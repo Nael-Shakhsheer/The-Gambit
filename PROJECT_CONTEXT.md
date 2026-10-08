@@ -4,6 +4,21 @@ Last updated: **2026-10-07**.
 
 ## Tactical update and publication — 2026-10-07
 
+Publication completed and remote main/tree verified on2026-10-08:
+https://github.com/Nael-Shakhsheer/The-Gauntlet/commit/92e417c5f4db837c80aa9d28153eb496e247031d
+The code commit contains290 files, including the prior October6 archive, all147
+runtime binary assets and142 source/document/test files. Every runtime asset SHA
+matches the verified local build; private checkpoints are excluded. Earlier
+publication-pending notes below are historical. The large ZIP upload was replaced
+by a complete runnable source commit through the authenticated GitHub connector.
+The local main branch now tracks origin/main. Its Git index was connected with
+a mixed reset that preserved the working files, original art and both saves;
+the previously published legacy ZIP was restored into the root. Large visual
+authoring art and reference screenshots are locally ignored, while audio rebuild
+sources remain tracked. Git publishing through the connector works; the native
+Git credential store has no signed-in account, so future native pushes may need
+sign-in. Public fetches work.
+
 The user selected the reassessment's ability alternatives, description accuracy,
 behavioral gear and signature bosses for implementation. `tactical_rules.py`
 holds ability metadata, four build items, roots/bleed and equipment modifiers.
