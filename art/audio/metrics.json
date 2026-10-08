@@ -1,0 +1,102 @@
+{
+  "blade": {
+    "seconds": 0.11,
+    "rms": 0.1783,
+    "bytes": 9742
+  },
+  "bow": {
+    "seconds": 0.073,
+    "rms": 0.2203,
+    "bytes": 6468
+  },
+  "magic": {
+    "seconds": 0.14,
+    "rms": 0.2333,
+    "bytes": 12422
+  },
+  "potion": {
+    "seconds": 0.131,
+    "rms": 0.2675,
+    "bytes": 11594
+  },
+  "bard": {
+    "seconds": 0.208,
+    "rms": 0.2233,
+    "bytes": 18362
+  },
+  "special": {
+    "seconds": 0.313,
+    "rms": 0.2329,
+    "bytes": 27694
+  },
+  "ultimate": {
+    "seconds": 0.59,
+    "rms": 0.2384,
+    "bytes": 52110
+  },
+  "dash": {
+    "seconds": 0.123,
+    "rms": 0.1978,
+    "bytes": 10850
+  },
+  "hit": {
+    "seconds": 0.082,
+    "rms": 0.2112,
+    "bytes": 7278
+  },
+  "hurt": {
+    "seconds": 0.112,
+    "rms": 0.3084,
+    "bytes": 9882
+  },
+  "heal": {
+    "seconds": 0.343,
+    "rms": 0.2775,
+    "bytes": 30290
+  },
+  "loot": {
+    "seconds": 0.267,
+    "rms": 0.2236,
+    "bytes": 23596
+  },
+  "select": {
+    "seconds": 0.063,
+    "rms": 0.2615,
+    "bytes": 5614
+  },
+  "interact": {
+    "seconds": 0.09,
+    "rms": 0.2225,
+    "bytes": 7998
+  },
+  "down": {
+    "seconds": 0.375,
+    "rms": 0.2263,
+    "bytes": 33090
+  },
+  "revive": {
+    "seconds": 0.477,
+    "rms": 0.2781,
+    "bytes": 42146
+  },
+  "clear": {
+    "seconds": 0.47,
+    "rms": 0.2243,
+    "bytes": 41506
+  },
+  "warning": {
+    "seconds": 0.181,
+    "rms": 0.225,
+    "bytes": 15986
+  },
+  "impact": {
+    "seconds": 0.254,
+    "rms": 0.2312,
+    "bytes": 22418
+  },
+  "curse": {
+    "seconds": 0.267,
+    "rms": 0.289,
+    "bytes": 23610
+  }
+}

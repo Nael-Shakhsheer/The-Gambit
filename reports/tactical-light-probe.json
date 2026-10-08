@@ -1,0 +1,101 @@
+{
+  "method": "12s stationary targets, no equipment, no enemy attacks; remaining in-flight damage excluded. Control counts enemy-seconds. Not human balance evidence.",
+  "results": [
+    {
+      "hero": "Druid",
+      "ability": "briar_burst",
+      "targets": 1,
+      "damage": 128,
+      "dps": 10.67,
+      "controlEnemySeconds": 4.95
+    },
+    {
+      "hero": "Druid",
+      "ability": "briar_burst",
+      "targets": 3,
+      "damage": 384,
+      "dps": 32.0,
+      "controlEnemySeconds": 14.85
+    },
+    {
+      "hero": "Druid",
+      "ability": "thornshot",
+      "targets": 1,
+      "damage": 299,
+      "dps": 24.92,
+      "controlEnemySeconds": 0.0
+    },
+    {
+      "hero": "Druid",
+      "ability": "thornshot",
+      "targets": 3,
+      "damage": 299,
+      "dps": 24.92,
+      "controlEnemySeconds": 0.0
+    },
+    {
+      "hero": "Wizard",
+      "ability": "arc_burst",
+      "targets": 1,
+      "damage": 247,
+      "dps": 20.58,
+      "controlEnemySeconds": 0.0
+    },
+    {
+      "hero": "Wizard",
+      "ability": "arc_burst",
+      "targets": 3,
+      "damage": 494,
+      "dps": 41.17,
+      "controlEnemySeconds": 0.0
+    },
+    {
+      "hero": "Wizard",
+      "ability": "frost_lance",
+      "targets": 1,
+      "damage": 150,
+      "dps": 12.5,
+      "controlEnemySeconds": 3.25
+    },
+    {
+      "hero": "Wizard",
+      "ability": "frost_lance",
+      "targets": 3,
+      "damage": 150,
+      "dps": 12.5,
+      "controlEnemySeconds": 3.25
+    },
+    {
+      "hero": "Cleric",
+      "ability": "radiant_flask",
+      "targets": 1,
+      "damage": 108,
+      "dps": 9.0,
+      "controlEnemySeconds": 0.0
+    },
+    {
+      "hero": "Cleric",
+      "ability": "radiant_flask",
+      "targets": 3,
+      "damage": 324,
+      "dps": 27.0,
+      "controlEnemySeconds": 0.0
+    },
+    {
+      "hero": "Cleric",
+      "ability": "sanctified_throw",
+      "targets": 1,
+      "damage": 207,
+      "dps": 17.25,
+      "controlEnemySeconds": 0.0
+    },
+    {
+      "hero": "Cleric",
+      "ability": "sanctified_throw",
+      "targets": 3,
+      "damage": 207,
+      "dps": 17.25,
+      "controlEnemySeconds": 0.0
+    }
+  ]
+}

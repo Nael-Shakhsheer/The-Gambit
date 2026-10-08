@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+data/
+releases/
+/.codex/
+/.agents/
+/PACKAGE_MANIFEST.json
+/art/*
+!/art/audio/
+/reports/*.png
+/reports/*.jpg
+/reports/*.jpeg

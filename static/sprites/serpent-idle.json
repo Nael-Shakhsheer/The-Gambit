@@ -1,0 +1,109 @@
+{
+  "character": {
+    "id": "7422bbdf-c47c-4e72-ba6a-31299e5878cd",
+    "name": "Idle",
+    "prompt": "16-bit pixel art reptilian serpent guard humanoid creature, 3/4 top-down perspective, strict 48x48 pixel grid scale, crisp outlines, green scales, wearing bronze shoulder pauldrons, holding a copper spear and a small leather buckler shield, clean retro SNES palette, transparent background.",
+    "size": {
+      "width": 48,
+      "height": 48
+    },
+    "directions": 8,
+    "view": "low top-down"
+  },
+  "spritesheet": {
+    "path": "16-bit_pixel_art_reptili-Idle.png",
+    "cell_size": {
+      "width": 68,
+      "height": 68
+    },
+    "sheet_size": {
+      "width": 612,
+      "height": 612
+    },
+    "columns": 9,
+    "pivot": "cell-center",
+    "rows": [
+      {
+        "row": 0,
+        "type": "rotations",
+        "frame_count": 8,
+        "directions": [
+          "south",
+          "south-east",
+          "east",
+          "north-east",
+          "north",
+          "north-west",
+          "west",
+          "south-west"
+        ]
+      },
+      {
+        "row": 1,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded serpent guard asset. Format into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, low coiled alert stance, subtle tail twitching.\n\u2022 Row 2: Slithering Jogging loop, fast forward movement, spear held ready.\n\u2022 Row 3: Spear Thrust, lunging forward sharply with the weapon for a melee strike.`",
+        "animation_group_id": "f56f63f4-e972-4d6d-b788-0d7c17eb0ba3",
+        "direction": "south"
+      },
+      {
+        "row": 2,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded serpent guard asset. Format into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, low coiled alert stance, subtle tail twitching.\n\u2022 Row 2: Slithering Jogging loop, fast forward movement, spear held ready.\n\u2022 Row 3: Spear Thrust, lunging forward sharply with the weapon for a melee strike.`",
+        "animation_group_id": "f56f63f4-e972-4d6d-b788-0d7c17eb0ba3",
+        "direction": "south-east"
+      },
+      {
+        "row": 3,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded serpent guard asset. Format into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, low coiled alert stance, subtle tail twitching.\n\u2022 Row 2: Slithering Jogging loop, fast forward movement, spear held ready.\n\u2022 Row 3: Spear Thrust, lunging forward sharply with the weapon for a melee strike.`",
+        "animation_group_id": "f56f63f4-e972-4d6d-b788-0d7c17eb0ba3",
+        "direction": "east"
+      },
+      {
+        "row": 4,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded serpent guard asset. Format into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, low coiled alert stance, subtle tail twitching.\n\u2022 Row 2: Slithering Jogging loop, fast forward movement, spear held ready.\n\u2022 Row 3: Spear Thrust, lunging forward sharply with the weapon for a melee strike.`",
+        "animation_group_id": "f56f63f4-e972-4d6d-b788-0d7c17eb0ba3",
+        "direction": "north-east"
+      },
+      {
+        "row": 5,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded serpent guard asset. Format into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, low coiled alert stance, subtle tail twitching.\n\u2022 Row 2: Slithering Jogging loop, fast forward movement, spear held ready.\n\u2022 Row 3: Spear Thrust, lunging forward sharply with the weapon for a melee strike.`",
+        "animation_group_id": "f56f63f4-e972-4d6d-b788-0d7c17eb0ba3",
+        "direction": "north"
+      },
+      {
+        "row": 6,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded serpent guard asset. Format into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, low coiled alert stance, subtle tail twitching.\n\u2022 Row 2: Slithering Jogging loop, fast forward movement, spear held ready.\n\u2022 Row 3: Spear Thrust, lunging forward sharply with the weapon for a melee strike.`",
+        "animation_group_id": "f56f63f4-e972-4d6d-b788-0d7c17eb0ba3",
+        "direction": "north-west"
+      },
+      {
+        "row": 7,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded serpent guard asset. Format into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, low coiled alert stance, subtle tail twitching.\n\u2022 Row 2: Slithering Jogging loop, fast forward movement, spear held ready.\n\u2022 Row 3: Spear Thrust, lunging forward sharply with the weapon for a melee strike.`",
+        "animation_group_id": "f56f63f4-e972-4d6d-b788-0d7c17eb0ba3",
+        "direction": "west"
+      },
+      {
+        "row": 8,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded serpent guard asset. Format into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, low coiled alert stance, subtle tail twitching.\n\u2022 Row 2: Slithering Jogging loop, fast forward movement, spear held ready.\n\u2022 Row 3: Spear Thrust, lunging forward sharply with the weapon for a melee strike.`",
+        "animation_group_id": "f56f63f4-e972-4d6d-b788-0d7c17eb0ba3",
+        "direction": "south-west"
+      }
+    ]
+  },
+  "export_version": "1.0",
+  "export_date": "2026-10-06T02:44:52.666265+00:00"
+}

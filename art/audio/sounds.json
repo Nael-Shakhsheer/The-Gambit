@@ -1,0 +1,25 @@
+{
+  "generator": "Bfxr 1.0.4 DSP, explicit parameters with seeded noise",
+  "sounds": {
+    "blade": {"seed":101,"params":{"waveType":3,"frequency_start":0.5,"frequency_slide":-0.26,"sustainTime":0.02,"decayTime":0.22,"hpFilterCutoff":0.2,"lpFilterCutoff":0.65}},
+    "bow": {"seed":102,"params":{"waveType":4,"frequency_start":0.48,"frequency_slide":-0.24,"sustainTime":0.02,"decayTime":0.18}},
+    "magic": {"seed":103,"params":{"waveType":4,"frequency_start":0.43,"frequency_slide":-0.13,"sustainTime":0.07,"decayTime":0.24,"vibratoDepth":0.1,"vibratoSpeed":0.35}},
+    "potion": {"seed":104,"params":{"waveType":2,"frequency_start":0.28,"frequency_slide":0.1,"sustainTime":0.03,"decayTime":0.24,"pitch_jump_amount":0.25,"pitch_jump_onset_percent":0.3}},
+    "bard": {"seed":105,"params":{"waveType":4,"frequency_start":0.42,"sustainTime":0.05,"decayTime":0.3,"pitch_jump_amount":0.18,"pitch_jump_onset_percent":0.3,"pitch_jump_2_amount":0.13,"pitch_jump_onset2_percent":0.6}},
+    "special": {"seed":106,"params":{"waveType":4,"frequency_start":0.25,"frequency_slide":0.13,"sustainTime":0.1,"decayTime":0.36,"vibratoDepth":0.08,"vibratoSpeed":0.25}},
+    "ultimate": {"seed":107,"params":{"waveType":4,"frequency_start":0.23,"frequency_slide":0.12,"attackTime":0.08,"sustainTime":0.16,"decayTime":0.48,"pitch_jump_amount":0.25,"pitch_jump_onset_percent":0.4}},
+    "dash": {"seed":108,"params":{"waveType":3,"frequency_start":0.35,"frequency_slide":0.18,"attackTime":0.025,"sustainTime":0.03,"decayTime":0.23,"hpFilterCutoff":0.1,"lpFilterCutoff":0.5}},
+    "hit": {"seed":109,"params":{"waveType":3,"frequency_start":0.18,"frequency_slide":-0.2,"sustainTime":0.02,"decayTime":0.19,"lpFilterCutoff":0.4}},
+    "hurt": {"seed":110,"params":{"waveType":0,"frequency_start":0.23,"frequency_slide":-0.18,"sustainTime":0.04,"decayTime":0.22,"squareDuty":0.45,"lpFilterCutoff":0.5}},
+    "heal": {"seed":111,"params":{"waveType":2,"frequency_start":0.4,"frequency_slide":0.08,"attackTime":0.04,"sustainTime":0.08,"decayTime":0.38,"pitch_jump_amount":0.2,"pitch_jump_onset_percent":0.4}},
+    "loot": {"seed":112,"params":{"waveType":4,"frequency_start":0.49,"sustainTime":0.055,"decayTime":0.34,"pitch_jump_amount":0.25,"pitch_jump_onset_percent":0.25,"pitch_jump_2_amount":0.2,"pitch_jump_onset2_percent":0.55}},
+    "select": {"seed":113,"params":{"waveType":2,"frequency_start":0.46,"sustainTime":0.01,"decayTime":0.13}},
+    "interact": {"seed":114,"params":{"waveType":4,"frequency_start":0.28,"sustainTime":0.025,"decayTime":0.2,"pitch_jump_amount":0.2,"pitch_jump_onset_percent":0.4}},
+    "down": {"seed":115,"params":{"waveType":4,"frequency_start":0.32,"frequency_slide":-0.14,"sustainTime":0.08,"decayTime":0.4,"pitch_jump_amount":-0.3,"pitch_jump_onset_percent":0.35}},
+    "revive": {"seed":116,"params":{"waveType":2,"frequency_start":0.22,"frequency_slide":0.12,"sustainTime":0.1,"decayTime":0.45,"pitch_jump_amount":0.3,"pitch_jump_onset_percent":0.5}},
+    "clear": {"seed":117,"params":{"waveType":4,"frequency_start":0.35,"sustainTime":0.08,"decayTime":0.45,"pitch_jump_amount":0.2,"pitch_jump_onset_percent":0.28,"pitch_jump_2_amount":0.25,"pitch_jump_onset2_percent":0.6}},
+    "warning": {"seed":118,"params":{"waveType":4,"frequency_start":0.19,"sustainTime":0.05,"decayTime":0.28,"pitch_jump_amount":-0.2,"pitch_jump_onset_percent":0.45}},
+    "impact": {"seed":119,"params":{"waveType":3,"frequency_start":0.12,"frequency_slide":-0.12,"sustainTime":0.07,"decayTime":0.33,"lpFilterCutoff":0.35}},
+    "curse": {"seed":120,"params":{"waveType":0,"frequency_start":0.25,"frequency_slide":-0.1,"sustainTime":0.06,"decayTime":0.34,"squareDuty":0.6,"lpFilterCutoff":0.5,"pitch_jump_amount":-0.3,"pitch_jump_onset_percent":0.3}}
+  }
+}

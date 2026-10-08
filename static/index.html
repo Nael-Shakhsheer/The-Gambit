@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#21302c">
+  <title>The Gauntlet — Co-op Adventure</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="brand">
+      <div class="brand-mark" aria-hidden="true"><span>✦</span></div>
+      <div><p class="eyebrow">A CO-OP PIXEL ADVENTURE</p><h1>The Gauntlet</h1></div>
+      <div class="connection" id="connection">READY</div>
+    </header>
+    <section id="entry" class="entry panel">
+      <div class="entry-copy">
+        <p class="eyebrow">GATHER YOUR PARTY</p><h2>Enter the gauntlet together.</h2>
+        <p>Choose a class, share your room code, and face the run as a team.</p>
+        <button id="openSettings" class="secondary small" type="button">Controls & keybindings</button>
+        <button class="secondary small" type="button" data-guide>How to play</button>
+        <button class="secondary small" type="button" data-audio-open>Sound settings</button>
+        <button id="continueRun" class="primary small hidden" type="button">Continue saved run</button>
+      </div>
+      <div class="entry-art" aria-hidden="true">
+        <img src="/sprites/portrait-knight-v1.png" alt="" width="64" height="64">
+        <img src="/sprites/portrait-wizard-v1.png" alt="" width="64" height="64">
+        <img src="/sprites/portrait-archer-v1.png" alt="" width="64" height="64">
+        <img src="/sprites/portrait-cleric-v1.png" alt="" width="64" height="64">
+        <img src="/sprites/portrait-rogue-v1.png" alt="" width="64" height="64">
+        <img src="/sprites/portrait-druid-v1.png" alt="" width="64" height="64">
+        <img src="/sprites/portrait-bard-v1.png" alt="" width="64" height="64">
+        <img src="/sprites/portrait-healer-v1.png" alt="" width="64" height="64">
+      </div>
+      <section id="keySettings" class="key-settings hidden" aria-label="Keybinding settings">
+        <div class="section-heading"><div><p class="eyebrow">PERSONAL CONTROLS</p><h3>Keybindings</h3></div><button id="closeSettings" class="secondary small" type="button">Close</button></div>
+        <p class="subtle">Movement uses WASD by default. Select a key, then press the key you want.</p>
+        <div id="keyBindingFields" class="key-binding-fields"></div>
+        <p id="controlHint" class="control-hint">Move: WASD · Dash: Space (5s) · Light attack: Left click · Special: Q · Ultimate: X</p>
+        <button id="resetBindings" class="secondary small" type="button">Restore defaults</button>
+      </section>
+      <form id="createForm" class="form-row">
+        <label><span>Your name</span><input id="createName" maxlength="18" placeholder="Adventurer" autocomplete="nickname"></label>
+        <button class="primary" type="submit">Create a room</button>
+      </form>
+      <div class="divider"><span>OR JOIN A PARTY</span></div>
+      <form id="joinForm" class="form-row">
+        <label><span>Your name</span><input id="joinName" maxlength="18" placeholder="Adventurer" autocomplete="nickname"></label>
+        <label class="code-label"><span>Room code</span><input id="roomCode" maxlength="5" placeholder="ABCDE" autocapitalize="characters" autocomplete="off"></label>
+        <button class="secondary" type="submit">Join room</button>
+      </form>
+      <p class="notice" id="entryNotice" role="status"></p>
+      <a id="liveGameLink" class="primary live-game-link hidden" href="http://127.0.0.1:8000/">Open the live game</a>
+    </section>
+    <section id="lobby" class="lobby hidden">
+      <div class="lobby-main">
+        <div class="room-bar panel">
+          <div><p class="eyebrow">YOUR PARTY ROOM</p><h2>Room <span id="roomCodeDisplay" class="room-code">-----</span></h2></div>
+          <div class="room-actions"><button id="copyCode" class="secondary small">Copy invite code</button><button id="mainMenu" class="secondary small">← Main menu</button></div>
+        </div>
+        <p id="roomNotice" class="notice room-notice" role="status"></p>
+        <div id="classPanel" class="panel class-panel">
+          <div class="section-heading"><div><p class="eyebrow">BUILD YOUR PARTY</p><h2>Choose a class</h2></div><span id="partyCount" class="count-pill">0 / 4</span></div>
+          <p class="subtle">Each class is unique within the party. Choose one Light, one Special, and one Ultimate ability.</p>
+          <fieldset id="runOptions" class="run-options">
+            <legend>Run options · host chooses</legend>
+            <label><span>Challenge</span><select id="difficultyChoice"><option value="easy">Easy</option><option value="medium" selected>Medium</option><option value="hard">Hard</option></select></label>
+            <label><span>Run length</span><select id="lengthChoice"><option value="9">Tester · 9 stages</option><option value="20">Short · 20 stages</option><option value="25" selected>Standard · 25 stages</option><option value="30">Long · 30 stages</option></select></label>
+            <label class="companion-choice"><input id="npcCompanion" type="checkbox"><span>Add NPC companion</span></label>
+            <p id="testerModeHint" class="subtle hidden">Tester compresses 25-stage combat progression into 9 stages, with bosses at 3, 6 and 9 and Dracos from 7.</p>
+            <p class="subtle">The companion fills one of four party slots and chooses a random available hero when the run starts. Enemy numbers and strength scale with your full party.</p>
+          </fieldset>
+          <div id="classGrid" class="class-grid"></div>
+          <section id="abilityLoadout" class="ability-loadout hidden">
+            <p class="eyebrow">CLASS ABILITIES · CHOOSE THREE</p>
+            <div id="abilityChoices" class="ability-grid"></div>
+            <p id="abilityNotice" class="notice" role="status">Select exactly three.</p>
+          </section>
+        </div>
+        <div id="arenaPanel" class="arena-panel hidden">
+          <div class="game-topbar">
+            <div><p class="eyebrow">THE GAUNTLET · <span id="runeCount">0 RUNES</span></p><h2 id="stageHeading">Stage 1 · Arena</h2></div>
+            <div class="game-top-actions"><button id="toggleChat" class="secondary small">Chat</button><button id="togglePouch" class="secondary small">Pouch</button><button id="mainMenuGame" class="secondary small">Main menu</button></div>
+          </div>
+          <canvas id="world" width="960" height="540" aria-label="Shared real-time game area"></canvas>
+          <p id="bossTactic" class="boss-tactic hidden" role="status"></p>
+          <div id="teamHud" class="team-hud" aria-label="Party health"></div>
+          <div class="coordination-tools">
+            <p id="npcClueHUD" class="npc-clue hidden" role="status"></p>
+            <div id="pingButtons" class="ping-buttons" aria-label="Quick party pings">
+              <button class="secondary" data-ping="help">Help</button>
+              <button class="secondary" data-ping="gather">Gather</button>
+              <button class="secondary" data-ping="enemy" aria-pressed="false">Enemy</button>
+            </div>
+            <button id="shareClue" class="secondary hidden">Share clue</button>
+            <button id="targetButton" class="secondary hidden">Auto target</button>
+          </div>
+          <div id="worldToast" class="world-toast hidden" role="status" aria-live="polite"></div>
+          <div id="waveCountdown" class="wave-countdown hidden" aria-live="assertive"></div>
+          <div id="objectiveHUD" class="objective-hud hidden" role="status"></div>
+          <section id="victoryPanel" class="victory-panel hidden" aria-live="polite">
+            <p class="eyebrow">THE THREE GREAT FOES HAVE FALLEN</p>
+            <h3>THE REALM IS SAVED</h3>
+            <p>The final dragon is defeated. The party's legend will be told for generations.</p>
+          </section>
+          <section id="chestPanel" class="chest-panel hidden" aria-live="polite">
+            <p class="eyebrow">A FIND IN THE GAUNTLET</p>
+            <h3>Treasure Chest</h3>
+            <p class="route-copy">The chest is in the arena. Walk up and open your share to claim runes, gear, or healing.</p>
+            <div id="pendingChestLoot" class="hidden">
+              <p id="pendingChestName" class="chest-loot-name"></p>
+              <p id="pendingChestDesc" class="route-copy"></p>
+              <p class="route-copy">Your pouch is full. Swap one item out to take the new item.</p>
+              <div id="chestSwapChoices" class="chest-swaps"></div>
+            </div>
+            <p id="chestWait" class="route-copy hidden"></p>
+            <p id="chestProgress" class="notice" role="status"></p>
+            <p id="chestNotice" class="notice" role="status"></p>
+          </section>
+          <section id="townPanel" class="town-panel hidden">
+            <p class="eyebrow">TOWN · MERCHANT</p>
+            <h3 id="townName">Town</h3>
+            <p class="route-copy">Stock is tailored to your class. The alchemist shares a useful potion; the innkeeper offers hunter training. Rest at an upstairs inn bed to save your checkpoint.</p>
+            <div class="town-columns">
+              <div><h4>Merchant's stock</h4><div id="shopStock" class="town-list"></div></div>
+              <div><h4>Your pouch</h4><div id="pouchItems" class="town-list"></div></div>
+            </div>
+            <div id="equipmentSlots" class="equipment-slots"></div>
+            <p id="townNotice" class="notice" role="status"></p>
+            <div class="town-actions">
+              <button id="closeTownShop" class="secondary">Close shop</button>
+            </div>
+          </section>
+          <section id="defeatPanel" class="defeat-panel hidden">
+            <p class="eyebrow">THE GAUNTLET CLAIMED ITS DUE</p>
+            <h3>Return to the last inn?</h3>
+            <p id="defeatMessage">The party lost 40% of its Runes. Items will be kept.</p>
+            <button id="checkpointResume" class="primary">Return to last inn</button>
+          </section>
+          <section id="puzzlePanel" class="puzzle-panel hidden">
+            <p class="eyebrow">YOUR SEPARATE RUNE ROOM</p>
+            <h3 id="puzzlePath">Find your totem</h3>
+            <p id="companionClue" class="route-copy hidden"></p><p id="puzzleClue" class="puzzle-instructions">Walk to the totem and press E for its hint.</p>
+            <p id="puzzleProgress" class="notice" role="status"></p>
+            <p id="puzzleNotice" class="notice" role="status"></p>
+          </section>
+          <div class="arena-controls">
+            <div class="touch-pad" aria-label="Movement controls">
+              <button data-move="0,-1" aria-label="Move up">▲</button>
+              <button data-move="-1,0" aria-label="Move left">◀</button>
+              <button data-move="0,1" aria-label="Move down">▼</button>
+              <button data-move="1,0" aria-label="Move right">▶</button>
+            </div>
+          </div>
+          <div id="gameHud" class="game-hud">
+            <div class="resource-stack">
+              <div class="resource-meter health-meter"><span id="hpLabel">HP 100 / 100</span><div class="resource-track"><div id="hpFill"></div></div></div>
+              <div class="resource-meter mana-meter"><span id="manaLabel">MANA 100 / 100</span><div class="resource-track"><div id="manaFill"></div></div></div>
+            </div>
+            <div class="hud-middle">
+              <div id="abilityButtons" class="ability-buttons"></div>
+              <div class="hud-actions"><button id="attackButton" class="primary">Attack</button><button id="dashButton" class="secondary hidden">Space · Dash</button><button id="reviveButton" class="secondary">Revive</button></div>
+              <div id="utilityHotbar" class="utility-hotbar" aria-label="Equipped utility items"><div id="utilityLeft" class="utility-side"></div><button id="interactButton" class="secondary hidden">Interact</button><div id="utilityRight" class="utility-side"></div></div>
+              <p id="combatNotice" class="notice" role="status"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <aside class="lobby-side">
+        <section class="panel party-panel">
+          <div class="section-heading"><div><p class="eyebrow">THE PARTY</p><h2>Adventurers</h2></div></div>
+          <div id="players" class="player-list"></div>
+          <button id="startRun" class="primary start-button" disabled>Choose a class to begin</button>
+        </section>
+        <section id="pouchPanel" class="panel pouch-panel hidden">
+          <div class="section-heading"><div><p class="eyebrow">YOUR ITEMS & STATUS</p><h2>Pouch & equipment <small id="pouchCount">0 / 10</small></h2></div><button id="expandPouch" class="secondary" aria-expanded="false">Expand</button></div>
+          <p id="curseStatus" class="curse-status hidden"></p>
+          <div id="quickPouch" class="quick-pouch"></div>
+          <h3 class="gear-caption">Equipped slots</h3>
+          <div id="quickGear" class="quick-gear"></div>
+          <p id="pouchNotice" class="notice" role="status"></p>
+        </section>
+        <section id="chatPanel" class="panel chat-panel">
+          <div class="section-heading"><div><p class="eyebrow">PARTY CHAT</p><h2>Messages</h2></div></div>
+          <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
+          <form id="chatForm" class="chat-form">
+            <input id="chatInput" maxlength="240" placeholder="Share a message…" autocomplete="off" aria-label="Chat message">
+            <button class="send-button" type="submit" aria-label="Send message">➤</button>
+          </form>
+        </section>
+      </aside>
+    </section>
+  </main>
+  <dialog id="guildDialog" class="guild-dialog panel" aria-labelledby="guildTitle" aria-describedby="guildIntro">
+    <div class="section-heading"><div><p class="eyebrow">THE GUILDMASTER</p><h2 id="guildTitle">Choose a new hero</h2></div><button id="guildCancel" class="secondary small" type="button">Back out</button></div>
+    <p id="guildIntro" class="subtle"></p>
+    <div id="guildHeroes" class="class-grid"></div>
+    <div id="guildSkills" class="hidden">
+      <div id="guildAbilityChoices" class="ability-grid"></div>
+      <div class="guild-actions"><button id="guildBack" class="secondary" type="button">Back to heroes</button><button id="guildConfirm" class="primary" type="button">Confirm class change</button></div>
+    </div>
+    <p id="guildNotice" class="notice" role="status"></p>
+  </dialog>
+  <script src="town-sprites.js" defer></script>
+  <script src="combat-environment.js" defer></script>
+  <script src="movement.js" defer></script>
+  <script src="audio.js" defer></script>
+  <script src="equipment-comparison.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="coordination.js" defer></script>
+  <script src="progression.js" defer></script>
+  <dialog id="storyDialog" class="panel info-dialog" aria-labelledby="storyTitle" aria-describedby="storyText">
+    <p id="storyStep" class="eyebrow"></p>
+    <div class="story-conversation">
+      <section class="dialogue-speaker player-speaker"><div class="speaker-heading"><canvas id="storyPlayerPortrait" width="80" height="88" aria-hidden="true"></canvas><h2 id="storyPlayerName"></h2></div><div class="speech-box"><p id="storyReply"></p><button id="storyNext" class="primary">Continue</button></div></section>
+      <section class="dialogue-speaker npc-speaker"><div class="speaker-heading"><h2 id="storyTitle"></h2><canvas id="storyNpcPortrait" width="80" height="88" aria-hidden="true"></canvas></div><div class="speech-box"><p id="storyText"></p></div></section>
+    </div>
+    <p id="storyNotice" class="notice" role="status"></p>
+  </dialog>
+  <dialog id="trainingDialog" class="panel info-dialog training-dialog" aria-labelledby="trainingTitle">
+    <div class="section-heading"><h2 id="trainingTitle">Hunter training</h2><button id="closeTraining" class="secondary">Close</button></div>
+    <p id="trainingPoints"></p><div id="trainingBranches" class="training-branches"></div><p id="trainingNotice" class="notice" role="status"></p>
+  </dialog>
+  <dialog id="questDialog" class="panel info-dialog" aria-labelledby="questTitle">
+    <div class="section-heading"><h2 id="questTitle">The wounded hunter's request</h2><button data-close="questDialog" class="secondary">Close</button></div>
+    <p id="questText"></p>
+  </dialog>
+  <dialog id="guideDialog" class="panel info-dialog" aria-labelledby="guideTitle">
+    <div class="section-heading"><h2 id="guideTitle">How to play</h2><button data-close="guideDialog" class="secondary">Close</button></div>
+    <p id="guideStep" class="eyebrow"></p><h3 id="guideHeading"></h3><p id="guideText"></p>
+    <div class="dialog-actions"><button id="guideBack" class="secondary">Back</button><button id="guideNext" class="primary">Next</button></div>
+  </dialog>
+  <dialog id="leaveRunDialog" class="panel info-dialog leave-run-dialog" aria-labelledby="leaveRunTitle">
+    <h2 id="leaveRunTitle">Leave this session?</h2><p id="leaveRunCopy"></p>
+    <div class="dialog-actions"><button data-close="leaveRunDialog" class="secondary">Keep playing</button><button id="confirmLeaveRun" class="primary">Main menu</button></div>
+  </dialog>
+  <dialog id="audioDialog" class="panel info-dialog audio-dialog" aria-labelledby="audioTitle">
+    <div class="section-heading"><h2 id="audioTitle">Sound settings</h2><button data-close="audioDialog" class="secondary" type="button">Close</button></div>
+    <p>Retro sound effects for combat, treasure and interactions. These settings apply to this browser.</p>
+    <label class="audio-volume"><span>Effects volume <output data-audio-value>45%</output></span><input data-audio-volume type="range" min="0" max="100" value="45" aria-label="Effects volume"></label>
+    <label class="audio-mute"><input data-audio-mute type="checkbox">Mute sound effects</label>
+    <button data-audio-test class="secondary" type="button">Test sound</button>
+    <p data-audio-status class="subtle" role="status">Click, tap or press a key to activate sound.</p>
+  </dialog>
+  <dialog id="statsDialog" class="panel info-dialog" aria-labelledby="statsTitle">
+    <div class="section-heading"><h2 id="statsTitle">Run stats</h2><button data-close="statsDialog" class="secondary">Close</button></div>
+    <p id="saveStatus"></p><p class="subtle">Overall totals for this run, including the current stage. Damage dealt includes your summons; damage taken counts your hero’s HP lost. Revives count allies rescued, deaths count falling or a party wipe, and kills go to the finishing attacker.</p>
+    <div id="overallStats"></div><button id="downloadStats" class="secondary">Download run stats</button>
+  </dialog>
+</body>
+</html>

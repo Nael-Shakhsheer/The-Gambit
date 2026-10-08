@@ -1,0 +1,118 @@
+{
+  "character": {
+    "size": {
+      "height": 48,
+      "width": 48
+    },
+    "name": "Archer",
+    "view": "low top-down",
+    "directions": 8
+  },
+  "spritesheet": {
+    "rows": [
+      {
+        "directions": [
+          "south",
+          "south-east",
+          "east",
+          "north-east",
+          "north",
+          "north-west",
+          "west",
+          "south-west"
+        ],
+        "frame_count": 8,
+        "row": 0,
+        "type": "rotations"
+      },
+      {
+        "direction": "south",
+        "frame_count": 9,
+        "row": 1,
+        "type": "animation"
+      },
+      {
+        "direction": "south-east",
+        "frame_count": 9,
+        "row": 2,
+        "type": "animation"
+      },
+      {
+        "direction": "east",
+        "frame_count": 9,
+        "row": 3,
+        "type": "animation"
+      },
+      {
+        "direction": "north-east",
+        "frame_count": 9,
+        "row": 4,
+        "type": "animation"
+      },
+      {
+        "direction": "north",
+        "frame_count": 9,
+        "row": 5,
+        "type": "animation"
+      },
+      {
+        "direction": "north-west",
+        "frame_count": 9,
+        "row": 6,
+        "type": "animation"
+      },
+      {
+        "direction": "west",
+        "frame_count": 9,
+        "row": 7,
+        "type": "animation"
+      },
+      {
+        "direction": "south-west",
+        "frame_count": 9,
+        "row": 8,
+        "type": "animation"
+      }
+    ],
+    "path": "archer-idle.png",
+    "cell_size": {
+      "height": 68,
+      "width": 68
+    },
+    "columns": 9,
+    "pivot": "cell-center",
+    "sheet_size": {
+      "height": 612,
+      "width": 612
+    }
+  },
+  "animations": {
+    "walk": [
+      3,
+      4,
+      5
+    ],
+    "attack": [
+      6,
+      7,
+      8
+    ],
+    "idle": [
+      0,
+      1,
+      2
+    ]
+  },
+  "animation_descriptions": {
+    "walk": "nimble jogging with clearly alternating boots, cape and quiver bob, bow held close",
+    "attack": "raise bow and nock arrow, draw string and release toward the row's facing, lower bow in recovery; use correct two-handed archery with compact arrow fully inside cell",
+    "idle": "relaxed breathing, bow down beside torso and a tiny cloak bob"
+  },
+  "mirrored_directions": {
+    "north-west": "north-east",
+    "west": "east",
+    "south-west": "south-east"
+  },
+  "status": "Packaged for import with import_heroes.py. Animation poses have not been reviewed in live gameplay.",
+  "export_version": "1.0"
+}

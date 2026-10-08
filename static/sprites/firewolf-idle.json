@@ -1,0 +1,118 @@
+{
+  "character": {
+    "name": "Fire Wolf",
+    "size": {
+      "width": 48,
+      "height": 48
+    },
+    "view": "low top-down",
+    "directions": 8
+  },
+  "spritesheet": {
+    "pivot": "cell-center",
+    "rows": [
+      {
+        "frame_count": 8,
+        "row": 0,
+        "type": "rotations",
+        "directions": [
+          "south",
+          "south-east",
+          "east",
+          "north-east",
+          "north",
+          "north-west",
+          "west",
+          "south-west"
+        ]
+      },
+      {
+        "frame_count": 9,
+        "row": 1,
+        "type": "animation",
+        "direction": "south"
+      },
+      {
+        "frame_count": 9,
+        "row": 2,
+        "type": "animation",
+        "direction": "south-east"
+      },
+      {
+        "frame_count": 9,
+        "row": 3,
+        "type": "animation",
+        "direction": "east"
+      },
+      {
+        "frame_count": 9,
+        "row": 4,
+        "type": "animation",
+        "direction": "north-east"
+      },
+      {
+        "frame_count": 9,
+        "row": 5,
+        "type": "animation",
+        "direction": "north"
+      },
+      {
+        "frame_count": 9,
+        "row": 6,
+        "type": "animation",
+        "direction": "north-west"
+      },
+      {
+        "frame_count": 9,
+        "row": 7,
+        "type": "animation",
+        "direction": "west"
+      },
+      {
+        "frame_count": 9,
+        "row": 8,
+        "type": "animation",
+        "direction": "south-west"
+      }
+    ],
+    "cell_size": {
+      "width": 68,
+      "height": 68
+    },
+    "columns": 9,
+    "path": "firewolf-idle.png",
+    "sheet_size": {
+      "width": 612,
+      "height": 612
+    }
+  },
+  "animations": {
+    "idle": [
+      0,
+      1,
+      2
+    ],
+    "attack": [
+      6,
+      7,
+      8
+    ],
+    "walk": [
+      3,
+      4,
+      5
+    ]
+  },
+  "animation_descriptions": {
+    "idle": "breathing and subtle bounded mane/tail flame flicker",
+    "attack": "crouch windup, sharp forward bite with small fiery fangs, low bite follow-through",
+    "walk": "bounding four-legged run, alternating paws, tail and small flame tufts moving naturally"
+  },
+  "mirrored_directions": {
+    "west": "east",
+    "south-west": "south-east",
+    "north-west": "north-east"
+  },
+  "status": "Packaged for import with import_wolf_druid.py. Animation poses have not been reviewed in live gameplay.",
+  "export_version": "1.0"
+}

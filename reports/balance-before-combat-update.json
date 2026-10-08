@@ -1,0 +1,4693 @@
+[
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 9.45,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 145,
+        "summonDamage": 0,
+        "heroDamageTaken": 6,
+        "summonDamageTaken": 0,
+        "damagePrevented": 7,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 145
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Knight"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 8.7,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 110,
+        "summonDamage": 0,
+        "heroDamageTaken": 4,
+        "summonDamageTaken": 0,
+        "damagePrevented": 4,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 110
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Knight"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 12.3,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 246,
+        "summonDamage": 0,
+        "heroDamageTaken": 10,
+        "summonDamageTaken": 0,
+        "damagePrevented": 9,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 246
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Knight"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 11.75,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 178,
+        "summonDamage": 0,
+        "heroDamageTaken": 19,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 178
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Wizard"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 12.65,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 207,
+        "summonDamage": 0,
+        "heroDamageTaken": 30,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 207
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Wizard"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 11.1,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 178,
+        "summonDamage": 0,
+        "heroDamageTaken": 19,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 178
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Wizard"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 10.8,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 194,
+        "summonDamage": 0,
+        "heroDamageTaken": 8,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 194
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Archer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 11.05,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 207,
+        "summonDamage": 0,
+        "heroDamageTaken": 11,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 207
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Archer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 9.85,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 178,
+        "summonDamage": 0,
+        "heroDamageTaken": 11,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 178
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Archer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 16.2,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Cleric",
+        "class": "Cleric",
+        "heroDamage": 158,
+        "summonDamage": 0,
+        "heroDamageTaken": 8,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 158
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Cleric"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 28.1,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Cleric",
+        "class": "Cleric",
+        "heroDamage": 278,
+        "summonDamage": 0,
+        "heroDamageTaken": 80,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 278
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Cleric"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 21.25,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Cleric",
+        "class": "Cleric",
+        "heroDamage": 192,
+        "summonDamage": 0,
+        "heroDamageTaken": 40,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 192
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Cleric"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 8.1,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Rogue",
+        "class": "Rogue",
+        "heroDamage": 116,
+        "summonDamage": 0,
+        "heroDamageTaken": 13,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 116
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Rogue"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 10.5,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Rogue",
+        "class": "Rogue",
+        "heroDamage": 207,
+        "summonDamage": 0,
+        "heroDamageTaken": 19,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 207
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Rogue"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 9.7,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Rogue",
+        "class": "Rogue",
+        "heroDamage": 178,
+        "summonDamage": 0,
+        "heroDamageTaken": 19,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 178
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Rogue"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 11.1,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 112,
+        "summonDamage": 66,
+        "heroDamageTaken": 0,
+        "summonDamageTaken": 19,
+        "damagePrevented": 0,
+        "summonSeconds": 11.1,
+        "summonSpawns": 1,
+        "summonDeaths": 0,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 11.1,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 178
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Druid"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 11.6,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 108,
+        "summonDamage": 83,
+        "heroDamageTaken": 0,
+        "summonDamageTaken": 30,
+        "damagePrevented": 0,
+        "summonSeconds": 11.6,
+        "summonSpawns": 1,
+        "summonDeaths": 0,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 11.6,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 191
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Druid"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 10.3,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 102,
+        "summonDamage": 76,
+        "heroDamageTaken": 0,
+        "summonDamageTaken": 19,
+        "damagePrevented": 0,
+        "summonSeconds": 10.3,
+        "summonSpawns": 1,
+        "summonDeaths": 0,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 10.3,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 178
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Druid"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 15.65,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Bard",
+        "class": "Bard",
+        "heroDamage": 158,
+        "summonDamage": 0,
+        "heroDamageTaken": 8,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 158
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Bard"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 16.95,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Bard",
+        "class": "Bard",
+        "heroDamage": 254,
+        "summonDamage": 0,
+        "heroDamageTaken": 40,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 254
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Bard"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 13.1,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Bard",
+        "class": "Bard",
+        "heroDamage": 139,
+        "summonDamage": 0,
+        "heroDamageTaken": 24,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 139
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Bard"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 35.1,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Healer",
+        "class": "Healer",
+        "heroDamage": 274,
+        "summonDamage": 0,
+        "heroDamageTaken": 32,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 274
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Healer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 46.8,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Healer",
+        "class": "Healer",
+        "heroDamage": 370,
+        "summonDamage": 0,
+        "heroDamageTaken": 96,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 370
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Healer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 23.75,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Healer",
+        "class": "Healer",
+        "heroDamage": 178,
+        "summonDamage": 0,
+        "heroDamageTaken": 60,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 178
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Healer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 2,
+    "startingPartySize": 2,
+    "seconds": 17.05,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 180,
+        "summonDamage": 128,
+        "heroDamageTaken": 0,
+        "summonDamageTaken": 48,
+        "damagePrevented": 0,
+        "summonSeconds": 19.05,
+        "summonSpawns": 2,
+        "summonDeaths": 0,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 17.05,
+            "died": false
+          },
+          {
+            "ability": "ice_bear",
+            "seconds": 2.0,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 308
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 382,
+        "summonDamage": 0,
+        "heroDamageTaken": 12,
+        "summonDamageTaken": 0,
+        "damagePrevented": 15,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 382
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Druid",
+      "Knight"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 2,
+    "startingPartySize": 2,
+    "seconds": 11.85,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 105,
+        "summonDamage": 77,
+        "heroDamageTaken": 11,
+        "summonDamageTaken": 30,
+        "damagePrevented": 0,
+        "summonSeconds": 11.85,
+        "summonSpawns": 1,
+        "summonDeaths": 0,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 11.85,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 182
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 270,
+        "summonDamage": 0,
+        "heroDamageTaken": 21,
+        "summonDamageTaken": 0,
+        "damagePrevented": 13,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 270
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Druid",
+      "Knight"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 2,
+    "startingPartySize": 2,
+    "seconds": 13.5,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 113,
+        "summonDamage": 80,
+        "heroDamageTaken": 0,
+        "summonDamageTaken": 8,
+        "damagePrevented": 0,
+        "summonSeconds": 13.5,
+        "summonSpawns": 1,
+        "summonDeaths": 0,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 13.5,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 193
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 280,
+        "summonDamage": 0,
+        "heroDamageTaken": 12,
+        "summonDamageTaken": 0,
+        "damagePrevented": 16,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 280
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Druid",
+      "Knight"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 2,
+    "startingPartySize": 2,
+    "seconds": 16.2,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 313,
+        "summonDamage": 0,
+        "heroDamageTaken": 26,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 313
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 373,
+        "summonDamage": 0,
+        "heroDamageTaken": 30,
+        "summonDamageTaken": 0,
+        "damagePrevented": 34,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 373
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Wizard",
+      "Knight"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 2,
+    "startingPartySize": 2,
+    "seconds": 11.75,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 167,
+        "summonDamage": 0,
+        "heroDamageTaken": 19,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 167
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 285,
+        "summonDamage": 0,
+        "heroDamageTaken": 22,
+        "summonDamageTaken": 0,
+        "damagePrevented": 23,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 285
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Wizard",
+      "Knight"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 2,
+    "startingPartySize": 2,
+    "seconds": 13.95,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 174,
+        "summonDamage": 0,
+        "heroDamageTaken": 0,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 174
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 300,
+        "summonDamage": 0,
+        "heroDamageTaken": 19,
+        "summonDamageTaken": 0,
+        "damagePrevented": 23,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 300
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Wizard",
+      "Knight"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 3,
+    "startingPartySize": 3,
+    "seconds": 15.05,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 88,
+        "summonDamage": 92,
+        "heroDamageTaken": 0,
+        "summonDamageTaken": 25,
+        "damagePrevented": 0,
+        "summonSeconds": 15.05,
+        "summonSpawns": 2,
+        "summonDeaths": 0,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 15.05,
+            "died": false
+          },
+          {
+            "ability": "ice_bear",
+            "seconds": 0.0,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 180
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 325,
+        "summonDamage": 0,
+        "heroDamageTaken": 60,
+        "summonDamageTaken": 0,
+        "damagePrevented": 61.25,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 325
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 392,
+        "summonDamage": 0,
+        "heroDamageTaken": 38,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 392
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Druid",
+      "Knight",
+      "Archer"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 3,
+    "startingPartySize": 3,
+    "seconds": 15.05,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 178,
+        "summonDamage": 72,
+        "heroDamageTaken": 31,
+        "summonDamageTaken": 55,
+        "damagePrevented": 0,
+        "summonSeconds": 7.3,
+        "summonSpawns": 2,
+        "summonDeaths": 1,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 7.3,
+            "died": true
+          },
+          {
+            "ability": "ice_bear",
+            "seconds": 0.0,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 250
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 295,
+        "summonDamage": 0,
+        "heroDamageTaken": 34,
+        "summonDamageTaken": 0,
+        "damagePrevented": 40,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 295
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 322,
+        "summonDamage": 0,
+        "heroDamageTaken": 6,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 322
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Druid",
+      "Knight",
+      "Archer"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 3,
+    "startingPartySize": 3,
+    "seconds": 17.6,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 202,
+        "summonDamage": 153,
+        "heroDamageTaken": 0,
+        "summonDamageTaken": 32,
+        "damagePrevented": 0,
+        "summonSeconds": 20.15,
+        "summonSpawns": 2,
+        "summonDeaths": 0,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 17.6,
+            "died": false
+          },
+          {
+            "ability": "ice_bear",
+            "seconds": 2.55,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 355
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 356,
+        "summonDamage": 0,
+        "heroDamageTaken": 18,
+        "summonDamageTaken": 0,
+        "damagePrevented": 18,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 356
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 523,
+        "summonDamage": 0,
+        "heroDamageTaken": 12,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 523
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Druid",
+      "Knight",
+      "Archer"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 3,
+    "startingPartySize": 3,
+    "seconds": 15.25,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 236,
+        "summonDamage": 0,
+        "heroDamageTaken": 68,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 236
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 294,
+        "summonDamage": 0,
+        "heroDamageTaken": 13,
+        "summonDamageTaken": 0,
+        "damagePrevented": 14,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 294
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 327,
+        "summonDamage": 0,
+        "heroDamageTaken": 38,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 327
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Wizard",
+      "Knight",
+      "Archer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 3,
+    "startingPartySize": 3,
+    "seconds": 15.05,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 234,
+        "summonDamage": 0,
+        "heroDamageTaken": 70,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 234
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 297,
+        "summonDamage": 0,
+        "heroDamageTaken": 46,
+        "summonDamageTaken": 0,
+        "damagePrevented": 54,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 297
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 336,
+        "summonDamage": 0,
+        "heroDamageTaken": 6,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 336
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Wizard",
+      "Knight",
+      "Archer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 3,
+    "startingPartySize": 3,
+    "seconds": 18.25,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 346,
+        "summonDamage": 0,
+        "heroDamageTaken": 53,
+        "summonDamageTaken": 0,
+        "damagePrevented": 23,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 346
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 311,
+        "summonDamage": 0,
+        "heroDamageTaken": 20,
+        "summonDamageTaken": 0,
+        "damagePrevented": 20,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 311
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 783,
+        "summonDamage": 0,
+        "heroDamageTaken": 12,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 783
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Wizard",
+      "Knight",
+      "Archer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 4,
+    "startingPartySize": 4,
+    "seconds": 17.45,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 171,
+        "summonDamage": 147,
+        "heroDamageTaken": 0,
+        "summonDamageTaken": 35,
+        "damagePrevented": 0,
+        "summonSeconds": 19.85,
+        "summonSpawns": 2,
+        "summonDeaths": 0,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 17.45,
+            "died": false
+          },
+          {
+            "ability": "ice_bear",
+            "seconds": 2.4,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 318
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 425,
+        "summonDamage": 0,
+        "heroDamageTaken": 81,
+        "summonDamageTaken": 0,
+        "damagePrevented": 80,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 425
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 1042,
+        "summonDamage": 0,
+        "heroDamageTaken": 35,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 1042
+      },
+      {
+        "name": "Healer",
+        "class": "Healer",
+        "heroDamage": 50,
+        "summonDamage": 0,
+        "heroDamageTaken": 110,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 50
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Druid",
+      "Knight",
+      "Archer",
+      "Healer"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 4,
+    "startingPartySize": 4,
+    "seconds": 21.7,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 272,
+        "summonDamage": 149,
+        "heroDamageTaken": 45,
+        "summonDamageTaken": 124,
+        "damagePrevented": 0,
+        "summonSeconds": 20.3,
+        "summonSpawns": 3,
+        "summonDeaths": 1,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 2.75,
+            "died": true
+          },
+          {
+            "ability": "lightning_bird",
+            "seconds": 10.9,
+            "died": false
+          },
+          {
+            "ability": "ice_bear",
+            "seconds": 6.65,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 421
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 410,
+        "summonDamage": 0,
+        "heroDamageTaken": 52,
+        "summonDamageTaken": 0,
+        "damagePrevented": 47,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 410
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 573,
+        "summonDamage": 0,
+        "heroDamageTaken": 28,
+        "summonDamageTaken": 0,
+        "damagePrevented": 32,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 573
+      },
+      {
+        "name": "Healer",
+        "class": "Healer",
+        "heroDamage": 89,
+        "summonDamage": 0,
+        "heroDamageTaken": 120,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 89
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Druid",
+      "Knight",
+      "Archer",
+      "Healer"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 4,
+    "startingPartySize": 4,
+    "seconds": 22.95,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 282,
+        "summonDamage": 225,
+        "heroDamageTaken": 0,
+        "summonDamageTaken": 103,
+        "damagePrevented": 0,
+        "summonSeconds": 22.0,
+        "summonSpawns": 3,
+        "summonDeaths": 1,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 6.9,
+            "died": true
+          },
+          {
+            "ability": "lightning_bird",
+            "seconds": 7.55,
+            "died": false
+          },
+          {
+            "ability": "ice_bear",
+            "seconds": 7.55,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 507
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 568,
+        "summonDamage": 0,
+        "heroDamageTaken": 52,
+        "summonDamageTaken": 0,
+        "damagePrevented": 54,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 568
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 885,
+        "summonDamage": 0,
+        "heroDamageTaken": 29,
+        "summonDamageTaken": 0,
+        "damagePrevented": 32,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 885
+      },
+      {
+        "name": "Healer",
+        "class": "Healer",
+        "heroDamage": 150,
+        "summonDamage": 0,
+        "heroDamageTaken": 55,
+        "summonDamageTaken": 0,
+        "damagePrevented": 6.0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 150
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Druid",
+      "Knight",
+      "Archer",
+      "Healer"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 4,
+    "startingPartySize": 4,
+    "seconds": 17.65,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 297,
+        "summonDamage": 0,
+        "heroDamageTaken": 35,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 297
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 447,
+        "summonDamage": 0,
+        "heroDamageTaken": 54,
+        "summonDamageTaken": 0,
+        "damagePrevented": 57,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 447
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 750,
+        "summonDamage": 0,
+        "heroDamageTaken": 82,
+        "summonDamageTaken": 0,
+        "damagePrevented": 14,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 750
+      },
+      {
+        "name": "Healer",
+        "class": "Healer",
+        "heroDamage": 50,
+        "summonDamage": 0,
+        "heroDamageTaken": 110,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 50
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Wizard",
+      "Knight",
+      "Archer",
+      "Healer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 4,
+    "startingPartySize": 4,
+    "seconds": 24.45,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 496,
+        "summonDamage": 0,
+        "heroDamageTaken": 140,
+        "summonDamageTaken": 0,
+        "damagePrevented": 80,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 496
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 565,
+        "summonDamage": 0,
+        "heroDamageTaken": 130,
+        "summonDamageTaken": 0,
+        "damagePrevented": 127,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 565
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 640,
+        "summonDamage": 0,
+        "heroDamageTaken": 0,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 640
+      },
+      {
+        "name": "Healer",
+        "class": "Healer",
+        "heroDamage": 116,
+        "summonDamage": 0,
+        "heroDamageTaken": 79,
+        "summonDamageTaken": 0,
+        "damagePrevented": 5,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 116
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Wizard",
+      "Knight",
+      "Archer",
+      "Healer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 4,
+    "startingPartySize": 4,
+    "seconds": 23.05,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 437,
+        "summonDamage": 0,
+        "heroDamageTaken": 71,
+        "summonDamageTaken": 0,
+        "damagePrevented": 36,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 437
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 467,
+        "summonDamage": 0,
+        "heroDamageTaken": 70,
+        "summonDamageTaken": 0,
+        "damagePrevented": 71,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 467
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 761,
+        "summonDamage": 0,
+        "heroDamageTaken": 0,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 761
+      },
+      {
+        "name": "Healer",
+        "class": "Healer",
+        "heroDamage": 125,
+        "summonDamage": 0,
+        "heroDamageTaken": 66,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 125
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Wizard",
+      "Knight",
+      "Archer",
+      "Healer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 28.55,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 858,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 141,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 858
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Knight"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 32.1,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 1065,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 169,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 1065
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Knight"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 28.5,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 915,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 141,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 915
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Knight"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 15.2,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 378,
+        "summonDamage": 0,
+        "heroDamageTaken": 100,
+        "summonDamageTaken": 0,
+        "damagePrevented": 7,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 378
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Wizard"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 18.75,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 495,
+        "summonDamage": 0,
+        "heroDamageTaken": 100,
+        "summonDamageTaken": 0,
+        "damagePrevented": 31,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 495
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Wizard"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 18.2,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 492,
+        "summonDamage": 0,
+        "heroDamageTaken": 100,
+        "summonDamageTaken": 0,
+        "damagePrevented": 54,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 492
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Wizard"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 15.9,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 482,
+        "summonDamage": 0,
+        "heroDamageTaken": 105,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 482
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Archer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 18.55,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 579,
+        "summonDamage": 0,
+        "heroDamageTaken": 105,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 579
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Archer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 15.05,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 418,
+        "summonDamage": 0,
+        "heroDamageTaken": 105,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 418
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Archer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 23.4,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Cleric",
+        "class": "Cleric",
+        "heroDamage": 258,
+        "summonDamage": 0,
+        "heroDamageTaken": 182,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 258
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Cleric"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 21.4,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Cleric",
+        "class": "Cleric",
+        "heroDamage": 235,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 235
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Cleric"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 20.15,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Cleric",
+        "class": "Cleric",
+        "heroDamage": 202,
+        "summonDamage": 0,
+        "heroDamageTaken": 108,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 202
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Cleric"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 11.85,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Rogue",
+        "class": "Rogue",
+        "heroDamage": 306,
+        "summonDamage": 0,
+        "heroDamageTaken": 80,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 306
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Rogue"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 12.5,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Rogue",
+        "class": "Rogue",
+        "heroDamage": 339,
+        "summonDamage": 0,
+        "heroDamageTaken": 80,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 339
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Rogue"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 15.15,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Rogue",
+        "class": "Rogue",
+        "heroDamage": 471,
+        "summonDamage": 0,
+        "heroDamageTaken": 80,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 471
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Rogue"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 15.35,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 269,
+        "summonDamage": 77,
+        "heroDamageTaken": 80,
+        "summonDamageTaken": 66,
+        "damagePrevented": 0,
+        "summonSeconds": 10.05,
+        "summonSpawns": 2,
+        "summonDeaths": 1,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 9.75,
+            "died": true
+          },
+          {
+            "ability": "ice_bear",
+            "seconds": 0.3,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 346
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Druid"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 18.7,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 348,
+        "summonDamage": 168,
+        "heroDamageTaken": 80,
+        "summonDamageTaken": 106,
+        "damagePrevented": 0,
+        "summonSeconds": 16.45,
+        "summonSpawns": 2,
+        "summonDeaths": 1,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 12.8,
+            "died": true
+          },
+          {
+            "ability": "ice_bear",
+            "seconds": 3.65,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 516
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Druid"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 15.35,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 281,
+        "summonDamage": 121,
+        "heroDamageTaken": 80,
+        "summonDamageTaken": 74,
+        "damagePrevented": 0,
+        "summonSeconds": 14.25,
+        "summonSpawns": 2,
+        "summonDeaths": 1,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 13.95,
+            "died": true
+          },
+          {
+            "ability": "ice_bear",
+            "seconds": 0.3,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 402
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Druid"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 14.05,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Bard",
+        "class": "Bard",
+        "heroDamage": 138,
+        "summonDamage": 0,
+        "heroDamageTaken": 75,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 138
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Bard"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 18.1,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Bard",
+        "class": "Bard",
+        "heroDamage": 199,
+        "summonDamage": 0,
+        "heroDamageTaken": 75,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 199
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Bard"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 19.8,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Bard",
+        "class": "Bard",
+        "heroDamage": 202,
+        "summonDamage": 0,
+        "heroDamageTaken": 75,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 202
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Bard"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 26.75,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Healer",
+        "class": "Healer",
+        "heroDamage": 208,
+        "summonDamage": 0,
+        "heroDamageTaken": 215,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 208
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Healer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 31.3,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Healer",
+        "class": "Healer",
+        "heroDamage": 250,
+        "summonDamage": 0,
+        "heroDamageTaken": 215,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 250
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Healer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 23.45,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Healer",
+        "class": "Healer",
+        "heroDamage": 168,
+        "summonDamage": 0,
+        "heroDamageTaken": 110,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 168
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Healer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 2,
+    "startingPartySize": 2,
+    "seconds": 28.15,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 549,
+        "summonDamage": 443,
+        "heroDamageTaken": 80,
+        "summonDamageTaken": 235,
+        "damagePrevented": 0,
+        "summonSeconds": 34.65,
+        "summonSpawns": 2,
+        "summonDeaths": 2,
+        "summonLifetimes": [
+          {
+            "ability": "ice_bear",
+            "seconds": 8.25,
+            "died": true
+          },
+          {
+            "ability": "lightning_bird",
+            "seconds": 26.4,
+            "died": true
+          }
+        ],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 992
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 724,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 158,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 724
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Druid",
+      "Knight"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 2,
+    "startingPartySize": 2,
+    "seconds": 30.75,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 600,
+        "summonDamage": 412,
+        "heroDamageTaken": 80,
+        "summonDamageTaken": 271,
+        "damagePrevented": 20,
+        "summonSeconds": 32.35,
+        "summonSpawns": 3,
+        "summonDeaths": 2,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 21.55,
+            "died": true
+          },
+          {
+            "ability": "ice_bear",
+            "seconds": 9.65,
+            "died": true
+          },
+          {
+            "ability": "lightning_bird",
+            "seconds": 1.15,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 1012
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 697,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 161,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 697
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Druid",
+      "Knight"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 2,
+    "startingPartySize": 2,
+    "seconds": 32.8,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 475,
+        "summonDamage": 423,
+        "heroDamageTaken": 80,
+        "summonDamageTaken": 235,
+        "damagePrevented": 0,
+        "summonSeconds": 33.75,
+        "summonSpawns": 2,
+        "summonDeaths": 2,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 24.4,
+            "died": true
+          },
+          {
+            "ability": "ice_bear",
+            "seconds": 9.35,
+            "died": true
+          }
+        ],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 898
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 1032,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 151,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 1032
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Druid",
+      "Knight"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 2,
+    "startingPartySize": 2,
+    "seconds": 29.05,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 831,
+        "summonDamage": 0,
+        "heroDamageTaken": 100,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 831
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 615,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 151,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 615
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Wizard",
+      "Knight"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 2,
+    "startingPartySize": 2,
+    "seconds": 31.05,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 829,
+        "summonDamage": 0,
+        "heroDamageTaken": 100,
+        "summonDamageTaken": 0,
+        "damagePrevented": 22,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 829
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 722,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 174,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 722
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Wizard",
+      "Knight"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 2,
+    "startingPartySize": 2,
+    "seconds": 34.75,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 751,
+        "summonDamage": 0,
+        "heroDamageTaken": 100,
+        "summonDamageTaken": 0,
+        "damagePrevented": 19,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 751
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 1172,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 153,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 1172
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Wizard",
+      "Knight"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 3,
+    "startingPartySize": 3,
+    "seconds": 37.25,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 589,
+        "summonDamage": 340,
+        "heroDamageTaken": 80,
+        "summonDamageTaken": 290,
+        "damagePrevented": 0,
+        "summonSeconds": 25.3,
+        "summonSpawns": 3,
+        "summonDeaths": 3,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 5.1,
+            "died": true
+          },
+          {
+            "ability": "ice_bear",
+            "seconds": 6.15,
+            "died": true
+          },
+          {
+            "ability": "lightning_bird",
+            "seconds": 14.05,
+            "died": true
+          }
+        ],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 929
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 623,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 160,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 623
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 1210,
+        "summonDamage": 0,
+        "heroDamageTaken": 105,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 1210
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Druid",
+      "Knight",
+      "Archer"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 3,
+    "startingPartySize": 3,
+    "seconds": 30.15,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 230,
+        "summonDamage": 132,
+        "heroDamageTaken": 80,
+        "summonDamageTaken": 55,
+        "damagePrevented": 0,
+        "summonSeconds": 14.75,
+        "summonSpawns": 1,
+        "summonDeaths": 1,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 14.75,
+            "died": true
+          }
+        ],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 362
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 694,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 160,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 694
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 920,
+        "summonDamage": 0,
+        "heroDamageTaken": 105,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 920
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Druid",
+      "Knight",
+      "Archer"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 3,
+    "startingPartySize": 3,
+    "seconds": 37.0,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 733,
+        "summonDamage": 395,
+        "heroDamageTaken": 80,
+        "summonDamageTaken": 338,
+        "damagePrevented": 50,
+        "summonSeconds": 34.35,
+        "summonSpawns": 4,
+        "summonDeaths": 3,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 18.85,
+            "died": true
+          },
+          {
+            "ability": "ice_bear",
+            "seconds": 5.5,
+            "died": true
+          },
+          {
+            "ability": "lightning_bird",
+            "seconds": 8.6,
+            "died": true
+          },
+          {
+            "ability": "ice_bear",
+            "seconds": 1.4,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 2,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 1128
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 663,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 155,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 663
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 895,
+        "summonDamage": 0,
+        "heroDamageTaken": 105,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 895
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Druid",
+      "Knight",
+      "Archer"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 3,
+    "startingPartySize": 3,
+    "seconds": 29.0,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 283,
+        "summonDamage": 0,
+        "heroDamageTaken": 100,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 283
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 662,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 157,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 662
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 839,
+        "summonDamage": 0,
+        "heroDamageTaken": 105,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 839
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Wizard",
+      "Knight",
+      "Archer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 3,
+    "startingPartySize": 3,
+    "seconds": 31.1,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 554,
+        "summonDamage": 0,
+        "heroDamageTaken": 100,
+        "summonDamageTaken": 0,
+        "damagePrevented": 120,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 554
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 721,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 175,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 721
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 963,
+        "summonDamage": 0,
+        "heroDamageTaken": 105,
+        "summonDamageTaken": 0,
+        "damagePrevented": 27,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 963
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Wizard",
+      "Knight",
+      "Archer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 3,
+    "startingPartySize": 3,
+    "seconds": 37.1,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 823,
+        "summonDamage": 0,
+        "heroDamageTaken": 100,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 823
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 730,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 170,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 730
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 1140,
+        "summonDamage": 0,
+        "heroDamageTaken": 105,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 1140
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Wizard",
+      "Knight",
+      "Archer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 4,
+    "startingPartySize": 4,
+    "seconds": 25.65,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 440,
+        "summonDamage": 213,
+        "heroDamageTaken": 80,
+        "summonDamageTaken": 235,
+        "damagePrevented": 63,
+        "summonSeconds": 23.7,
+        "summonSpawns": 3,
+        "summonDeaths": 2,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 15.55,
+            "died": true
+          },
+          {
+            "ability": "ice_bear",
+            "seconds": 6.1,
+            "died": true
+          },
+          {
+            "ability": "lightning_bird",
+            "seconds": 2.05,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 653
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 588,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 148,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 588
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 741,
+        "summonDamage": 0,
+        "heroDamageTaken": 105,
+        "summonDamageTaken": 0,
+        "damagePrevented": 63,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 741
+      },
+      {
+        "name": "Healer",
+        "class": "Healer",
+        "heroDamage": 55,
+        "summonDamage": 0,
+        "heroDamageTaken": 110,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 55
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Druid",
+      "Knight",
+      "Archer",
+      "Healer"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 4,
+    "startingPartySize": 4,
+    "seconds": 26.45,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 480,
+        "summonDamage": 215,
+        "heroDamageTaken": 80,
+        "summonDamageTaken": 287,
+        "damagePrevented": 29,
+        "summonSeconds": 25.65,
+        "summonSpawns": 3,
+        "summonDeaths": 2,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 4.0,
+            "died": true
+          },
+          {
+            "ability": "ice_bear",
+            "seconds": 7.25,
+            "died": true
+          },
+          {
+            "ability": "lightning_bird",
+            "seconds": 14.4,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 695
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 490,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 169,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 490
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 647,
+        "summonDamage": 0,
+        "heroDamageTaken": 105,
+        "summonDamageTaken": 0,
+        "damagePrevented": 29,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 647
+      },
+      {
+        "name": "Healer",
+        "class": "Healer",
+        "heroDamage": 50,
+        "summonDamage": 0,
+        "heroDamageTaken": 110,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 50
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Druid",
+      "Knight",
+      "Archer",
+      "Healer"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 4,
+    "startingPartySize": 4,
+    "seconds": 30.1,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 507,
+        "summonDamage": 321,
+        "heroDamageTaken": 80,
+        "summonDamageTaken": 279,
+        "damagePrevented": 0,
+        "summonSeconds": 30.25,
+        "summonSpawns": 3,
+        "summonDeaths": 2,
+        "summonLifetimes": [
+          {
+            "ability": "lightning_bird",
+            "seconds": 20.95,
+            "died": true
+          },
+          {
+            "ability": "ice_bear",
+            "seconds": 8.2,
+            "died": true
+          },
+          {
+            "ability": "lightning_bird",
+            "seconds": 1.1,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 828
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 586,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 152,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 586
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 668,
+        "summonDamage": 0,
+        "heroDamageTaken": 105,
+        "summonDamageTaken": 0,
+        "damagePrevented": 49,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 668
+      },
+      {
+        "name": "Healer",
+        "class": "Healer",
+        "heroDamage": 55,
+        "summonDamage": 0,
+        "heroDamageTaken": 110,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 55
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Druid",
+      "Knight",
+      "Archer",
+      "Healer"
+    ],
+    "druidLoadout": [
+      "lightning_bird",
+      "ice_bear"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 4,
+    "startingPartySize": 4,
+    "seconds": 24.55,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 572,
+        "summonDamage": 0,
+        "heroDamageTaken": 100,
+        "summonDamageTaken": 0,
+        "damagePrevented": 69,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 572
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 577,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 154,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 577
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 744,
+        "summonDamage": 0,
+        "heroDamageTaken": 105,
+        "summonDamageTaken": 0,
+        "damagePrevented": 69,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 744
+      },
+      {
+        "name": "Healer",
+        "class": "Healer",
+        "heroDamage": 55,
+        "summonDamage": 0,
+        "heroDamageTaken": 110,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 55
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Wizard",
+      "Knight",
+      "Archer",
+      "Healer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 4,
+    "startingPartySize": 4,
+    "seconds": 25.25,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 289,
+        "summonDamage": 0,
+        "heroDamageTaken": 100,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 289
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 671,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 179,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 671
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 791,
+        "summonDamage": 0,
+        "heroDamageTaken": 105,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 791
+      },
+      {
+        "name": "Healer",
+        "class": "Healer",
+        "heroDamage": 50,
+        "summonDamage": 0,
+        "heroDamageTaken": 110,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 50
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Wizard",
+      "Knight",
+      "Archer",
+      "Healer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 4,
+    "startingPartySize": 4,
+    "seconds": 29.0,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Wizard",
+        "class": "Wizard",
+        "heroDamage": 522,
+        "summonDamage": 0,
+        "heroDamageTaken": 100,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 522
+      },
+      {
+        "name": "Knight",
+        "class": "Knight",
+        "heroDamage": 594,
+        "summonDamage": 0,
+        "heroDamageTaken": 150,
+        "summonDamageTaken": 0,
+        "damagePrevented": 159,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 594
+      },
+      {
+        "name": "Archer",
+        "class": "Archer",
+        "heroDamage": 908,
+        "summonDamage": 0,
+        "heroDamageTaken": 105,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 908
+      },
+      {
+        "name": "Healer",
+        "class": "Healer",
+        "heroDamage": 55,
+        "summonDamage": 0,
+        "heroDamageTaken": 110,
+        "summonDamageTaken": 0,
+        "damagePrevented": 0,
+        "summonSeconds": 0,
+        "summonSpawns": 0,
+        "summonDeaths": 0,
+        "summonLifetimes": [],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 55
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Wizard",
+      "Knight",
+      "Archer",
+      "Healer"
+    ],
+    "druidLoadout": []
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 11.25,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 112,
+        "summonDamage": 66,
+        "heroDamageTaken": 0,
+        "summonDamageTaken": 27,
+        "damagePrevented": 0,
+        "summonSeconds": 11.25,
+        "summonSpawns": 1,
+        "summonDeaths": 0,
+        "summonLifetimes": [
+          {
+            "ability": "fire_wolf",
+            "seconds": 11.25,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 178
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Druid"
+    ],
+    "druidLoadout": [
+      "fire_wolf",
+      "nature_golem"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 11.65,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 145,
+        "summonDamage": 62,
+        "heroDamageTaken": 8,
+        "summonDamageTaken": 22,
+        "damagePrevented": 0,
+        "summonSeconds": 11.65,
+        "summonSpawns": 1,
+        "summonDeaths": 0,
+        "summonLifetimes": [
+          {
+            "ability": "fire_wolf",
+            "seconds": 11.65,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 207
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Druid"
+    ],
+    "druidLoadout": [
+      "fire_wolf",
+      "nature_golem"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 1,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 10.9,
+    "outcome": "cleared",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 117,
+        "summonDamage": 61,
+        "heroDamageTaken": 0,
+        "summonDamageTaken": 19,
+        "damagePrevented": 0,
+        "summonSeconds": 10.9,
+        "summonSpawns": 1,
+        "summonDeaths": 0,
+        "summonLifetimes": [
+          {
+            "ability": "fire_wolf",
+            "seconds": 10.9,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 0,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": true,
+        "totalDamage": 178
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Druid"
+    ],
+    "druidLoadout": [
+      "fire_wolf",
+      "nature_golem"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 16.85,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 305,
+        "summonDamage": 112,
+        "heroDamageTaken": 80,
+        "summonDamageTaken": 150,
+        "damagePrevented": 0,
+        "summonSeconds": 14.1,
+        "summonSpawns": 2,
+        "summonDeaths": 1,
+        "summonLifetimes": [
+          {
+            "ability": "fire_wolf",
+            "seconds": 12.3,
+            "died": true
+          },
+          {
+            "ability": "nature_golem",
+            "seconds": 1.8,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 417
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 1,
+    "lineup": [
+      "Druid"
+    ],
+    "druidLoadout": [
+      "fire_wolf",
+      "nature_golem"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 21.9,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 420,
+        "summonDamage": 227,
+        "heroDamageTaken": 80,
+        "summonDamageTaken": 225,
+        "damagePrevented": 0,
+        "summonSeconds": 20.7,
+        "summonSpawns": 3,
+        "summonDeaths": 1,
+        "summonLifetimes": [
+          {
+            "ability": "fire_wolf",
+            "seconds": 12.75,
+            "died": true
+          },
+          {
+            "ability": "nature_golem",
+            "seconds": 6.85,
+            "died": false
+          },
+          {
+            "ability": "fire_wolf",
+            "seconds": 1.1,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 647
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 2,
+    "lineup": [
+      "Druid"
+    ],
+    "druidLoadout": [
+      "fire_wolf",
+      "nature_golem"
+    ]
+  },
+  {
+    "version": 1,
+    "stage": 8,
+    "partySize": 1,
+    "startingPartySize": 1,
+    "seconds": 21.55,
+    "outcome": "defeat",
+    "players": [
+      {
+        "name": "Druid",
+        "class": "Druid",
+        "heroDamage": 401,
+        "summonDamage": 250,
+        "heroDamageTaken": 80,
+        "summonDamageTaken": 135,
+        "damagePrevented": 0,
+        "summonSeconds": 22.0,
+        "summonSpawns": 2,
+        "summonDeaths": 1,
+        "summonLifetimes": [
+          {
+            "ability": "fire_wolf",
+            "seconds": 15.5,
+            "died": true
+          },
+          {
+            "ability": "nature_golem",
+            "seconds": 6.5,
+            "died": false
+          }
+        ],
+        "ultimateCasts": 1,
+        "openingCooldown": 15,
+        "endedBeforeUltimate": false,
+        "totalDamage": 651
+      }
+    ],
+    "source": "bot simulation",
+    "seed": 3,
+    "lineup": [
+      "Druid"
+    ],
+    "druidLoadout": [
+      "fire_wolf",
+      "nature_golem"
+    ]
+  }
+]

@@ -1,0 +1,109 @@
+{
+  "character": {
+    "id": "0e652682-b2cb-4164-b585-db59b9726f00",
+    "name": "Idle",
+    "prompt": "\t16-bit pixel art knight character, 3/4 top-down perspective, heavy silver plate armor, closed visor helmet, holding a steel broadsword and iron tower shield, 4-directional sprite sheet layout (north, south, east, west), clean pixel boundaries.",
+    "size": {
+      "width": 48,
+      "height": 48
+    },
+    "directions": 8,
+    "view": "low top-down"
+  },
+  "spritesheet": {
+    "path": "16-bit_pixel_art_knight-Idle.png",
+    "cell_size": {
+      "width": 68,
+      "height": 68
+    },
+    "sheet_size": {
+      "width": 612,
+      "height": 612
+    },
+    "columns": 9,
+    "pivot": "cell-center",
+    "rows": [
+      {
+        "row": 0,
+        "type": "rotations",
+        "frame_count": 8,
+        "directions": [
+          "south",
+          "south-east",
+          "east",
+          "north-east",
+          "north",
+          "north-west",
+          "west",
+          "south-west"
+        ]
+      },
+      {
+        "row": 1,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "16-bit pixel art knight, 3/4 top-down perspective, 64x64 pixel grid, clean outlines. Provide a 4-directional animated sprite sheet layout (facing North, South, East, West) containing the following matching sequence:\n- Row 1: Idle loop, gentle up-and-down breathing bob.\n- Row 2: Jogging loop, running with heavy armor footstep pacing.\n- Row 3: Sword Swing, attacking with a sharp 180-degree horizontal broadsword arc.\n- Row 4: Shield Thrust, forcefully slamming the iron tower shield forward.\n- Row 5: Shield Block, crouching low, bracing behind the tower shield firmly.\n- Row 6: Ground Smash, jumping slightly and slamming the sword down hard into the floor grid.",
+        "animation_group_id": "8b472a55-4ccf-4136-9454-fc3dfe67b7bc",
+        "direction": "south"
+      },
+      {
+        "row": 2,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "16-bit pixel art knight, 3/4 top-down perspective, 64x64 pixel grid, clean outlines. Provide a 4-directional animated sprite sheet layout (facing North, South, East, West) containing the following matching sequence:\n- Row 1: Idle loop, gentle up-and-down breathing bob.\n- Row 2: Jogging loop, running with heavy armor footstep pacing.\n- Row 3: Sword Swing, attacking with a sharp 180-degree horizontal broadsword arc.\n- Row 4: Shield Thrust, forcefully slamming the iron tower shield forward.\n- Row 5: Shield Block, crouching low, bracing behind the tower shield firmly.\n- Row 6: Ground Smash, jumping slightly and slamming the sword down hard into the floor grid.",
+        "animation_group_id": "8b472a55-4ccf-4136-9454-fc3dfe67b7bc",
+        "direction": "south-east"
+      },
+      {
+        "row": 3,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "16-bit pixel art knight, 3/4 top-down perspective, 64x64 pixel grid, clean outlines. Provide a 4-directional animated sprite sheet layout (facing North, South, East, West) containing the following matching sequence:\n- Row 1: Idle loop, gentle up-and-down breathing bob.\n- Row 2: Jogging loop, running with heavy armor footstep pacing.\n- Row 3: Sword Swing, attacking with a sharp 180-degree horizontal broadsword arc.\n- Row 4: Shield Thrust, forcefully slamming the iron tower shield forward.\n- Row 5: Shield Block, crouching low, bracing behind the tower shield firmly.\n- Row 6: Ground Smash, jumping slightly and slamming the sword down hard into the floor grid.",
+        "animation_group_id": "8b472a55-4ccf-4136-9454-fc3dfe67b7bc",
+        "direction": "east"
+      },
+      {
+        "row": 4,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "16-bit pixel art knight, 3/4 top-down perspective, 64x64 pixel grid, clean outlines. Provide a 4-directional animated sprite sheet layout (facing North, South, East, West) containing the following matching sequence:\n- Row 1: Idle loop, gentle up-and-down breathing bob.\n- Row 2: Jogging loop, running with heavy armor footstep pacing.\n- Row 3: Sword Swing, attacking with a sharp 180-degree horizontal broadsword arc.\n- Row 4: Shield Thrust, forcefully slamming the iron tower shield forward.\n- Row 5: Shield Block, crouching low, bracing behind the tower shield firmly.\n- Row 6: Ground Smash, jumping slightly and slamming the sword down hard into the floor grid.",
+        "animation_group_id": "8b472a55-4ccf-4136-9454-fc3dfe67b7bc",
+        "direction": "north-east"
+      },
+      {
+        "row": 5,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "16-bit pixel art knight, 3/4 top-down perspective, 64x64 pixel grid, clean outlines. Provide a 4-directional animated sprite sheet layout (facing North, South, East, West) containing the following matching sequence:\n- Row 1: Idle loop, gentle up-and-down breathing bob.\n- Row 2: Jogging loop, running with heavy armor footstep pacing.\n- Row 3: Sword Swing, attacking with a sharp 180-degree horizontal broadsword arc.\n- Row 4: Shield Thrust, forcefully slamming the iron tower shield forward.\n- Row 5: Shield Block, crouching low, bracing behind the tower shield firmly.\n- Row 6: Ground Smash, jumping slightly and slamming the sword down hard into the floor grid.",
+        "animation_group_id": "8b472a55-4ccf-4136-9454-fc3dfe67b7bc",
+        "direction": "north"
+      },
+      {
+        "row": 6,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "16-bit pixel art knight, 3/4 top-down perspective, 64x64 pixel grid, clean outlines. Provide a 4-directional animated sprite sheet layout (facing North, South, East, West) containing the following matching sequence:\n- Row 1: Idle loop, gentle up-and-down breathing bob.\n- Row 2: Jogging loop, running with heavy armor footstep pacing.\n- Row 3: Sword Swing, attacking with a sharp 180-degree horizontal broadsword arc.\n- Row 4: Shield Thrust, forcefully slamming the iron tower shield forward.\n- Row 5: Shield Block, crouching low, bracing behind the tower shield firmly.\n- Row 6: Ground Smash, jumping slightly and slamming the sword down hard into the floor grid.",
+        "animation_group_id": "8b472a55-4ccf-4136-9454-fc3dfe67b7bc",
+        "direction": "north-west"
+      },
+      {
+        "row": 7,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "16-bit pixel art knight, 3/4 top-down perspective, 64x64 pixel grid, clean outlines. Provide a 4-directional animated sprite sheet layout (facing North, South, East, West) containing the following matching sequence:\n- Row 1: Idle loop, gentle up-and-down breathing bob.\n- Row 2: Jogging loop, running with heavy armor footstep pacing.\n- Row 3: Sword Swing, attacking with a sharp 180-degree horizontal broadsword arc.\n- Row 4: Shield Thrust, forcefully slamming the iron tower shield forward.\n- Row 5: Shield Block, crouching low, bracing behind the tower shield firmly.\n- Row 6: Ground Smash, jumping slightly and slamming the sword down hard into the floor grid.",
+        "animation_group_id": "8b472a55-4ccf-4136-9454-fc3dfe67b7bc",
+        "direction": "west"
+      },
+      {
+        "row": 8,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "16-bit pixel art knight, 3/4 top-down perspective, 64x64 pixel grid, clean outlines. Provide a 4-directional animated sprite sheet layout (facing North, South, East, West) containing the following matching sequence:\n- Row 1: Idle loop, gentle up-and-down breathing bob.\n- Row 2: Jogging loop, running with heavy armor footstep pacing.\n- Row 3: Sword Swing, attacking with a sharp 180-degree horizontal broadsword arc.\n- Row 4: Shield Thrust, forcefully slamming the iron tower shield forward.\n- Row 5: Shield Block, crouching low, bracing behind the tower shield firmly.\n- Row 6: Ground Smash, jumping slightly and slamming the sword down hard into the floor grid.",
+        "animation_group_id": "8b472a55-4ccf-4136-9454-fc3dfe67b7bc",
+        "direction": "south-west"
+      }
+    ]
+  },
+  "export_version": "1.0",
+  "export_date": "2026-10-06T01:44:51.109753+00:00"
+}

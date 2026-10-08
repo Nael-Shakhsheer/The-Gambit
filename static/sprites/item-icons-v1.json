@@ -1,0 +1,251 @@
+{
+  "version": 1,
+  "path": "item-icons-v1.png",
+  "cell_size": 64,
+  "columns": 6,
+  "rows": 4,
+  "items": {
+    "healing_draught": {
+      "name": "Healing Draught",
+      "slot": "utility",
+      "kind": "heal",
+      "rarity": "Common",
+      "path": "item-healing_draught-v1.png",
+      "x": 0,
+      "y": 0,
+      "width": 64,
+      "height": 64
+    },
+    "warding_tonic": {
+      "name": "Warding Tonic",
+      "slot": "utility",
+      "kind": "ward",
+      "rarity": "Uncommon",
+      "path": "item-warding_tonic-v1.png",
+      "x": 64,
+      "y": 0,
+      "width": 64,
+      "height": 64
+    },
+    "mana_draught": {
+      "name": "Mana Draught",
+      "slot": "utility",
+      "kind": "mana",
+      "rarity": "Uncommon",
+      "path": "item-mana_draught-v1.png",
+      "x": 128,
+      "y": 0,
+      "width": 64,
+      "height": 64
+    },
+    "quickstep_elixir": {
+      "name": "Quickstep Elixir",
+      "slot": "utility",
+      "kind": "speed",
+      "rarity": "Uncommon",
+      "path": "item-quickstep_elixir-v1.png",
+      "x": 192,
+      "y": 0,
+      "width": 64,
+      "height": 64
+    },
+    "route_lens": {
+      "name": "Pathfinder's Lens",
+      "slot": "utility",
+      "kind": "hint",
+      "rarity": "Rare",
+      "path": "item-route_lens-v1.png",
+      "x": 256,
+      "y": 0,
+      "width": 64,
+      "height": 64
+    },
+    "ember_oil": {
+      "name": "Ember Oil",
+      "slot": "utility",
+      "kind": "buff",
+      "rarity": "Rare",
+      "path": "item-ember_oil-v1.png",
+      "x": 320,
+      "y": 0,
+      "width": 64,
+      "height": 64
+    },
+    "piercing_arrows": {
+      "name": "Piercing Arrows",
+      "slot": "utility",
+      "kind": "arrows",
+      "rarity": "Rare",
+      "path": "item-piercing_arrows-v1.png",
+      "x": 0,
+      "y": 64,
+      "width": 64,
+      "height": 64
+    },
+    "phoenix_flask": {
+      "name": "Phoenix Flask",
+      "slot": "utility",
+      "kind": "heal",
+      "rarity": "Epic",
+      "path": "item-phoenix_flask-v1.png",
+      "x": 64,
+      "y": 64,
+      "width": 64,
+      "height": 64
+    },
+    "stormguard_charm": {
+      "name": "Stormguard Charm",
+      "slot": "utility",
+      "kind": "ward",
+      "rarity": "Epic",
+      "path": "item-stormguard_charm-v1.png",
+      "x": 128,
+      "y": 64,
+      "width": 64,
+      "height": 64
+    },
+    "iron_sword": {
+      "name": "Iron Sword",
+      "slot": "tool",
+      "kind": "weapon",
+      "rarity": "Common",
+      "path": "item-iron_sword-v1.png",
+      "x": 192,
+      "y": 64,
+      "width": 64,
+      "height": 64
+    },
+    "oakguard_vest": {
+      "name": "Oakguard Vest",
+      "slot": "tool",
+      "kind": "armor",
+      "rarity": "Uncommon",
+      "path": "item-oakguard_vest-v1.png",
+      "x": 256,
+      "y": 64,
+      "width": 64,
+      "height": 64
+    },
+    "moonsteel_sword": {
+      "name": "Moonsteel Sword",
+      "slot": "tool",
+      "kind": "weapon",
+      "rarity": "Rare",
+      "path": "item-moonsteel_sword-v1.png",
+      "x": 320,
+      "y": 64,
+      "width": 64,
+      "height": 64
+    },
+    "dragonbone_armor": {
+      "name": "Dragonbone Armor",
+      "slot": "tool",
+      "kind": "armor",
+      "rarity": "Epic",
+      "path": "item-dragonbone_armor-v1.png",
+      "x": 0,
+      "y": 128,
+      "width": 64,
+      "height": 64
+    },
+    "starfall_blade": {
+      "name": "Starfall Blade",
+      "slot": "tool",
+      "kind": "weapon",
+      "rarity": "Legendary",
+      "path": "item-starfall_blade-v1.png",
+      "x": 64,
+      "y": 128,
+      "width": 64,
+      "height": 64
+    },
+    "aegis_of_dawn": {
+      "name": "Aegis of Dawn",
+      "slot": "tool",
+      "kind": "armor",
+      "rarity": "Legendary",
+      "path": "item-aegis_of_dawn-v1.png",
+      "x": 128,
+      "y": 128,
+      "width": 64,
+      "height": 64
+    },
+    "sage_wand": {
+      "name": "Sage's Wand",
+      "slot": "tool",
+      "kind": "weapon",
+      "rarity": "Common",
+      "path": "item-sage_wand-v1.png",
+      "x": 192,
+      "y": 128,
+      "width": 64,
+      "height": 64
+    },
+    "wind_bow": {
+      "name": "Wind Bow",
+      "slot": "tool",
+      "kind": "weapon",
+      "rarity": "Common",
+      "path": "item-wind_bow-v1.png",
+      "x": 256,
+      "y": 128,
+      "width": 64,
+      "height": 64
+    },
+    "sun_censer": {
+      "name": "Sun Censer",
+      "slot": "tool",
+      "kind": "weapon",
+      "rarity": "Common",
+      "path": "item-sun_censer-v1.png",
+      "x": 320,
+      "y": 128,
+      "width": 64,
+      "height": 64
+    },
+    "shadow_blades": {
+      "name": "Shadow Blades",
+      "slot": "tool",
+      "kind": "weapon",
+      "rarity": "Common",
+      "path": "item-shadow_blades-v1.png",
+      "x": 0,
+      "y": 192,
+      "width": 64,
+      "height": 64
+    },
+    "thorn_staff": {
+      "name": "Thorn Staff",
+      "slot": "tool",
+      "kind": "weapon",
+      "rarity": "Common",
+      "path": "item-thorn_staff-v1.png",
+      "x": 64,
+      "y": 192,
+      "width": 64,
+      "height": 64
+    },
+    "travel_lute": {
+      "name": "Travel Lute",
+      "slot": "tool",
+      "kind": "weapon",
+      "rarity": "Common",
+      "path": "item-travel_lute-v1.png",
+      "x": 128,
+      "y": 192,
+      "width": 64,
+      "height": 64
+    },
+    "mercy_rod": {
+      "name": "Mercy Rod",
+      "slot": "tool",
+      "kind": "weapon",
+      "rarity": "Common",
+      "path": "item-mercy_rod-v1.png",
+      "x": 192,
+      "y": 192,
+      "width": 64,
+      "height": 64
+    }
+  }
+}

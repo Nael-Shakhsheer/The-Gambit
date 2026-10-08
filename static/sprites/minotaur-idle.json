@@ -1,0 +1,109 @@
+{
+  "character": {
+    "id": "c887b816-fb30-4fee-bdf0-e75353d0ec2a",
+    "name": "Idle",
+    "prompt": "16-bit pixel art aggressive minotaur beast character, 3/4 top-down perspective, strict 48x48 pixel grid scale, crisp outlines, thick brown fur, large sharp horns, broad muscular torso, holding a heavy dual-headed iron battleaxe, clean retro Genesis palette, transparent background.",
+    "size": {
+      "width": 48,
+      "height": 48
+    },
+    "directions": 8,
+    "view": "low top-down"
+  },
+  "spritesheet": {
+    "path": "16-bit_pixel_art_aggress-Idle.png",
+    "cell_size": {
+      "width": 68,
+      "height": 68
+    },
+    "sheet_size": {
+      "width": 612,
+      "height": 612
+    },
+    "columns": 9,
+    "pivot": "cell-center",
+    "rows": [
+      {
+        "row": 0,
+        "type": "rotations",
+        "frame_count": 8,
+        "directions": [
+          "south",
+          "south-east",
+          "east",
+          "north-east",
+          "north",
+          "north-west",
+          "west",
+          "south-west"
+        ]
+      },
+      {
+        "row": 1,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded minotaur asset. Format into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, heavy breathing stance, arms crossing weapon.\n\u2022 Row 2: Heavy Jogging loop, thumping aggressive run, axe raised over shoulder.\n\u2022 Row 3: Axe Chop, slamming the battleaxe downward violently in a front arc.`",
+        "animation_group_id": "93c95e07-d325-4f94-8954-9e4a5e4dfb74",
+        "direction": "south"
+      },
+      {
+        "row": 2,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded minotaur asset. Format into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, heavy breathing stance, arms crossing weapon.\n\u2022 Row 2: Heavy Jogging loop, thumping aggressive run, axe raised over shoulder.\n\u2022 Row 3: Axe Chop, slamming the battleaxe downward violently in a front arc.`",
+        "animation_group_id": "93c95e07-d325-4f94-8954-9e4a5e4dfb74",
+        "direction": "south-east"
+      },
+      {
+        "row": 3,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded minotaur asset. Format into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, heavy breathing stance, arms crossing weapon.\n\u2022 Row 2: Heavy Jogging loop, thumping aggressive run, axe raised over shoulder.\n\u2022 Row 3: Axe Chop, slamming the battleaxe downward violently in a front arc.`",
+        "animation_group_id": "93c95e07-d325-4f94-8954-9e4a5e4dfb74",
+        "direction": "east"
+      },
+      {
+        "row": 4,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded minotaur asset. Format into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, heavy breathing stance, arms crossing weapon.\n\u2022 Row 2: Heavy Jogging loop, thumping aggressive run, axe raised over shoulder.\n\u2022 Row 3: Axe Chop, slamming the battleaxe downward violently in a front arc.`",
+        "animation_group_id": "93c95e07-d325-4f94-8954-9e4a5e4dfb74",
+        "direction": "north-east"
+      },
+      {
+        "row": 5,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded minotaur asset. Format into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, heavy breathing stance, arms crossing weapon.\n\u2022 Row 2: Heavy Jogging loop, thumping aggressive run, axe raised over shoulder.\n\u2022 Row 3: Axe Chop, slamming the battleaxe downward violently in a front arc.`",
+        "animation_group_id": "93c95e07-d325-4f94-8954-9e4a5e4dfb74",
+        "direction": "north"
+      },
+      {
+        "row": 6,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded minotaur asset. Format into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, heavy breathing stance, arms crossing weapon.\n\u2022 Row 2: Heavy Jogging loop, thumping aggressive run, axe raised over shoulder.\n\u2022 Row 3: Axe Chop, slamming the battleaxe downward violently in a front arc.`",
+        "animation_group_id": "93c95e07-d325-4f94-8954-9e4a5e4dfb74",
+        "direction": "north-west"
+      },
+      {
+        "row": 7,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded minotaur asset. Format into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, heavy breathing stance, arms crossing weapon.\n\u2022 Row 2: Heavy Jogging loop, thumping aggressive run, axe raised over shoulder.\n\u2022 Row 3: Axe Chop, slamming the battleaxe downward violently in a front arc.`",
+        "animation_group_id": "93c95e07-d325-4f94-8954-9e4a5e4dfb74",
+        "direction": "west"
+      },
+      {
+        "row": 8,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded minotaur asset. Format into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, heavy breathing stance, arms crossing weapon.\n\u2022 Row 2: Heavy Jogging loop, thumping aggressive run, axe raised over shoulder.\n\u2022 Row 3: Axe Chop, slamming the battleaxe downward violently in a front arc.`",
+        "animation_group_id": "93c95e07-d325-4f94-8954-9e4a5e4dfb74",
+        "direction": "south-west"
+      }
+    ]
+  },
+  "export_version": "1.0",
+  "export_date": "2026-10-06T03:11:31.527890+00:00"
+}

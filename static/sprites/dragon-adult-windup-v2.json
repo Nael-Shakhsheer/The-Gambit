@@ -1,0 +1,97 @@
+{
+  "spritesheet": {
+    "path": "dragon-adult-windup-v2.png",
+    "rows": [
+      {
+        "row": 0,
+        "frame_count": 8,
+        "directions": [
+          "south",
+          "south-east",
+          "east",
+          "north-east",
+          "north",
+          "north-west",
+          "west",
+          "south-west"
+        ],
+        "type": "rotations"
+      },
+      {
+        "row": 1,
+        "direction": "south",
+        "frame_count": 9,
+        "type": "animation"
+      },
+      {
+        "row": 2,
+        "direction": "south-east",
+        "frame_count": 9,
+        "type": "animation"
+      },
+      {
+        "row": 3,
+        "direction": "east",
+        "frame_count": 9,
+        "type": "animation"
+      },
+      {
+        "row": 4,
+        "direction": "north-east",
+        "frame_count": 9,
+        "type": "animation"
+      },
+      {
+        "row": 5,
+        "direction": "north",
+        "frame_count": 9,
+        "type": "animation"
+      },
+      {
+        "row": 6,
+        "direction": "north-west",
+        "frame_count": 9,
+        "type": "animation"
+      },
+      {
+        "row": 7,
+        "direction": "west",
+        "frame_count": 9,
+        "type": "animation"
+      },
+      {
+        "row": 8,
+        "direction": "south-west",
+        "frame_count": 9,
+        "type": "animation"
+      }
+    ],
+    "cell_size": {
+      "height": 116,
+      "width": 116
+    },
+    "columns": 9
+  },
+  "animations": {
+    "heavy": [
+      3,
+      4,
+      5
+    ],
+    "channel": [
+      6,
+      7,
+      8
+    ],
+    "charge": [
+      0,
+      1,
+      2
+    ]
+  },
+  "mirrored": {
+    "north-west": "north-east",
+    "south-west": "south-east",
+    "west": "east"
+  }
+}

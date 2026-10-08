@@ -1,0 +1,14 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const sandbox={window:{}};vm.createContext(sandbox);
+vm.runInContext(fs.readFileSync('static/equipment-comparison.js','utf8'),sandbox);
+const compare=sandbox.window.GauntletEquipment.compare;
+const conductor={slot:'tool',name:'Conductor',damage:3,effect:'conductor',effectLabel:'Chain / projectile cost'};
+const armor={slot:'tool',name:'Armor',armor:6};
+let result=compare(conductor,[armor,null],0);
+assert.equal(result.stats,'DMG +3 · ARM −6');assert.equal(result.gains.length,1);assert.match(result.detail,/Replaces Armor/);
+result=compare(armor,[conductor,null],0);assert.equal(result.stats,'DMG −3 · ARM +6');assert.equal(result.losses.length,1);
+result=compare(armor,[conductor,conductor],0);assert.equal(result.losses.length,0,'Duplicate effects remain active in other slot');
+result=compare(conductor,[conductor,null],1);assert.equal(result.gains.length,0,'Unique effects do not stack');
+result=compare({slot:'utility',description:'Heal 40'},[{name:'Mana draught'},null],0);assert.match(result.stats,/Replace Mana/);assert.equal(result.detail,'Heal 40');
+assert.ok(fs.readFileSync('static/index.html','utf8').indexOf('equipment-comparison.js')<fs.readFileSync('static/index.html','utf8').indexOf('src="app.js"'));
+console.log('Equipment replacement comparisons and non-stacking effects passed.');

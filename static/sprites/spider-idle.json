@@ -1,0 +1,113 @@
+{
+  "character": {
+    "directions": 8,
+    "view": "low top-down",
+    "size": {
+      "height": 48,
+      "width": 48
+    },
+    "name": "Cave Spider"
+  },
+  "spritesheet": {
+    "rows": [
+      {
+        "directions": [
+          "south",
+          "south-east",
+          "east",
+          "north-east",
+          "north",
+          "north-west",
+          "west",
+          "south-west"
+        ],
+        "row": 0,
+        "type": "rotations",
+        "frame_count": 8
+      },
+      {
+        "row": 1,
+        "direction": "south",
+        "type": "animation",
+        "frame_count": 9
+      },
+      {
+        "row": 2,
+        "direction": "south-east",
+        "type": "animation",
+        "frame_count": 9
+      },
+      {
+        "row": 3,
+        "direction": "east",
+        "type": "animation",
+        "frame_count": 9
+      },
+      {
+        "row": 4,
+        "direction": "north-east",
+        "type": "animation",
+        "frame_count": 9
+      },
+      {
+        "row": 5,
+        "direction": "north",
+        "type": "animation",
+        "frame_count": 9
+      },
+      {
+        "row": 6,
+        "direction": "north-west",
+        "type": "animation",
+        "frame_count": 9
+      },
+      {
+        "row": 7,
+        "direction": "west",
+        "type": "animation",
+        "frame_count": 9
+      },
+      {
+        "row": 8,
+        "direction": "south-west",
+        "type": "animation",
+        "frame_count": 9
+      }
+    ],
+    "sheet_size": {
+      "height": 612,
+      "width": 612
+    },
+    "cell_size": {
+      "height": 68,
+      "width": 68
+    },
+    "path": "spider-idle.png",
+    "columns": 9,
+    "pivot": "cell-center"
+  },
+  "animations": {
+    "idle": [
+      0,
+      1,
+      2
+    ],
+    "walk": [
+      3,
+      4,
+      5
+    ],
+    "attack": [
+      6,
+      7,
+      8
+    ]
+  },
+  "mirrored_directions": {
+    "south-west": "south-east",
+    "north-west": "north-east",
+    "west": "east"
+  },
+  "status": "Generated Cave Spider packaged for import. Use import_spider.py to register it in The Gauntlet. Animation quality has not been evaluated in live gameplay.",
+  "export_version": "1.0"
+}

@@ -1,0 +1,118 @@
+{
+  "character": {
+    "directions": 8,
+    "size": {
+      "height": 48,
+      "width": 48
+    },
+    "name": "Lightning Bird",
+    "view": "low top-down"
+  },
+  "spritesheet": {
+    "columns": 9,
+    "path": "lightningbird-idle.png",
+    "pivot": "cell-center",
+    "cell_size": {
+      "height": 68,
+      "width": 68
+    },
+    "rows": [
+      {
+        "directions": [
+          "south",
+          "south-east",
+          "east",
+          "north-east",
+          "north",
+          "north-west",
+          "west",
+          "south-west"
+        ],
+        "type": "rotations",
+        "frame_count": 8,
+        "row": 0
+      },
+      {
+        "direction": "south",
+        "type": "animation",
+        "frame_count": 9,
+        "row": 1
+      },
+      {
+        "direction": "south-east",
+        "type": "animation",
+        "frame_count": 9,
+        "row": 2
+      },
+      {
+        "direction": "east",
+        "type": "animation",
+        "frame_count": 9,
+        "row": 3
+      },
+      {
+        "direction": "north-east",
+        "type": "animation",
+        "frame_count": 9,
+        "row": 4
+      },
+      {
+        "direction": "north",
+        "type": "animation",
+        "frame_count": 9,
+        "row": 5
+      },
+      {
+        "direction": "north-west",
+        "type": "animation",
+        "frame_count": 9,
+        "row": 6
+      },
+      {
+        "direction": "west",
+        "type": "animation",
+        "frame_count": 9,
+        "row": 7
+      },
+      {
+        "direction": "south-west",
+        "type": "animation",
+        "frame_count": 9,
+        "row": 8
+      }
+    ],
+    "sheet_size": {
+      "height": 612,
+      "width": 612
+    }
+  },
+  "animations": {
+    "walk": [
+      3,
+      4,
+      5
+    ],
+    "attack": [
+      6,
+      7,
+      8
+    ],
+    "idle": [
+      0,
+      1,
+      2
+    ]
+  },
+  "animation_descriptions": {
+    "walk": "strong flight wingbeat sequence: wings up, wings level, wings down, consistent hovering body height",
+    "attack": "wings drawn back and beak charging cyan, wings spread with tiny lightning spark at beak, forward casting recoil; no long projectile trail",
+    "idle": "hover loop with gently alternating wing positions and tucked talons"
+  },
+  "mirrored_directions": {
+    "north-west": "north-east",
+    "west": "east",
+    "south-west": "south-east"
+  },
+  "status": "Packaged for import with import_wolf_druid.py. Animation poses have not been reviewed in live gameplay.",
+  "export_version": "1.0"
+}

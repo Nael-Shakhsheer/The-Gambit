@@ -1,0 +1,118 @@
+{
+  "character": {
+    "name": "Alchemist",
+    "directions": 8,
+    "view": "low top-down",
+    "size": {
+      "height": 48,
+      "width": 48
+    }
+  },
+  "spritesheet": {
+    "columns": 9,
+    "path": "alchemist-idle.png",
+    "sheet_size": {
+      "height": 612,
+      "width": 612
+    },
+    "rows": [
+      {
+        "directions": [
+          "south",
+          "south-east",
+          "east",
+          "north-east",
+          "north",
+          "north-west",
+          "west",
+          "south-west"
+        ],
+        "row": 0,
+        "type": "rotations",
+        "frame_count": 8
+      },
+      {
+        "direction": "south",
+        "row": 1,
+        "type": "animation",
+        "frame_count": 9
+      },
+      {
+        "direction": "south-east",
+        "row": 2,
+        "type": "animation",
+        "frame_count": 9
+      },
+      {
+        "direction": "east",
+        "row": 3,
+        "type": "animation",
+        "frame_count": 9
+      },
+      {
+        "direction": "north-east",
+        "row": 4,
+        "type": "animation",
+        "frame_count": 9
+      },
+      {
+        "direction": "north",
+        "row": 5,
+        "type": "animation",
+        "frame_count": 9
+      },
+      {
+        "direction": "north-west",
+        "row": 6,
+        "type": "animation",
+        "frame_count": 9
+      },
+      {
+        "direction": "west",
+        "row": 7,
+        "type": "animation",
+        "frame_count": 9
+      },
+      {
+        "direction": "south-west",
+        "row": 8,
+        "type": "animation",
+        "frame_count": 9
+      }
+    ],
+    "cell_size": {
+      "height": 68,
+      "width": 68
+    },
+    "pivot": "cell-center"
+  },
+  "animations": {
+    "gesture": [
+      6,
+      7,
+      8
+    ],
+    "walk": [
+      3,
+      4,
+      5
+    ],
+    "idle": [
+      0,
+      1,
+      2
+    ]
+  },
+  "animation_descriptions": {
+    "gesture": "raise the small potion flask to eye level to inspect, show it toward customer, lower it",
+    "walk": "careful walking with alternate boots and slight apron and vial motion",
+    "idle": "gentle breathing, small flask held steadily at waist"
+  },
+  "mirrored_directions": {
+    "north-west": "north-east",
+    "south-west": "south-east",
+    "west": "east"
+  },
+  "status": "Packaged for import with import_town_sprites.py. Live gameplay has not been reviewed.",
+  "export_version": "1.0"
+}

@@ -1,0 +1,113 @@
+{
+  "character": {
+    "size": {
+      "height": 48,
+      "width": 48
+    },
+    "view": "low top-down",
+    "directions": 8,
+    "name": "Cave Troll"
+  },
+  "spritesheet": {
+    "path": "troll-idle.png",
+    "rows": [
+      {
+        "type": "rotations",
+        "row": 0,
+        "directions": [
+          "south",
+          "south-east",
+          "east",
+          "north-east",
+          "north",
+          "north-west",
+          "west",
+          "south-west"
+        ],
+        "frame_count": 8
+      },
+      {
+        "type": "animation",
+        "row": 1,
+        "direction": "south",
+        "frame_count": 9
+      },
+      {
+        "type": "animation",
+        "row": 2,
+        "direction": "south-east",
+        "frame_count": 9
+      },
+      {
+        "type": "animation",
+        "row": 3,
+        "direction": "east",
+        "frame_count": 9
+      },
+      {
+        "type": "animation",
+        "row": 4,
+        "direction": "north-east",
+        "frame_count": 9
+      },
+      {
+        "type": "animation",
+        "row": 5,
+        "direction": "north",
+        "frame_count": 9
+      },
+      {
+        "type": "animation",
+        "row": 6,
+        "direction": "north-west",
+        "frame_count": 9
+      },
+      {
+        "type": "animation",
+        "row": 7,
+        "direction": "west",
+        "frame_count": 9
+      },
+      {
+        "type": "animation",
+        "row": 8,
+        "direction": "south-west",
+        "frame_count": 9
+      }
+    ],
+    "cell_size": {
+      "height": 68,
+      "width": 68
+    },
+    "pivot": "cell-center",
+    "columns": 9,
+    "sheet_size": {
+      "height": 612,
+      "width": 612
+    }
+  },
+  "animations": {
+    "idle": [
+      0,
+      1,
+      2
+    ],
+    "walk": [
+      3,
+      4,
+      5
+    ],
+    "attack": [
+      6,
+      7,
+      8
+    ]
+  },
+  "mirrored_directions": {
+    "north-west": "north-east",
+    "west": "east",
+    "south-west": "south-east"
+  },
+  "status": "Approved animation sample packaged for import. Diagonal poses are approximate. Use import_troll.py to register the asset in The Gauntlet.",
+  "export_version": "1.0"
+}

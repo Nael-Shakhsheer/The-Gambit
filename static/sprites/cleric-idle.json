@@ -1,0 +1,118 @@
+{
+  "character": {
+    "size": {
+      "height": 48,
+      "width": 48
+    },
+    "name": "Cleric",
+    "view": "low top-down",
+    "directions": 8
+  },
+  "spritesheet": {
+    "rows": [
+      {
+        "directions": [
+          "south",
+          "south-east",
+          "east",
+          "north-east",
+          "north",
+          "north-west",
+          "west",
+          "south-west"
+        ],
+        "frame_count": 8,
+        "row": 0,
+        "type": "rotations"
+      },
+      {
+        "direction": "south",
+        "frame_count": 9,
+        "row": 1,
+        "type": "animation"
+      },
+      {
+        "direction": "south-east",
+        "frame_count": 9,
+        "row": 2,
+        "type": "animation"
+      },
+      {
+        "direction": "east",
+        "frame_count": 9,
+        "row": 3,
+        "type": "animation"
+      },
+      {
+        "direction": "north-east",
+        "frame_count": 9,
+        "row": 4,
+        "type": "animation"
+      },
+      {
+        "direction": "north",
+        "frame_count": 9,
+        "row": 5,
+        "type": "animation"
+      },
+      {
+        "direction": "north-west",
+        "frame_count": 9,
+        "row": 6,
+        "type": "animation"
+      },
+      {
+        "direction": "west",
+        "frame_count": 9,
+        "row": 7,
+        "type": "animation"
+      },
+      {
+        "direction": "south-west",
+        "frame_count": 9,
+        "row": 8,
+        "type": "animation"
+      }
+    ],
+    "path": "cleric-idle.png",
+    "cell_size": {
+      "height": 68,
+      "width": 68
+    },
+    "columns": 9,
+    "pivot": "cell-center",
+    "sheet_size": {
+      "height": 612,
+      "width": 612
+    }
+  },
+  "animations": {
+    "walk": [
+      3,
+      4,
+      5
+    ],
+    "attack": [
+      6,
+      7,
+      8
+    ],
+    "idle": [
+      0,
+      1,
+      2
+    ]
+  },
+  "animation_descriptions": {
+    "walk": "steady jog with alternating feet, robe hem and potion belt bob",
+    "attack": "draw flask-hand back, extend that hand forward in a holy flask throw/cast with a few bounded gold sparks, open-hand recovery; keep flask or tiny gold spark close to the casting hand, no detached projectile",
+    "idle": "gentle breathing with flask held at waist and restrained golden glow"
+  },
+  "mirrored_directions": {
+    "north-west": "north-east",
+    "west": "east",
+    "south-west": "south-east"
+  },
+  "status": "Packaged for import with import_heroes.py. Animation poses have not been reviewed in live gameplay.",
+  "export_version": "1.0"
+}

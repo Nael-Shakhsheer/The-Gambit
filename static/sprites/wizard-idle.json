@@ -1,0 +1,109 @@
+{
+  "character": {
+    "id": "061553eb-9f86-4d67-a3bd-81c4d334f26c",
+    "name": "Idle",
+    "prompt": "16-bit pixel art wizard character, 3/4 top-down perspective, strict 48x48 pixel grid scale, crisp outlines, dark violet hooded robes with glowing cyan arcane runes, holding a gnarled wooden staff topped with a large glowing blue crystal, clean retro SNES palette, centered on a transparent background.",
+    "size": {
+      "width": 48,
+      "height": 48
+    },
+    "directions": 8,
+    "view": "low top-down"
+  },
+  "spritesheet": {
+    "path": "16-bit_pixel_art_wizard-Idle.png",
+    "cell_size": {
+      "width": 64,
+      "height": 64
+    },
+    "sheet_size": {
+      "width": 576,
+      "height": 576
+    },
+    "columns": 9,
+    "pivot": "cell-center",
+    "rows": [
+      {
+        "row": 0,
+        "type": "rotations",
+        "frame_count": 8,
+        "directions": [
+          "south",
+          "south-east",
+          "east",
+          "north-east",
+          "north",
+          "north-west",
+          "west",
+          "south-west"
+        ]
+      },
+      {
+        "row": 1,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded wizard character asset. Format the layout into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, gentle up-and-down breathing bob, blue crystal gently pulsing.\n\u2022 Row 2: Jogging loop, running animation with flowing robe physics, staff held out forward.\n\u2022 Row 3: Projectile Cast, thrusting the staff forward sharply to launch a spell.\n\u2022 Row 4: Power Channel, raising the staff high into the air with both hands, robes billowing upward.\n\u2022 Row 5: Teleport Frame, a single frame of the wizard body dissolving into sudden vertical streaks of purple energy.`",
+        "animation_group_id": "28fd5d4b-b239-42ce-9e35-88b23b515a1a",
+        "direction": "south"
+      },
+      {
+        "row": 2,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded wizard character asset. Format the layout into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, gentle up-and-down breathing bob, blue crystal gently pulsing.\n\u2022 Row 2: Jogging loop, running animation with flowing robe physics, staff held out forward.\n\u2022 Row 3: Projectile Cast, thrusting the staff forward sharply to launch a spell.\n\u2022 Row 4: Power Channel, raising the staff high into the air with both hands, robes billowing upward.\n\u2022 Row 5: Teleport Frame, a single frame of the wizard body dissolving into sudden vertical streaks of purple energy.`",
+        "animation_group_id": "28fd5d4b-b239-42ce-9e35-88b23b515a1a",
+        "direction": "south-east"
+      },
+      {
+        "row": 3,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded wizard character asset. Format the layout into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, gentle up-and-down breathing bob, blue crystal gently pulsing.\n\u2022 Row 2: Jogging loop, running animation with flowing robe physics, staff held out forward.\n\u2022 Row 3: Projectile Cast, thrusting the staff forward sharply to launch a spell.\n\u2022 Row 4: Power Channel, raising the staff high into the air with both hands, robes billowing upward.\n\u2022 Row 5: Teleport Frame, a single frame of the wizard body dissolving into sudden vertical streaks of purple energy.`",
+        "animation_group_id": "28fd5d4b-b239-42ce-9e35-88b23b515a1a",
+        "direction": "east"
+      },
+      {
+        "row": 4,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded wizard character asset. Format the layout into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, gentle up-and-down breathing bob, blue crystal gently pulsing.\n\u2022 Row 2: Jogging loop, running animation with flowing robe physics, staff held out forward.\n\u2022 Row 3: Projectile Cast, thrusting the staff forward sharply to launch a spell.\n\u2022 Row 4: Power Channel, raising the staff high into the air with both hands, robes billowing upward.\n\u2022 Row 5: Teleport Frame, a single frame of the wizard body dissolving into sudden vertical streaks of purple energy.`",
+        "animation_group_id": "28fd5d4b-b239-42ce-9e35-88b23b515a1a",
+        "direction": "north-east"
+      },
+      {
+        "row": 5,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded wizard character asset. Format the layout into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, gentle up-and-down breathing bob, blue crystal gently pulsing.\n\u2022 Row 2: Jogging loop, running animation with flowing robe physics, staff held out forward.\n\u2022 Row 3: Projectile Cast, thrusting the staff forward sharply to launch a spell.\n\u2022 Row 4: Power Channel, raising the staff high into the air with both hands, robes billowing upward.\n\u2022 Row 5: Teleport Frame, a single frame of the wizard body dissolving into sudden vertical streaks of purple energy.`",
+        "animation_group_id": "28fd5d4b-b239-42ce-9e35-88b23b515a1a",
+        "direction": "north"
+      },
+      {
+        "row": 6,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded wizard character asset. Format the layout into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, gentle up-and-down breathing bob, blue crystal gently pulsing.\n\u2022 Row 2: Jogging loop, running animation with flowing robe physics, staff held out forward.\n\u2022 Row 3: Projectile Cast, thrusting the staff forward sharply to launch a spell.\n\u2022 Row 4: Power Channel, raising the staff high into the air with both hands, robes billowing upward.\n\u2022 Row 5: Teleport Frame, a single frame of the wizard body dissolving into sudden vertical streaks of purple energy.`",
+        "animation_group_id": "28fd5d4b-b239-42ce-9e35-88b23b515a1a",
+        "direction": "north-west"
+      },
+      {
+        "row": 7,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded wizard character asset. Format the layout into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, gentle up-and-down breathing bob, blue crystal gently pulsing.\n\u2022 Row 2: Jogging loop, running animation with flowing robe physics, staff held out forward.\n\u2022 Row 3: Projectile Cast, thrusting the staff forward sharply to launch a spell.\n\u2022 Row 4: Power Channel, raising the staff high into the air with both hands, robes billowing upward.\n\u2022 Row 5: Teleport Frame, a single frame of the wizard body dissolving into sudden vertical streaks of purple energy.`",
+        "animation_group_id": "28fd5d4b-b239-42ce-9e35-88b23b515a1a",
+        "direction": "west"
+      },
+      {
+        "row": 8,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "`Generate a 4-directional animated sprite sheet layout (facing North, South, East, West) using the loaded wizard character asset. Format the layout into a strict 48x48 pixel grid sequence matching the following grid order:\n\u2022 Row 1: Idle loop, gentle up-and-down breathing bob, blue crystal gently pulsing.\n\u2022 Row 2: Jogging loop, running animation with flowing robe physics, staff held out forward.\n\u2022 Row 3: Projectile Cast, thrusting the staff forward sharply to launch a spell.\n\u2022 Row 4: Power Channel, raising the staff high into the air with both hands, robes billowing upward.\n\u2022 Row 5: Teleport Frame, a single frame of the wizard body dissolving into sudden vertical streaks of purple energy.`",
+        "animation_group_id": "28fd5d4b-b239-42ce-9e35-88b23b515a1a",
+        "direction": "south-west"
+      }
+    ]
+  },
+  "export_version": "1.0",
+  "export_date": "2026-10-06T02:11:17.867082+00:00"
+}

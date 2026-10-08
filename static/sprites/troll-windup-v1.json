@@ -1,0 +1,97 @@
+{
+  "mirrored": {
+    "south-west": "south-east",
+    "north-west": "north-east",
+    "west": "east"
+  },
+  "spritesheet": {
+    "columns": 9,
+    "cell_size": {
+      "width": 68,
+      "height": 68
+    },
+    "path": "troll-windup-v1.png",
+    "rows": [
+      {
+        "row": 0,
+        "directions": [
+          "south",
+          "south-east",
+          "east",
+          "north-east",
+          "north",
+          "north-west",
+          "west",
+          "south-west"
+        ],
+        "frame_count": 8,
+        "type": "rotations"
+      },
+      {
+        "row": 1,
+        "direction": "south",
+        "frame_count": 9,
+        "type": "animation"
+      },
+      {
+        "row": 2,
+        "direction": "south-east",
+        "frame_count": 9,
+        "type": "animation"
+      },
+      {
+        "row": 3,
+        "direction": "east",
+        "frame_count": 9,
+        "type": "animation"
+      },
+      {
+        "row": 4,
+        "direction": "north-east",
+        "frame_count": 9,
+        "type": "animation"
+      },
+      {
+        "row": 5,
+        "direction": "north",
+        "frame_count": 9,
+        "type": "animation"
+      },
+      {
+        "row": 6,
+        "direction": "north-west",
+        "frame_count": 9,
+        "type": "animation"
+      },
+      {
+        "row": 7,
+        "direction": "west",
+        "frame_count": 9,
+        "type": "animation"
+      },
+      {
+        "row": 8,
+        "direction": "south-west",
+        "frame_count": 9,
+        "type": "animation"
+      }
+    ]
+  },
+  "animations": {
+    "channel": [
+      6,
+      7,
+      8
+    ],
+    "charge": [
+      0,
+      1,
+      2
+    ],
+    "heavy": [
+      3,
+      4,
+      5
+    ]
+  }
+}
