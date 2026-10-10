@@ -1,6 +1,148 @@
 # The Gauntlet - project handoff
 
-Last updated: **2026-10-07**.
+Last updated: **2026-10-09**.
+
+## Latest GitHub publication — 2026-10-09
+
+The user requested publishing the current playable build to
+Nael-Shakhsheer/The-Gauntlet main, including the HUD, all 48 ability icons,
+eight hero casting atlases and shared ability animation integration.
+157 Python tests passed, as did Node syntax, equipment comparison, movement,
+audio and held-attack/client checks. Public uploads exclude saved data, large
+authoring projects, release archives and machine cleanup records. The earlier
+tracked October 6 ZIP remains on GitHub; its local cleanup is not a request to
+erase repository history. Record the verified publication commit after upload.
+
+## Ability casting poses and shared ultimate eruptions — 2026-10-09
+
+Eight new hero animation atlases add three-frame Light, Special and Ultimate
+body sequences. Each has eight directions: five generated views and three
+deterministic mirrors. All 48 ability IDs connect to these class/type body
+sequences and their own artwork/colors/effect treatments. Alternatives share
+their class/type physical sequence; there are not 48 independent body atlases.
+Druid crouches/kneels to trace summoning circles, Archer draws a massive bow,
+Bard uses a full-size concert harp, and the other five heroes have matching
+physical casting actions. Original idle/move sheets remain intact.
+
+Every successful Ultimate has glowing rising pixel ribbons, expanding ground
+energy, class/ability particles and its actual name visible to teammates. Shared
+cast IDs and relative elapsed/remaining time come from ability_animations.py,
+through player snapshots and ability_cast effects. Held Light attacks cannot
+erase a longer Special/Ultimate pose. Class, stage, status and scene changes
+guard stale animations; final-enemy kills can finish their brief cast into loot
+or exit. Actual affected recipient IDs drive teammate buff/heal/revive particles.
+Projectile visuals use existing literal ability art, including ice shards,
+arrows, bottles, thorns and musical notes. Cover-target shots also retain IDs.
+
+The four Druid summons have circle emergence and lightning/fire/ice/stone attack
+particles. Enemy windup sheets still follow actual role/boss attack progress,
+with concentrated energy, charge dust and release particles. Normal enemy
+attacks now select imported attack frames too. Enemy support healing, pounces,
+charges, heavy strikes, Draco shot/bite cycles and all adult Dragon affinities
+keep their current creature bodies and committed directions. Combat rules,
+cooldowns, mana, inputs, movement and damage/spawn timing are unchanged.
+
+static/ability-animations.js is registered in the server static whitelist and
+integrated into app.js/combat-environment.js. audio.js follows public cast IDs
+to avoid duplicate or missed cast cues. Eight generated source atlases, exact
+prompts, references, 48-ID coverage, hashes, 576-cell crop/mirror manifest,
+PowerShell exporter and native preview are retained in art/ability-animations.
+Gutter detection is necessary: equal fractional crops cut off source feet.
+Fixed per-hero scale and foot baseline match the old sheets; ultimate props
+remain larger. See WORKFLOW.md. preview.html is a local artwork viewer using
+the actual renderer, with all 48 choices and eight directions; it makes no rooms.
+
+Artwork/native exports were visually reviewed; Python/JavaScript syntax checks
+passed. No automated gameplay tests or full multiplayer play-through were run.
+Both disk checkpoints were copied and SHA256-matched to
+data/backups/before-cast-animations-20261009-123304 before the authorized restart.
+Python updates require a restart; static assets require clients to refresh.
+
+## Ability icons and recharge rings — 2026-10-09
+
+All 48 ability choices now have distinct literal pixel-art designs, including
+an ice shard for Frost Lance and separate Druid summon icons. Individual
+64×64 transparent icons and a complete 6×8 atlas/metadata live in static/sprites.
+Lobby and Guild ability choices show the same icons as the equipped HUD.
+
+The central ability bar now contains Light, Special and Ultimate, between the
+two tools. It reuses the actual held-Attack button and retains its input listeners;
+buttons persist across cooldown snapshots. Numeric ability countdowns are
+replaced by a clockwise glowing red ring. The full ring becomes green when
+cooldown readiness is confirmed, mana is sufficient and the hero can act.
+Names, shortcut hints and mana costs remain. Active Druid summons show Active
+with an empty ring and begin refilling after death. Low mana remains labeled.
+Desktop HUD/world offsets and narrow-screen icon sizes accommodate the circles.
+
+The private ability-slot snapshot adds fractional cooldownRemaining alongside
+the existing rounded cooldownLeft. The client advances visuals between polls
+but does not show Ready before server confirmation. Ability rules, cooldown
+durations, costs and saves are unchanged. Python requires a restart for the
+precise field; static changes require a browser refresh.
+
+art/ability-icons retains eight built-in ImageGen sources, all exact prompts,
+48 design descriptions, a style reference, deterministic PowerShell exporter,
+crop/export manifest and catalog/cooldown previews. Artwork was visually
+reviewed; no implementation tests or full live gameplay checks were run for
+this request. See art/ability-icons/WORKFLOW.md for rebuilding.
+
+Activated on port 8000 after copying and SHA256-checking both bed checkpoint
+files to data/backups/before-ability-icons-20261009-115336. The identified old
+server was stopped under the existing restart authorization; the current
+project's server.py is now running in exec session 5719. Live rooms reset;
+both disk checkpoints remain intact. Refresh the game page to load the icons.
+
+## HUD tools, utilities and rune star — 2026-10-09
+
+Tool 1 and Tool 2 now flank the bottom HUD's central ability/interaction space.
+They show the equipped tool sprites and open the pouch when clicked. The three
+utility slots sit directly under Help/Gather/Enemy; their click actions and 1/2/3
+shortcuts still use the utility items. The movement pad is hidden for mouse/keyboard
+devices through the hover/fine-pointer media query and remains on touch devices.
+The center retains working Special/Ultimate controls and cooldown labels, ready
+for the user's future ability sprites/animations; no new artwork was supplied.
+
+The STAR puzzle rune and totem clue now draw matching five-point symbols in slate
+and brass frames, replacing the old six-point sprite for that sigil. The fallback
+text glyph is also a five-point star. Other rune artwork is unchanged.
+Client syntax and existing held-attack, movement and equipment-comparison checks
+passed. An isolated browser fixture using the actual HTML/render functions verified
+1280x720 and 390x844 layouts without horizontal overflow, utility click dispatch,
+tool-to-pouch behavior and both star drawings. Physical-phone testing remains open.
+Refresh the HTTP game page; no server restart is required.
+
+## Consolidated OneDrive backup — 2026-10-08
+
+The user requested one complete backup and removal of game files that only take
+up space. The verified backup is the sibling file
+`../The-Gauntlet-Complete-Backup-2026-10-08.zip` (800,772,746 bytes; SHA256
+bbb89c40483b81d9844bdf7ac8f91ad09c4ffe03a8980cec82f4f826d00b0925).
+It contains the complete current project including original art, saved data and
+Git database, plus the older laptop copy and release history. All archived entries
+passed CRC and SHA256 checks. Current files have their ordinary layout inside
+The-Gauntlet/. Historical versions share identical content through _Backup/INDEX.json
+and _History/, with _Backup/RESTORE_HISTORY.py for restoration. Old release ZIP
+wrappers were flattened; all member-file contents were retained. Python bytecode
+caches were omitted as regenerable files. OneDrive cloud sync was not verified.
+
+Cleanup completed after the user explicitly approved the exact deletion list.
+Removed the older laptop copy, releases, original visual art folders, reference
+screenshots, data/backups, bytecode caches, stale package manifest and old root ZIP.
+All 2,262 removal candidates were checked against the backup's source hashes or
+identified as disposable caches/generated metadata before deletion. Git storage
+was compacted. Removed 2,338,372,728 bytes; after adding the single backup and Git
+compaction, net space reduction is 1,538,468,847 bytes (about 1.54 GB).
+See reports/CLEANUP_2026-10-08.json for the completed audit.
+
+The current working game, all 215 static files, art/audio, both bed checkpoints
+and active Git repository remain. Runtime file hashes matched before/after and
+live HTTP checks passed for the page, client scripts, Druid sprite and Bard audio.
+The server was not restarted. Visual authoring paths mentioned below and in
+README.md now refer to archived material: extract The-Gauntlet/art/ from the
+complete backup when editing original art. Historical versions can be restored
+using the archive's _Backup/RESTORE_HISTORY.py.
+The root legacy ZIP removal is a local Git working-tree deletion; cleanup changes
+have not been committed or published to GitHub.
 
 ## Tactical update and publication — 2026-10-07
 

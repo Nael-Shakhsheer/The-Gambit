@@ -1,5 +1,19 @@
 const $ = (selector) => document.querySelector(selector);
 const CLASS_ORDER = ["Knight", "Wizard", "Archer", "Cleric", "Rogue", "Druid", "Bard", "Healer"];
+const ABILITY_SPRITE_KEYS = new Set(["shield_bash","cleaving_arc","iron_wall","challenge","guardian_cry","earthshaker","arc_burst","frost_lance","spell_surge","blink","team_aegis","arcane_cataclysm","piercing_volley","snare_shot","eagle_eye","quickstep","rain_of_arrows","deadeye","radiant_flask","sanctified_throw","splash_mend","blessed_vial","sanctuary_rain","cleansing_splash","backstab","fan_of_blades","vanish","shadowstep","death_bloom","execution","briar_burst","thornshot","lightning_bird","fire_wolf","ice_bear","nature_golem","discord_note","quickstring","battle_anthem","fleet_rhythm","grand_crescendo","rallying_chord","life_spark","healing_ray","major_mend","quick_revival","miracle","mass_revival"]);
+function createAbilityIcon(ability) {
+  if (!ABILITY_SPRITE_KEYS.has(ability.id)) return null;
+  const image=document.createElement("img");
+  image.className="ability-sprite"; image.src="/sprites/ability-"+ability.id+"-v1.png";
+  image.alt=""; image.setAttribute("aria-hidden","true"); image.width=image.height=64; image.draggable=false;
+  image.addEventListener("error",()=>image.remove(),{once:true});
+  return image;
+}
+function decorateAbilityChoice(label,ability) {
+  const image=createAbilityIcon(ability); if(!image) return;
+  const text=document.createElement("span");text.textContent=label.textContent;
+  label.classList.add("ability-choice-heading");label.replaceChildren(image,text);
+}
 const ITEM_SPRITE_KEYS = new Set(["healing_draught","warding_tonic","mana_draught","quickstep_elixir","route_lens","ember_oil","piercing_arrows","phoenix_flask","stormguard_charm","iron_sword","oakguard_vest","moonsteel_sword","dragonbone_armor","starfall_blade","aegis_of_dawn","sage_wand","wind_bow","sun_censer","shadow_blades","thorn_staff","travel_lute","mercy_rod"]);
 function createItemSprite(item) {
   const key = ({arcane_conductor:'sage_wand',rescuers_cuirass:'oakguard_vest',summoners_staff:'thorn_staff',pursuit_blade:'shadow_blades'})[item?.key] || item?.key;
@@ -64,6 +78,7 @@ let lastTownSignature = "";
 let lastRouteSignature = "";
 let lastLoadoutSignature = "";
 let lastAbilityBarSignature = "";
+const abilityRingRecords = new Map();
 let lastClassSignature = "";
 let lastChestSignature = "";
 let lastPrivateNotice = "";
@@ -163,6 +178,7 @@ for (const role of ["Knight", "Wizard", "Serpent", "Minotaur", "Troll", "Spider"
 }
 
 function drawImportedHero(ctx, player, x, y, spriteKey = player.class) {
+  if (spriteKey === player.class && window.GauntletAbilityAnimations?.hero(ctx, player, x, y)) return true;
   const sprite = heroSprites[spriteKey];
   if (!sprite?.sheet || !sprite.image.complete || !sprite.image.naturalWidth) return false;
   const sheet = sprite.sheet;
@@ -398,6 +414,11 @@ $("#utilityHotbar").addEventListener("click", async (event) => {
   try { await sendAction("useItem", { item: button.dataset.useItem }); refresh(); }
   catch (error) { notice($("#combatNotice"), error.message); }
 });
+$("#toolHotbar").addEventListener("click", (event) => {
+  if (!event.target.closest(".tool-slot")) return;
+  $("#pouchPanel").classList.add("hud-open");
+  $("#togglePouch").textContent = "Close pouch";
+});
 async function triggerUtility(index) {
   if (!latestRoom) return;
   const item = latestRoom.utilitySlots[index];
@@ -599,6 +620,7 @@ function renderGuild(room) {
       button.dataset.guildAbility = ability.id;
       button.innerHTML = '<b></b><span></span><small></small>';
       button.querySelector("b").textContent = ability.attackType.toUpperCase() + " · " + ability.name;
+      decorateAbilityChoice(button.querySelector("b"),ability);
       button.querySelector("span").textContent = ability.description;
       button.querySelector("small").textContent = ability.cooldown + (ability.kind === "summon" ? "s recharge after death" : "s cooldown") + " · " + ability.manaCost + " MP";
       choices.append(button);
@@ -633,6 +655,7 @@ function renderAbilityChoices(room) {
     button.setAttribute("aria-pressed", String(selected));
     button.innerHTML = '<b></b><span></span><small></small>';
     button.querySelector("b").textContent = ability.attackType.toUpperCase() + " · " + ability.name + (selected ? " · EQUIPPED" : "");
+    decorateAbilityChoice(button.querySelector("b"),ability);
     button.querySelector("span").textContent = ability.description;
     button.querySelector("small").textContent = ability.attackType === "light" ? "Left click · " + ability.cooldown + "s cooldown" :
       String(keyBindings[ability.attackType]).toUpperCase() + " · " + ability.cooldown + (ability.kind === "summon" ? "s recharge after death" : "s cooldown") + (ability.manaCost ? " · " + ability.manaCost + " MP" : "");
@@ -643,24 +666,57 @@ function renderAbilityChoices(room) {
 function renderAbilityBar(room) {
   const bar = $("#abilityButtons");
   const own = room.players.find((player) => player.id === room.you);
-  const signature = JSON.stringify([room.abilitySlots, room.phase, room.waveCountdown, own && own.status,
-    room.abilitySlots.map((ability) => room.mana >= ability.manaCost)]);
-  if (signature === lastAbilityBarSignature) return;
-  lastAbilityBarSignature = signature;
-  bar.replaceChildren();
-  bar.classList.toggle("hidden", room.phase !== "combat" || !room.abilitySlots.length);
-  room.abilitySlots.filter((ability) => ability.attackType !== "light").forEach((ability) => {
-    const button = document.createElement("button");
-    button.className = "secondary ability-key";
-    button.dataset.abilitySlot = String(room.abilitySlots.indexOf(ability) + 1);
-    button.title = ability.description;
-    const name = document.createElement("span"); name.className = "ability-name"; name.textContent = ability.name;
-    const status = document.createElement("small"); status.textContent = String(keyBindings[ability.attackType]).toUpperCase() + " · " +
-      (ability.summonAlive ? "Alive" : ability.cooldownLeft ? ability.cooldownLeft + "s" : "Ready") + " · " + ability.manaCost + " MP";
-    button.append(name, status);
-    button.disabled = room.phase !== "combat" || Boolean(room.waveCountdown) || !own || own.status !== "alive" || ability.summonAlive || ability.cooldownLeft > 0 || room.mana < ability.manaCost;
-    bar.append(button);
+  const abilities=room.abilitySlots || [], attack=$("#attackButton");
+  const signature=JSON.stringify([room.code,room.you,abilities.map(a=>[a.id,a.attackType])]);
+  if(signature!==lastAbilityBarSignature) {
+    lastAbilityBarSignature=signature;
+    // Keep the actual held-attack button and its pointer listeners/capture.
+    if(attack.parentElement===bar) $(".hud-actions").prepend(attack);
+    bar.replaceChildren(); abilityRingRecords.clear();
+    for(const ability of abilities) {
+      const button=ability.attackType==="light"?attack:document.createElement("button");
+      button.type="button";button.className="secondary ability-key ability-icon-button";
+      const face=document.createElement("span");face.className="ability-orb";face.setAttribute("aria-hidden","true");
+      face.innerHTML='<svg class="ability-ring" viewBox="0 0 64 64"><circle class="ability-ring-track" cx="32" cy="32" r="28" fill="none"/><circle class="ability-ring-fill" cx="32" cy="32" r="28" fill="none" pathLength="100"/></svg>';
+      const image=createAbilityIcon(ability);if(image)face.append(image);
+      else {const fallback=document.createElement("span");fallback.textContent=ability.name[0];face.append(fallback);}
+      const name=document.createElement("span");name.className="ability-name";name.textContent=ability.name;
+      const status=document.createElement("small");status.className="ability-key-hint";
+      button.replaceChildren(face,name,status);bar.append(button);
+      abilityRingRecords.set(ability.id,{button,ring:face.querySelector(".ability-ring-fill"),status});
+    }
+  }
+  bar.classList.toggle("hidden",room.phase!=="combat" || !abilities.length);
+  const now=performance.now();
+  abilities.forEach((ability,index)=>{
+    const record=abilityRingRecords.get(ability.id);if(!record)return;
+    const remaining=Math.max(0,Number(ability.cooldownRemaining ?? ability.cooldownLeft)||0);
+    const available=room.phase==="combat" && !room.waveCountdown && own?.status==="alive";
+    const enoughMana=room.mana>=ability.manaCost;
+    Object.assign(record,{ability,deadline:now+remaining*1000,remaining,available,enoughMana});
+    if(ability.attackType!=="light")record.button.dataset.abilitySlot=String(index+1);
+    // Holding Light continues through its normal recharge, as before.
+    record.button.disabled=!available || ability.summonAlive || (!enoughMana) || (ability.attackType!=="light" && remaining>0);
   });
+  animateAbilityRings(now);
+}
+function animateAbilityRings(now) {
+  for(const record of abilityRingRecords.values()) {
+    const {ability,button,ring,status,available,enoughMana,remaining}=record;
+    const alive=Boolean(ability.summonAlive), confirmedReady=remaining<=0 && !alive;
+    const ready=confirmedReady && available && enoughMana;
+    // Never announce Ready before the server confirms it, even after a stale poll.
+    const elapsedRemaining=Math.max(0,(record.deadline-now)/1000);
+    const total=Math.max(.001,Number(ability.cooldown)||1);
+    const progress=alive?0:confirmedReady?1:Math.min(.995,Math.max(0,1-elapsedRemaining/total));
+    ring.style.strokeDashoffset=String(100*(1-progress));
+    button.dataset.charge=ready?"ready":alive?"active":"charging";
+    const key=ability.attackType==="light"?"Hold":String(keyBindings[ability.attackType]).toUpperCase();
+    const state=alive?"Active":!available?"Unavailable":!enoughMana?"Need mana":confirmedReady?"Ready":"Charging";
+    status.textContent=key+(alive?" · Active":!enoughMana?" · Need MP":ability.manaCost?" · "+ability.manaCost+" MP":"");
+    button.setAttribute("aria-label",ability.name+" · "+state+" · "+key+(ability.manaCost?" · "+ability.manaCost+" mana":""));
+    button.title=ability.name+" — "+state+". "+ability.description;
+  }
 }
 function renderClasses(room) {
   const grid = $("#classGrid");
@@ -768,6 +824,7 @@ function renderRoom(room, roundTrip = 0) {
   renderWorldToast(room);
   renderQuickPouch(room);
   renderUtilityHotbar(room);
+  renderToolHotbar(room);
   renderChat(room);
   const active = room.phase !== "lobby";
   document.body.classList.toggle("is-playing", active);
@@ -802,7 +859,7 @@ function renderRoom(room, roundTrip = 0) {
   $("#waveCountdown").textContent = room.waveCountdown ? "WAVE " + room.stageWave + " IN " + room.waveCountdown : "";
   $(".hud-actions").classList.toggle("hidden", ["lobby", "defeat", "cleared"].includes(room.phase));
   $("#attackButton").classList.toggle("hidden", room.phase !== "combat");
-  $("#attackButton").disabled = room.phase !== "combat" || Boolean(room.waveCountdown);
+  $("#attackButton").disabled = room.phase !== "combat" || Boolean(room.waveCountdown) || own?.status !== "alive";
   $("#dashButton").classList.toggle("hidden", room.phase !== "combat");
   $("#dashButton").disabled = room.phase !== "combat" || Boolean(room.dashCooldown);
   $("#dashButton").textContent = room.dashCooldown ? "Dash · " + room.dashCooldown + "s" : "Space · Dash";
@@ -856,6 +913,7 @@ function renderRoom(room, roundTrip = 0) {
 }
 function updateMotionTracks(room) {
   window.GauntletCombatEnvironment?.observe(room);
+  window.GauntletAbilityAnimations?.observe(room);
   const scene = [room.code, room.stage, room.phase, room.townInterior, room.innFloor, room.puzzle?.id].join(":");
   const now = performance.now();
   if (room.code !== damageRoom) { damageTracks.clear(); damageRoom = room.code; }
@@ -890,6 +948,7 @@ function interpolatedPosition(track, now) {
 }
 function animateWorld(now) {
   if (latestRoom && latestRoom.phase !== "lobby" && !document.hidden) {
+    animateAbilityRings(now);
     const direction = currentMovement();
     localMotion.remember(direction, now);
     sendMovement(false);
@@ -1067,7 +1126,7 @@ function renderUtilityHotbar(room) {
   const signature = JSON.stringify([room.utilitySlots, room.phase, own && own.status, own && own.hp, room.mana >= room.maxMana]);
   if (signature === hotbar.dataset.signature) return;
   hotbar.dataset.signature = signature;
-  $("#utilityLeft").replaceChildren(); $("#utilityRight").replaceChildren();
+  hotbar.replaceChildren();
   const icons = { heal: "✚", mana: "✦", ward: "⬡", hint: "⌕", buff: "⚔", speed: "➤", arrows: "➶" };
   room.utilitySlots.forEach((item, index) => {
     const button = document.createElement("button");
@@ -1091,7 +1150,34 @@ function renderUtilityHotbar(room) {
       button.innerHTML = '<span class="utility-key"></span><span class="utility-name">Empty</span>';
       button.querySelector(".utility-key").textContent = String(index + 1);
     }
-    (index === 0 ? $("#utilityLeft") : $("#utilityRight")).append(button);
+    hotbar.append(button);
+  });
+}
+function renderToolHotbar(room) {
+  const hotbar = $("#toolHotbar");
+  const signature = JSON.stringify(room.toolSlots);
+  if (signature === hotbar.dataset.signature) return;
+  hotbar.dataset.signature = signature;
+  [$("#toolLeft"), $("#toolRight")].forEach((side, index) => {
+    side.replaceChildren();
+    const item = room.toolSlots[index];
+    const button = document.createElement("button");
+    button.className = "tool-slot";
+    button.type = "button";
+    button.setAttribute("aria-label", "Tool " + (index + 1) + ": " + (item ? item.name : "empty") + ". Open pouch.");
+    button.title = (item ? item.name + " · " + item.description : "Empty tool slot") + " · Open pouch to change tools";
+    const caption = document.createElement("span");
+    caption.className = "tool-caption";
+    caption.textContent = "Tool " + (index + 1);
+    const icon = document.createElement("span");
+    icon.className = "tool-icon";
+    const image = item && createItemSprite(item);
+    if (image) {
+      icon.append(image);
+      image.addEventListener("error", () => { icon.textContent = "⚔"; }, { once: true });
+    } else icon.textContent = item ? "⚔" : "—";
+    button.append(caption, icon);
+    side.append(button);
   });
 }
 function renderRoutes(room) {
@@ -1436,7 +1522,7 @@ function drawPuzzleRoom(ctx, puzzle, w, h) {
   ctx.strokeStyle = "#c3a7eb"; ctx.lineWidth = 9; ctx.strokeRect(20, 20, w - 40, h - 40);
   ctx.strokeStyle = "#78659a"; ctx.lineWidth = 3; ctx.setLineDash([10, 9]);
   ctx.strokeRect(34, 34, w - 68, h - 68); ctx.setLineDash([]);
-  const glyphs = { SUN: "☼", MOON: "☾", LEAF: "❧", FLAME: "♨", WAVE: "≋", STAR: "✦" };
+  const glyphs = { SUN: "☼", MOON: "☾", LEAF: "❧", FLAME: "♨", WAVE: "≋", STAR: "★" };
   const runeColors = { SUN: "#ffe27c", MOON: "#c4d8ff", LEAF: "#a7ed9c", FLAME: "#ff9a68", WAVE: "#83dcf4", STAR: "#f4eaff" };
   puzzle.runes.forEach((rune) => {
     const active = puzzle.standingRune === rune.rune;
@@ -1723,6 +1809,7 @@ function drawTreasureChest(ctx, chest) {
 function drawCombatEffects(ctx, room) {
   const now = Date.now();
   (room.projectiles || []).forEach((shot) => {
+    if (window.GauntletAbilityAnimations?.projectile(ctx, shot)) return;
     if (window.GauntletCombatEnvironment?.projectile(ctx, shot)) return;
     ctx.save(); ctx.imageSmoothingEnabled = true; ctx.drawImage(enemyGlow(shot.color), shot.x - 16, shot.y - 16, 32, 32);
     ctx.imageSmoothingEnabled = false; ctx.fillStyle = shot.color;
@@ -1741,6 +1828,7 @@ function drawCombatEffects(ctx, room) {
     ctx.restore();
   });
   (room.effects || []).forEach((effect) => {
+    if (effect.type === 'ability_cast') return; // Draw once, attached to the actor, in the choreography layer.
     const remain = Math.max(0, Math.min(1, (effect.until * 1000 - now) / 800));
     if (!remain) return;
     if (window.GauntletCombatEnvironment?.effect(ctx, effect)) {
@@ -1836,12 +1924,13 @@ function drawSummon(ctx, summon) {
   const attacking = summon.animationUntil * 1000 > Date.now();
   const stride = summon.moving ? Math.round(Math.sin(Date.now() / 90) * 2) : 0;
   ctx.save();
+  window.GauntletAbilityAnimations?.summonGround(ctx, summon);
   drawCharacterShadow(ctx, x, y + 12, summon.kind === "bird" ? 16 : ["bear", "golem"].includes(summon.kind) ? 32 : 23, "#10231bb0");
   ctx.strokeStyle = summon.color; ctx.lineWidth = 2; ctx.beginPath(); ctx.ellipse(x, y + 12, 28, 12, 0, 0, Math.PI * 2); ctx.stroke();
   drawDamageTint(ctx, "summon", summon, x, y, (ctx) => {
     const summonSpriteKey = ({ lightning_bird: "LightningBird", fire_wolf: "FireWolf", ice_bear: "IceBear", nature_golem: "NatureGolem" })[summon.abilityId];
     if (summonSpriteKey) {
-      const scale = summon.kind === "golem" ? 2.5 : summon.kind === "bear" ? 2.15 : summon.kind === "wolf" ? 1.15 : 1;
+      const scale = (summon.kind === "golem" ? 2.5 : summon.kind === "bear" ? 2.15 : summon.kind === "wolf" ? 1.15 : 1) * (window.GauntletAbilityAnimations?.summonScale(summon) ?? 1);
       ctx.save(); ctx.translate(x, y); ctx.scale(scale, scale); ctx.translate(-x, -y);
       const imported = drawImportedHero(ctx, { ...summon, status: "alive" }, x, y, summonSpriteKey);
       ctx.restore();
@@ -1995,13 +2084,15 @@ function drawWorld(room) {
     }
     ctx.globalAlpha = player.invisible ? 0.35 : 1;
     const x = player.x, y = player.y, color = player.color, role = player.class;
-    const bob = Math.sin(Date.now() / (role === "Druid" ? 550 : 180) + x) * (role === "Druid" ? .25 : 1.2);
+    const abilityMotion = window.GauntletAbilityAnimations?.motion(player);
+    const bob = abilityMotion ? 0 : Math.sin(Date.now() / (role === "Druid" ? 550 : 180) + x) * (role === "Druid" ? .25 : 1.2);
     const characterScale = room.phase === "town" ? 0.78 : 1.65;
     const nameOffset = room.phase === "town" ? 28 : heroSprites[role]?.sheet ? 61 : 37;
     if (player.id===room.you && player.status==='alive') {
       ctx.save();ctx.strokeStyle='#fff1af';ctx.lineWidth=3;ctx.beginPath();ctx.arc(x,y+12,23,0,Math.PI*2);ctx.stroke();ctx.restore();
     }
     drawCharacterShadow(ctx, x, y + 12 * characterScale, 11 * characterScale);
+    if (abilityMotion) window.GauntletAbilityAnimations?.ground(ctx, player);
     ctx.save(); ctx.translate(x, y + bob); ctx.scale(characterScale, characterScale); ctx.translate(-x, -y);
     drawDamageTint(ctx, "player", player, x, y, (ctx) => {
     if (!drawImportedHero(ctx, player, x, y)) {
@@ -2043,8 +2134,8 @@ function drawWorld(room) {
       ctx.fillRect(x + 10, y - 22, 3, 37); ctx.fillRect(x + 7, y - 24, 9, 4); ctx.fillRect(x + 10, y - 31, 3, 18);
     }
     }
-    if (player.armorColor) { ctx.fillStyle = player.armorColor; ctx.fillRect(x - 8, y - 9, 16, 13); ctx.fillRect(x - 11, y - 7, 4, 10); ctx.fillStyle = "#ffffff55"; ctx.fillRect(x - 6, y - 8, 3, 8); }
-    if (player.weaponColor) { ctx.fillStyle = "#171722"; ctx.fillRect(x + 10, y - 11, 5, 29); ctx.fillStyle = player.weaponColor; ctx.fillRect(x + 11, y - 12, 3, 28); ctx.fillRect(x + 8, y - 4, 9, 4); }
+    if (!abilityMotion && player.armorColor) { ctx.fillStyle = player.armorColor; ctx.fillRect(x - 8, y - 9, 16, 13); ctx.fillRect(x - 11, y - 7, 4, 10); ctx.fillStyle = "#ffffff55"; ctx.fillRect(x - 6, y - 8, 3, 8); }
+    if (!abilityMotion && player.weaponColor) { ctx.fillStyle = "#171722"; ctx.fillRect(x + 10, y - 11, 5, 29); ctx.fillStyle = player.weaponColor; ctx.fillRect(x + 11, y - 12, 3, 28); ctx.fillRect(x + 8, y - 4, 9, 4); }
     });
     ctx.restore();
     ctx.fillStyle = "#fff4d5"; ctx.font = room.phase === "town" ? "bold 9px monospace" : "bold 12px monospace"; ctx.textAlign = "center";
@@ -2059,6 +2150,8 @@ function drawWorld(room) {
   });
   if (room.phase === "combat") (room.summons || []).forEach((summon) => drawSummonLabel(ctx, summon));
   drawCombatEffects(ctx, room);
+  window.GauntletAbilityAnimations?.front(ctx, room);
+  if (room.phase === 'combat') (room.summons || []).forEach(s => window.GauntletAbilityAnimations?.summonFront(ctx, s));
   if (typeof drawPings === "function") drawPings(ctx, room);
   if (room.phase === "cleared" || room.phase === "defeat") {
     ctx.fillStyle = room.phase === "defeat" ? "rgba(14, 8, 18, .82)" : "rgba(12, 20, 17, .72)";

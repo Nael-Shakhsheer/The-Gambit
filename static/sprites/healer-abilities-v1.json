@@ -1,0 +1,43 @@
+{
+  "descriptions": [
+    "lowering the turquoise staff toward an ally, gathering a life spark in the free palm, then extending the palm",
+    "planting the staff and kneeling to offer a healing light in both hands, then lifting the light toward an ally",
+    "raising the turquoise crystal staff and both hands skyward, robes lifting in radiant white teal power, then spreading the arms in a full-body miracle eruption"
+  ],
+  "directions": [
+    "south",
+    "south-east",
+    "east",
+    "north-east",
+    "north",
+    "north-west",
+    "west",
+    "south-west"
+  ],
+  "hero": "Healer",
+  "rows": 8,
+  "cell": 96,
+  "groups": {
+    "special": [
+      3,
+      4,
+      5
+    ],
+    "light": [
+      0,
+      1,
+      2
+    ],
+    "ultimate": [
+      6,
+      7,
+      8
+    ]
+  },
+  "anchor": [
+    48,
+    77
+  ],
+  "columns": 9,
+  "source": "art/ability-animations/source/healer-v1.png"
+}

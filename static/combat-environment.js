@@ -76,6 +76,7 @@
     for (const id of effectTimes.keys()) if (!active.has(id)) effectTimes.delete(id);
   }
   function enemy(ctx,e,x,y) {
+    window.GauntletAbilityAnimations?.enemy(ctx,e,enemies.get(e.id));
     const a = e.bossAttack || e.roleAttack, record = enemies.get(e.id);
     const kind = e.kind === "monster" ? "chimera" : e.kind === "dragon" ? "dragon-adult" : e.kind;
     let column, key;
@@ -84,8 +85,9 @@
       const progress = record?.pending ? clamp(record.progress+(performance.now()-record.at)/1000*(1-record.progress)/Math.max(.01,record.remaining)) : clamp(a.progress || 0);
       const group = ["charge","charger","ambusher"].includes(a.kind) ? 0 : ["slam","bruiser","breath","draco_melee"].includes(a.kind) ? 1 : 2;
       column = group*3+Math.min(2,Math.floor(progress*3)); key = kind+"-windup";
-    } else if (e.charging || elapsed < 550) {
-      column = e.charging ? 6+Math.floor(performance.now()/110)%3 : 6+Math.min(2,Math.floor(elapsed/140)); key = kind+"-idle";
+    } else if (e.charging || elapsed < 550 || e.animationUntil*1000 > Date.now()) {
+      const releaseElapsed = elapsed < 550 ? elapsed : 450-(e.animationUntil*1000-Date.now());
+      column = e.charging ? 6+Math.floor(performance.now()/110)%3 : 6+Math.max(0,Math.min(2,Math.floor(releaseElapsed/140))); key = kind+"-idle";
     } else if (e.kind === "draco") {
       column = (e.moving ? 3 : 0)+Math.floor(performance.now()/(e.moving ? 120 : 250))%3; key = "draco-idle";
     } else return false;
@@ -285,6 +287,28 @@
     ctx.fillStyle='#16271f';ctx.fillRect(e.x-30,barY,60,6);ctx.fillStyle=friendly?'#8ec995':'#d88c83';ctx.fillRect(e.x-29,barY+1,58*clamp(e.hp/Math.max(1,e.maxHp)),4);ctx.restore();
   }
   function puzzleObject(ctx,sigil,x,y,totem=false) {
+    if (sigil === 'STAR') {
+      // Draw the five-point sigil directly so both the rune and clue agree.
+      ctx.save(); ctx.translate(Math.round(x),Math.round(y));
+      ctx.fillStyle='#17171e'; ctx.fillRect(totem?-24:-38,totem?-37:-24,totem?48:76,totem?73:46);
+      ctx.fillStyle='#363640'; ctx.strokeStyle='#696071'; ctx.lineWidth=3;
+      ctx.beginPath();
+      const frame=totem?[[-19,-31],[19,-31],[19,30],[-19,30]]:[[-30,-23],[30,-23],[37,18],[-37,18]];
+      frame.forEach(([px,py],i)=>i?ctx.lineTo(px,py):ctx.moveTo(px,py));ctx.closePath();ctx.fill();ctx.stroke();
+      ctx.fillStyle='#24252f';
+      ctx.fillRect(totem?-14:-24,totem?-23:-18,totem?28:48,totem?48:30);
+      ctx.fillStyle='#a97b34';
+      for(const [px,py] of frame) { ctx.fillRect(px-4,py-3,8,6);ctx.fillStyle='#e0b45d';ctx.fillRect(px-3,py-3,6,2);ctx.fillStyle='#a97b34'; }
+      const cy=totem?0:-4, outer=totem?14:19, inner=outer*.44;
+      ctx.beginPath();
+      for(let i=0;i<10;i++) {
+        const angle=-Math.PI/2+i*Math.PI/5, radius=i%2?inner:outer;
+        const px=Math.round(Math.cos(angle)*radius),py=Math.round(cy+Math.sin(angle)*radius);
+        if(i)ctx.lineTo(px,py);else ctx.moveTo(px,py);
+      }
+      ctx.closePath();ctx.fillStyle='#eee6da';ctx.strokeStyle='#b7a9a0';ctx.lineWidth=1;ctx.fill();ctx.stroke();
+      ctx.restore();return true;
+    }
     const index=['SUN','MOON','LEAF','FLAME','WAVE','STAR'].indexOf(sigil);
     return stamp(ctx,'puzzle-objects',index<0?6:index,totem?1:0,96,x-48,y-48,96);
   }

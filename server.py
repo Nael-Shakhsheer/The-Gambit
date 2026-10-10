@@ -57,7 +57,7 @@ class Handler(BaseHTTPRequestHandler):
             return
         if parsed.path == "/":
             return self._file("index.html", "text/html; charset=utf-8")
-        if parsed.path in ("/app.js", "/audio.js", "/coordination.js", "/progression.js", "/town-sprites.js", "/combat-environment.js", "/movement.js", "/equipment-comparison.js", "/style.css"):
+        if parsed.path in ("/app.js", "/audio.js", "/coordination.js", "/progression.js", "/town-sprites.js", "/combat-environment.js", "/ability-animations.js", "/movement.js", "/equipment-comparison.js", "/style.css"):
             name = parsed.path.lstrip("/")
             mime = "text/javascript; charset=utf-8" if name.endswith(".js") else "text/css; charset=utf-8"
             return self._file(name, mime)

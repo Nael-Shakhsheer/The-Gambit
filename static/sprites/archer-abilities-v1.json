@@ -1,0 +1,43 @@
+{
+  "descriptions": [
+    "drawing the normal bow, pulling the string fully back, then releasing an arrow",
+    "lowering into a hunter stance, focusing their gaze and bow, then stepping lightly into a ready stance",
+    "bringing out a massive ornate longbow taller than the hero, bracing and drawing an enormous glowing arrow with both arms, then releasing the huge shot"
+  ],
+  "directions": [
+    "south",
+    "south-east",
+    "east",
+    "north-east",
+    "north",
+    "north-west",
+    "west",
+    "south-west"
+  ],
+  "hero": "Archer",
+  "rows": 8,
+  "cell": 96,
+  "groups": {
+    "special": [
+      3,
+      4,
+      5
+    ],
+    "light": [
+      0,
+      1,
+      2
+    ],
+    "ultimate": [
+      6,
+      7,
+      8
+    ]
+  },
+  "anchor": [
+    48,
+    78
+  ],
+  "columns": 9,
+  "source": "art/ability-animations/source/archer-v1.png"
+}

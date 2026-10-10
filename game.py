@@ -19,6 +19,7 @@ import progression
 import combat_environment as terrain
 import enemy_roles
 import combat_encounters
+import ability_animations
 
 WIDTH = 960
 HEIGHT = 540
@@ -288,7 +289,7 @@ class GameWorld:
                       "chargeUntil", "activatesAt", "nextHitAt", "trackUntil", "recoverUntil",
                       "roleReadyAt", "roleRecoverUntil", "roleChargeUntil", "warnAt", "readyAt",
                       "terrainHitAt", "stunResistUntil", "aiDodgeUntil", "aiStrafeAt", "spawnAt", "endsAt",
-                      "rootUntil", "rootResistUntil", "pursuitUntil", "rescueGuardUntil", "rescueGuardReadyAt", "vulnerableUntil"}
+                      "rootUntil", "rootResistUntil", "pursuitUntil", "rescueGuardUntil", "rescueGuardReadyAt", "vulnerableUntil", "emergeUntil"}
         if isinstance(value, dict):
             for key, item in value.items():
                 if key == "abilityCooldowns":
@@ -470,6 +471,7 @@ class GameWorld:
                     "moving": bool(player.get("dx", 0) or player.get("dy", 0)),
                     "animation": player.get("animation", "idle"),
                     "animationUntil": player.get("animationUntil", 0),
+                    "abilityAnimation": ability_animations.view(player, now, room['stage']),
                 "abilityCount": len(player["abilities"]),
                     "invisible": player["invisibleUntil"] > time.monotonic(),
                     "indoors": bool(player.get("townInterior")),
@@ -542,7 +544,8 @@ class GameWorld:
                 ],
                 "chat": room["chat"][-40:], "puzzle": player_puzzle_view(room["puzzle"], player_id,
                     (room["players"][player_id]["x"], room["players"][player_id]["y"])),
-                "effects": [dict(effect) for effect in room["effects"]],
+                "effects": [dict(effect, elapsed=max(0, now-effect['startedAt']))
+                            if effect['type'] == 'ability_cast' else dict(effect) for effect in room["effects"]],
                 "environment": terrain.view(room, time.monotonic()),
                 "objective": combat_encounters.view(room, time.monotonic()),
                 "bossIntel": boss_ai.view(room),
@@ -556,6 +559,7 @@ class GameWorld:
                 "summons": [{key: summon[key] for key in (
                     "id", "ownerId", "abilityId", "name", "kind", "affinity", "color", "x", "y", "hp", "maxHp",
                     "damageTaken", "facingX", "facingY", "moving", "animationUntil")}
+                    | {"emergeRemaining": max(0, summon.get('emergeUntil', 0)-now)}
                     for summon in room.get("summons", [])],
                 "projectiles": [dict(projectile) for projectile in room["projectiles"]],
                 "stageWave": room["stageWave"], "stageWaves": room["stageWaves"],
@@ -1360,6 +1364,7 @@ class GameWorld:
         abilities = {ability[0]: ability_record(ability) for ability in ABILITY_SETS.get(player["class"], [])}
         return [
             {**abilities[ability_id], "cooldownLeft": math.ceil(max(0, player["abilityCooldowns"].get(ability_id, 0) - now)),
+             "cooldownRemaining": max(0, player["abilityCooldowns"].get(ability_id, 0) - now),
              "summonAlive": ability_id in player.get("activeSummons", {})}
             for ability_id in player["abilities"] if ability_id in abilities
         ]
@@ -2024,7 +2029,8 @@ class GameWorld:
                   "x": max(28, min(WIDTH - 28, player["x"] + offset)),
                   "y": max(30, min(HEIGHT - 30, player["y"] - 28)),
                   "facingX": player.get("facingX", 1), "facingY": player.get("facingY", 0),
-                  "moving": False, "animationUntil": 0, "lastTick": now, "lastAttack": now}
+                  "moving": False, "animationUntil": 0, "lastTick": now, "lastAttack": now,
+                  "emergeUntil": now + 1.1}
         telemetry.tick(room, now)
         room.setdefault("summons", []).append(summon)
         telemetry.summon_spawn(room, summon, now)
@@ -2363,6 +2369,10 @@ class GameWorld:
         if player["mana"] < ability["manaCost"]:
             raise ValueError(f"{ability['name']} needs {ability['manaCost']} mana.")
         player["mana"] -= ability["manaCost"]
+        cast_origin = (player['x'], player['y'])
+        cast_target = choose(nearby) or player
+        cast_target_position = (cast_target['x'], cast_target['y'])
+        cast_recipient_ids = []
         if ability["attackType"] == "ultimate":
             telemetry.add(room, player["id"], "ultimateCasts", 1)
         if ability["kind"] != "summon":
@@ -2399,7 +2409,7 @@ class GameWorld:
             if ranged_class:
                 self._launch_projectile(room, side="hero", owner_id=player["id"], target_id=cover_target["id"],
                     x=player["x"], y=player["y"]-8, damage=round(base_damage*power),
-                    color=CLASSES[player["class"]]["color"], attack_class=player["class"])
+                    color=CLASSES[player["class"]]["color"], attack_class=player["class"], ability_id=ability_id)
             else:
                 terrain.damage_cover(self, room, cover_target, round(base_damage*power))
         elif kind in ("damage", "stun", "bleed", "dash_strike"):
@@ -2462,6 +2472,7 @@ class GameWorld:
                 if not reach or math.hypot(member["x"] - player["x"], member["y"] - player["y"]) <= reach:
                     if member["wardUntil"] <= now or power <= member.get("wardFactor", 1):
                         member["wardUntil"], member["wardFactor"], member["wardSource"] = now+8, power, player["id"]
+                        cast_recipient_ids.append(member['id'])
         elif kind == "self_damage":
             player["damageBoostUntil"], player["damageBoost"] = now + 8, power
             player["damageBoostSource"] = player["id"]
@@ -2469,21 +2480,26 @@ class GameWorld:
             for member in room["players"].values():
                 member["damageBoostUntil"], member["damageBoost"] = now + 8, power
                 member["damageBoostSource"] = player["id"]
+                cast_recipient_ids.append(member['id'])
         elif kind == "team_heal":
             for member in healing_targets:
                 healed = min(member["maxHp"]-member["hp"], power)
                 member["hp"] += healed
+                if healed > 0:
+                    cast_recipient_ids.append(member['id'])
                 telemetry.add(room, player["id"], "healingGiven", healed)
         elif kind == "revive":
             fallen = [member for member in room["players"].values() if member["status"] in ("downed", "fallen") and math.hypot(member["x"] - player["x"], member["y"] - player["y"]) <= reach]
             target = min(fallen, key=lambda member: math.hypot(member["x"] - player["x"], member["y"] - player["y"]))
             self._restore_ally(room, player, target, 0.45)
+            cast_recipient_ids.append(target['id'])
             self._say(room, "system", "The Gauntlet", f"{player['name']} quickly revived {target['name']}.")
         elif kind == "team_revive":
             revived = []
             for target in room["players"].values():
                 if target["status"] in ("downed", "fallen"):
                     self._restore_ally(room, player, target, 0.4)
+                    cast_recipient_ids.append(target['id'])
                     revived.append(target["name"])
             self._say(room, "system", "The Gauntlet", f"{player['name']} called every fallen ally back: {', '.join(revived)}.")
         elif kind == "speed":
@@ -2491,6 +2507,7 @@ class GameWorld:
         elif kind == "team_speed":
             for member in room["players"].values():
                 member["speedBoostUntil"], member["speedBoost"] = now + 6, power
+                cast_recipient_ids.append(member['id'])
         elif kind == "invisible":
             player["invisibleUntil"] = now + 5
         elif kind == "taunt":
@@ -2509,6 +2526,7 @@ class GameWorld:
                 distance = max(1, math.hypot(dx, dy))
                 terrain.move(room, player, player["x"]+dx/distance*reach, player["y"]+dy/distance*reach)
                 tactical.dashed(player, now, math.hypot(player['x']-start_x, player['y']-start_y))
+        ability_animations.record(room, player, ability, cast_origin, cast_target_position, cast_recipient_ids)
         self._say(room, "system", "The Gauntlet", f"{player['name']} used {ability['name']}.")
 
     @staticmethod

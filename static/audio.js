@@ -110,7 +110,7 @@
       const prior=old.players?.find(p=>p.id===player.id);
       if(!prior || prior.class!==player.class) continue;
       const local=player.id===room.you, options={x:player.x,y:player.y,local,gain:local ? .65 : .35,priority:local?2:1};
-      if(sameCombat && player.status==='alive' && player.animationUntil>prior.animationUntil) {
+      if(sameCombat && player.status==='alive' && player.animationUntil>prior.animationUntil && !effects.some(e=>e.type==='ability_cast' && e.ownerId===player.id)) {
         const cue=player.animation==='ultimate'?'ultimate':player.animation==='special'?'special':LIGHT[player.class] || 'magic';
         play(cue,options);
       }
@@ -130,6 +130,12 @@
     for(const effect of effects) {
       if(seen.has(effect.id)) continue;
       seen.add(effect.id);
+      if(effect.type==='ability_cast' && old.phase==='combat' && ['combat','chest','stage_exit','cleared'].includes(room.phase)) {
+        const local=effect.ownerId===room.you;
+        const cue=effect.attackType==='ultimate'?'ultimate':effect.attackType==='special'?'special':LIGHT[effect.heroClass] || 'magic';
+        play(cue,{x:effect.x,y:effect.y,local,gain:local?.65:.35,priority:effect.attackType==='ultimate'?3:local?2:1});
+        continue;
+      }
       const cues={dash:'dash',heal:'heal',impact:'impact',puzzle_solved:'clear',ambush:'warning',enemy_attack:LIGHT[effect.class] || 'blade'};
       const cue=cues[effect.type];
       if(cue && (room.phase==='combat' || ['heal','puzzle_solved'].includes(effect.type))) play(cue,{x:effect.x,y:effect.y,gain:effect.type==='enemy_attack'?.22:.4,priority:effect.type==='dash'?1:0});

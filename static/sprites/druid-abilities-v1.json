@@ -1,0 +1,43 @@
+{
+  "descriptions": [
+    "planting the staff and thrusting a thorn spell forward",
+    "lowering to a deep crouch, one palm pressed flat against the floor, then tracing a glowing summoning circle while still crouched",
+    "kneeling on the ground with the staff planted beside them, both hands carving a large summoning circle, then rising with arms spread as nature power erupts"
+  ],
+  "directions": [
+    "south",
+    "south-east",
+    "east",
+    "north-east",
+    "north",
+    "north-west",
+    "west",
+    "south-west"
+  ],
+  "hero": "Druid",
+  "rows": 8,
+  "cell": 96,
+  "groups": {
+    "special": [
+      3,
+      4,
+      5
+    ],
+    "light": [
+      0,
+      1,
+      2
+    ],
+    "ultimate": [
+      6,
+      7,
+      8
+    ]
+  },
+  "anchor": [
+    48,
+    80
+  ],
+  "columns": 9,
+  "source": "art/ability-animations/source/druid-v1.png"
+}

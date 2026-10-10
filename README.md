@@ -4,6 +4,15 @@ A browser client with a Python authoritative game server. The game supports room
 
 ## Run locally
 
+After the October 8 storage cleanup, original visual art, import ZIPs and older
+releases are stored in the sibling
+`../The-Gauntlet-Complete-Backup-2026-10-08.zip`. Visual source/workflow paths under
+`art/` referenced below are inside its `The-Gauntlet/art/` folder; extract those
+folders when editing the original artwork. Runtime sprites and sounds remain
+in `static/`, and `art/audio/` remains available for audio rebuilding. The game
+runs without extracting the backup. OneDrive cloud sync of the backup has not
+been verified.
+
 Requires Python 3.10 or newer. No third-party Python packages are required.
 
 Run: python server.py
@@ -25,9 +34,24 @@ instructions are in `art/audio/WORKFLOW.md`.
   your equipped Light at its normal cooldown. A quick click/tap also works.
   Release, switch tabs, or open a dialog to stop. Movement and attack can be held together.
 - Special: Q. Ultimate: X. Both keys can be changed from Controls & keybindings in the main menu.
+- Light, Special and Ultimate now show distinct ability icons. A glowing red
+  circle fills around each icon while recharging, then turns green when ready
+  to use. Druid summons show Active until they die; low mana is labeled. All 48
+  designs, exact prompts and rebuild steps are in `art/ability-icons/WORKFLOW.md`.
+- Heroes now perform class-specific Light, Special and Ultimate casting poses.
+  Druid summons start with a ground crouch and summoning circle; Archer Ultimates
+  use a massive bow, and Bard Ultimates bring out a concert harp. Every Ultimate
+  erupts in colored energy and displays its ability name for teammates. Enemy
+  anticipation/release effects follow their real attacks, and all four summons
+  have emergence and elemental attack effects. These visuals do not change cast
+  costs, damage, cooldowns or movement. Sources, exact prompts, mirrored exports
+  and a local animation viewer are in `art/ability-animations/WORKFLOW.md`.
 - Every hero's Ultimate has a 15-second cooldown, including when a combat stage
   starts. New waves do not restart that timer. Mana costs are unchanged.
 - Equipped utilities: 1, 2, and 3 (the number row or numpad), or click/tap their HUD slots.
+  All three appear below Help/Gather/Enemy. Tool 1 and Tool 2 flank the central
+  ability controls; click either tool slot to open the pouch. Movement arrows
+  appear on touch devices and are hidden for mouse/keyboard play.
 - Revive: stand near a downed teammate and hold E or Revive. Downed allies have
   no expiry countdown; they stay revivable while someone is standing. Reviving
   takes 1.8 seconds, or 0.8 for Healers. Everyone down at once is still a party wipe.

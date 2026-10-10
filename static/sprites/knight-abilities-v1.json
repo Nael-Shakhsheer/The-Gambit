@@ -1,0 +1,43 @@
+{
+  "descriptions": [
+    "drawing sword and shield back, driving shield and sword forward, then following through the swing",
+    "planting boots wide and raising the shield defensively, then lifting the sword to rally allies",
+    "raising the greatsword overhead with both arms and bracing the shield, gathering golden power, then bringing the blade down in a mighty ground strike"
+  ],
+  "directions": [
+    "south",
+    "south-east",
+    "east",
+    "north-east",
+    "north",
+    "north-west",
+    "west",
+    "south-west"
+  ],
+  "hero": "Knight",
+  "rows": 8,
+  "cell": 96,
+  "groups": {
+    "special": [
+      3,
+      4,
+      5
+    ],
+    "light": [
+      0,
+      1,
+      2
+    ],
+    "ultimate": [
+      6,
+      7,
+      8
+    ]
+  },
+  "anchor": [
+    48,
+    84
+  ],
+  "columns": 9,
+  "source": "art/ability-animations/source/knight-v1.png"
+}

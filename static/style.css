@@ -808,26 +808,38 @@ body.is-playing #puzzlePanel, body.is-playing #defeatPanel, body.is-playing #vic
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 
-/* Utilities flank the interaction at the centre of the bottom HUD. */
+/* Tools flank the ability space; utilities sit directly below party pings. */
 body.is-playing #gameHud { grid-template-columns: minmax(155px,220px) minmax(240px,1fr) minmax(155px,220px); }
 .hud-middle { grid-column: 2; }
 .hud-actions { position: absolute; right: 16px; bottom: 10px; }
-.utility-hotbar { width: 100%; grid-template-columns: minmax(44px,1fr) minmax(90px,150px) minmax(92px,1fr); gap: 8px; align-items: center; }
-.utility-side { display: flex; gap: 6px; min-width: 0; }
-#utilityLeft { justify-content: flex-end; }
-#utilityRight { justify-content: flex-start; }
-.utility-slot { flex: 0 0 44px; height: 48px; padding: 4px; }
+.tool-hotbar { display: grid; width: 100%; grid-template-columns: 60px minmax(0,1fr) 60px; gap: 12px; align-items: center; }
+.tool-side { display: flex; min-width: 0; justify-content: center; }
+.tool-slot { display: grid; justify-items: center; align-content: center; gap: 4px; width: 60px; min-height: 64px; padding: 5px; color: #f0e5c9; background: #172b22; border: 2px solid #738263; border-radius: 0; box-shadow: inset 0 0 0 1px #0c2117; }
+.tool-caption { font-size: 10px; white-space: nowrap; color: #f1daa0; }
+.tool-icon { min-height: 28px; font-size: 20px; }
+.tool-icon .item-sprite { width: 32px; height: 32px; border: 0; background: transparent; }
+.ability-center { display: grid; gap: 6px; justify-items: center; min-width: 0; min-height: 64px; align-content: center; }
+.ability-center .ability-buttons { flex-wrap: nowrap; width: 100%; }
+body.is-playing .ability-center .ability-key { min-width: 0; flex: 1; }
+.utility-hotbar { width: 100%; grid-template-columns: repeat(3,minmax(44px,1fr)); gap: 6px; align-items: center; }
+.utility-slot { height: 48px; padding: 4px; grid-template-columns: 1fr; }
 .utility-name { display: none; }
 .utility-icon .item-sprite { width: 28px; height: 28px; }
 #interactButton { font-size: 11px; min-height: 48px; padding: 6px; }
-#interactButton.hidden { display: block !important; visibility: hidden; }
+@media (hover:hover) and (pointer:fine) {
+  body.is-playing .arena-controls { display: none; }
+}
 @media (max-width:700px) {
   body.is-playing #gameHud { grid-template-columns: 1fr; grid-template-rows: 30px 1fr; }
-  .hud-middle { grid-column: 1; grid-template-rows: 98px 48px; }
+  .hud-middle { grid-column: 1; grid-template-columns: 1fr; grid-template-rows: auto auto; }
   .hud-actions { position: static; }
-  .utility-hotbar { grid-column: 1 / -1; grid-template-columns: 1fr minmax(100px,150px) 1fr; gap: 6px; }
-  .utility-slot { grid-template-columns: 1fr; height: 48px; }
-  .utility-side { gap: 4px; }
+  .tool-hotbar { grid-template-columns: 52px minmax(0,1fr) 52px; gap: 6px; }
+  .tool-slot { width: 52px; }
+  .utility-hotbar { gap: 4px; }
+  .utility-slot { height: 44px; }
+  .ability-center { width: 100%; }
+  body.is-playing .ability-center .ability-key { font-size: 11px; }
+  .hud-actions { grid-template-columns: repeat(3,minmax(0,1fr)); }
 }
 @media (max-height:500px) and (min-width:701px) {
   body.is-playing #gameHud { grid-template-columns: 120px minmax(250px,1fr) 170px; }
@@ -854,3 +866,43 @@ body.is-playing #gameHud { grid-template-columns: minmax(155px,220px) minmax(240
 .audio-volume input { width: 100%; min-height: 32px; accent-color: #d4ab61; }
 .audio-mute { display: flex; align-items: center; gap: 12px; margin: 16px 0; }
 .audio-mute input { width: 20px; height: 20px; accent-color: #d4ab61; }
+
+/* Literal ability sprites framed by a clockwise cooldown ring. */
+@media (min-width:701px) {
+  body.is-playing #gameHud { min-height:124px; }
+  body.is-playing #world { bottom:124px; height:calc(100dvh - 124px); }
+  .coordination-tools { bottom:144px; }
+  body.is-playing .arena-controls { bottom:136px; }
+}
+.ability-choice-heading { display:flex; align-items:center; gap:10px; }
+.ability-choice-heading .ability-sprite { flex:0 0 44px; width:44px; height:44px; image-rendering:pixelated; }
+.ability-choice-heading span { color:inherit; font-size:inherit; }
+body.is-playing .ability-center .ability-buttons { display:flex; justify-content:center; gap:6px; }
+body.is-playing .ability-center .ability-icon-button {
+  --ring-color:#ff5757; display:grid; justify-items:center; align-content:start; gap:3px;
+  flex:0 1 92px; min-width:56px; min-height:100px; padding:3px 2px;
+  background:transparent; border:0; box-shadow:none; border-radius:8px;
+  opacity:1; touch-action:none; color:#f1e8d2;
+}
+.ability-icon-button .ability-orb { position:relative; display:grid; place-items:center; width:64px; height:64px; border-radius:50%; background:#13261ff2; }
+.ability-icon-button .ability-sprite { width:48px; height:48px; image-rendering:pixelated; pointer-events:none; }
+.ability-ring { position:absolute; inset:0; width:100%; height:100%; overflow:visible; pointer-events:none; transform:rotate(-90deg); }
+.ability-ring-track { stroke:#652d32; stroke-width:4; }
+.ability-ring-fill { stroke:var(--ring-color); stroke-width:4; stroke-dasharray:100 100; stroke-linecap:round; filter:drop-shadow(0 0 3px var(--ring-color)); }
+.ability-icon-button[data-charge=ready] { --ring-color:#70f09b; }
+.ability-icon-button[data-charge=ready] .ability-ring-track { stroke:#335d42; }
+.ability-icon-button[data-charge=charging] .ability-sprite { opacity:.72; }
+.ability-icon-button[data-charge=active] .ability-sprite { opacity:.9; }
+.ability-icon-button .ability-name { font-size:10px; line-height:1.15; min-height:23px; max-width:100%; text-align:center; }
+.ability-icon-button .ability-key-hint { color:#cbd6c3; font-size:9px; line-height:1.2; }
+.ability-icon-button[data-charge=ready] .ability-key-hint { color:#9eebb4; }
+.ability-icon-button:focus-visible .ability-orb { outline:2px solid #ffe08a; outline-offset:4px; }
+.ability-icon-button:not(:disabled):hover .ability-orb { background:#294338; }
+@media (max-width:700px) {
+  body.is-playing .ability-center .ability-buttons { gap:2px; }
+  body.is-playing .ability-center .ability-icon-button { flex:1 1 0; min-width:48px; min-height:91px; }
+  .ability-icon-button .ability-orb { width:54px; height:54px; }
+  .ability-icon-button .ability-sprite { width:40px; height:40px; }
+  .ability-icon-button .ability-name { font-size:9px; }
+  .ability-icon-button .ability-key-hint { font-size:8px; }
+}

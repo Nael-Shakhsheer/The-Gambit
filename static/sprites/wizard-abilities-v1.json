@@ -1,0 +1,43 @@
+{
+  "descriptions": [
+    "drawing the blue crystal staff back, focusing a small spell on its tip, then thrusting it forward",
+    "sweeping the crystal staff across the body while the free hand channels magic, then extending an open palm",
+    "lifting the crystal staff overhead with both hands, arching backward as robes billow, then stretching both arms wide as arcane energy erupts"
+  ],
+  "directions": [
+    "south",
+    "south-east",
+    "east",
+    "north-east",
+    "north",
+    "north-west",
+    "west",
+    "south-west"
+  ],
+  "hero": "Wizard",
+  "rows": 8,
+  "cell": 96,
+  "groups": {
+    "special": [
+      3,
+      4,
+      5
+    ],
+    "light": [
+      0,
+      1,
+      2
+    ],
+    "ultimate": [
+      6,
+      7,
+      8
+    ]
+  },
+  "anchor": [
+    48,
+    83
+  ],
+  "columns": 9,
+  "source": "art/ability-animations/source/wizard-v1.png"
+}

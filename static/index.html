@@ -93,6 +93,7 @@
               <button class="secondary" data-ping="gather">Gather</button>
               <button class="secondary" data-ping="enemy" aria-pressed="false">Enemy</button>
             </div>
+            <div id="utilityHotbar" class="utility-hotbar" aria-label="Equipped utility items"></div>
             <button id="shareClue" class="secondary hidden">Share clue</button>
             <button id="targetButton" class="secondary hidden">Auto target</button>
           </div>
@@ -159,9 +160,15 @@
               <div class="resource-meter mana-meter"><span id="manaLabel">MANA 100 / 100</span><div class="resource-track"><div id="manaFill"></div></div></div>
             </div>
             <div class="hud-middle">
-              <div id="abilityButtons" class="ability-buttons"></div>
+              <div id="toolHotbar" class="tool-hotbar" aria-label="Equipped tools">
+                <div id="toolLeft" class="tool-side"></div>
+                <div class="ability-center">
+                  <div id="abilityButtons" class="ability-buttons"></div>
+                  <button id="interactButton" class="secondary hidden">Interact</button>
+                </div>
+                <div id="toolRight" class="tool-side"></div>
+              </div>
               <div class="hud-actions"><button id="attackButton" class="primary">Attack</button><button id="dashButton" class="secondary hidden">Space · Dash</button><button id="reviveButton" class="secondary">Revive</button></div>
-              <div id="utilityHotbar" class="utility-hotbar" aria-label="Equipped utility items"><div id="utilityLeft" class="utility-side"></div><button id="interactButton" class="secondary hidden">Interact</button><div id="utilityRight" class="utility-side"></div></div>
               <p id="combatNotice" class="notice" role="status"></p>
             </div>
           </div>
@@ -204,6 +211,7 @@
   </dialog>
   <script src="town-sprites.js" defer></script>
   <script src="combat-environment.js" defer></script>
+  <script src="ability-animations.js" defer></script>
   <script src="movement.js" defer></script>
   <script src="audio.js" defer></script>
   <script src="equipment-comparison.js" defer></script>

@@ -1,0 +1,1687 @@
+{
+  "abilities": [
+    {
+      "name": "Shield Bash",
+      "alpha_bounds": [
+        200,
+        33,
+        366,
+        370
+      ],
+      "crop": [
+        0,
+        0,
+        611,
+        429
+      ],
+      "source_size": [
+        1222,
+        1287
+      ],
+      "id": "shield_bash",
+      "hero": "Knight",
+      "art_size": [
+        47,
+        48
+      ],
+      "source": "source/knight.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-shield_bash-v1.png",
+      "atlas_cell": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Cleave",
+      "alpha_bounds": [
+        44,
+        32,
+        437,
+        374
+      ],
+      "crop": [
+        611,
+        0,
+        611,
+        429
+      ],
+      "source_size": [
+        1222,
+        1287
+      ],
+      "id": "cleaving_arc",
+      "hero": "Knight",
+      "art_size": [
+        48,
+        41
+      ],
+      "source": "source/knight.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-cleaving_arc-v1.png",
+      "atlas_cell": [
+        1,
+        0
+      ]
+    },
+    {
+      "name": "Iron Wall",
+      "alpha_bounds": [
+        200,
+        5,
+        307,
+        424
+      ],
+      "crop": [
+        0,
+        429,
+        611,
+        429
+      ],
+      "source_size": [
+        1222,
+        1287
+      ],
+      "id": "iron_wall",
+      "hero": "Knight",
+      "art_size": [
+        35,
+        48
+      ],
+      "source": "source/knight.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-iron_wall-v1.png",
+      "atlas_cell": [
+        2,
+        0
+      ]
+    },
+    {
+      "name": "Challenge",
+      "alpha_bounds": [
+        35,
+        14,
+        499,
+        415
+      ],
+      "crop": [
+        611,
+        429,
+        611,
+        429
+      ],
+      "source_size": [
+        1222,
+        1287
+      ],
+      "id": "challenge",
+      "hero": "Knight",
+      "art_size": [
+        48,
+        40
+      ],
+      "source": "source/knight.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-challenge-v1.png",
+      "atlas_cell": [
+        3,
+        0
+      ]
+    },
+    {
+      "name": "Last Stand",
+      "alpha_bounds": [
+        131,
+        0,
+        434,
+        387
+      ],
+      "crop": [
+        0,
+        858,
+        611,
+        429
+      ],
+      "source_size": [
+        1222,
+        1287
+      ],
+      "id": "guardian_cry",
+      "hero": "Knight",
+      "art_size": [
+        48,
+        43
+      ],
+      "source": "source/knight.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-guardian_cry-v1.png",
+      "atlas_cell": [
+        4,
+        0
+      ]
+    },
+    {
+      "name": "Earthshaker",
+      "alpha_bounds": [
+        21,
+        0,
+        503,
+        394
+      ],
+      "crop": [
+        611,
+        858,
+        611,
+        429
+      ],
+      "source_size": [
+        1222,
+        1287
+      ],
+      "id": "earthshaker",
+      "hero": "Knight",
+      "art_size": [
+        48,
+        38
+      ],
+      "source": "source/knight.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-earthshaker-v1.png",
+      "atlas_cell": [
+        5,
+        0
+      ]
+    },
+    {
+      "name": "Arc Bolt",
+      "alpha_bounds": [
+        44,
+        44,
+        437,
+        436
+      ],
+      "crop": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "arc_burst",
+      "hero": "Wizard",
+      "art_size": [
+        48,
+        48
+      ],
+      "source": "source/wizard.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-arc_burst-v1.png",
+      "atlas_cell": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "Frost Lance",
+      "alpha_bounds": [
+        67,
+        57,
+        394,
+        437
+      ],
+      "crop": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "frost_lance",
+      "hero": "Wizard",
+      "art_size": [
+        43,
+        48
+      ],
+      "source": "source/wizard.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-frost_lance-v1.png",
+      "atlas_cell": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Spell Surge",
+      "alpha_bounds": [
+        56,
+        39,
+        425,
+        433
+      ],
+      "crop": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "spell_surge",
+      "hero": "Wizard",
+      "art_size": [
+        47,
+        48
+      ],
+      "source": "source/wizard.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-spell_surge-v1.png",
+      "atlas_cell": [
+        2,
+        1
+      ]
+    },
+    {
+      "name": "Blink",
+      "alpha_bounds": [
+        52,
+        45,
+        417,
+        427
+      ],
+      "crop": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "blink",
+      "hero": "Wizard",
+      "art_size": [
+        47,
+        48
+      ],
+      "source": "source/wizard.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-blink-v1.png",
+      "atlas_cell": [
+        3,
+        1
+      ]
+    },
+    {
+      "name": "Astral Aegis",
+      "alpha_bounds": [
+        38,
+        62,
+        455,
+        378
+      ],
+      "crop": [
+        0,
+        1024,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "team_aegis",
+      "hero": "Wizard",
+      "art_size": [
+        48,
+        40
+      ],
+      "source": "source/wizard.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-team_aegis-v1.png",
+      "atlas_cell": [
+        4,
+        1
+      ]
+    },
+    {
+      "name": "Arcane Cataclysm",
+      "alpha_bounds": [
+        31,
+        7,
+        461,
+        467
+      ],
+      "crop": [
+        512,
+        1024,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "arcane_cataclysm",
+      "hero": "Wizard",
+      "art_size": [
+        47,
+        48
+      ],
+      "source": "source/wizard.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-arcane_cataclysm-v1.png",
+      "atlas_cell": [
+        5,
+        1
+      ]
+    },
+    {
+      "name": "Quick Shot",
+      "alpha_bounds": [
+        99,
+        132,
+        356,
+        348
+      ],
+      "crop": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "piercing_volley",
+      "hero": "Archer",
+      "art_size": [
+        48,
+        47
+      ],
+      "source": "source/archer.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-piercing_volley-v1.png",
+      "atlas_cell": [
+        0,
+        2
+      ]
+    },
+    {
+      "name": "Snare Shot",
+      "alpha_bounds": [
+        65,
+        117,
+        364,
+        369
+      ],
+      "crop": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "snare_shot",
+      "hero": "Archer",
+      "art_size": [
+        47,
+        48
+      ],
+      "source": "source/archer.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-snare_shot-v1.png",
+      "atlas_cell": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "Eagle Eye",
+      "alpha_bounds": [
+        66,
+        68,
+        413,
+        397
+      ],
+      "crop": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "eagle_eye",
+      "hero": "Archer",
+      "art_size": [
+        48,
+        46
+      ],
+      "source": "source/archer.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-eagle_eye-v1.png",
+      "atlas_cell": [
+        2,
+        2
+      ]
+    },
+    {
+      "name": "Quickstep",
+      "alpha_bounds": [
+        48,
+        67,
+        400,
+        398
+      ],
+      "crop": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "quickstep",
+      "hero": "Archer",
+      "art_size": [
+        48,
+        48
+      ],
+      "source": "source/archer.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-quickstep-v1.png",
+      "atlas_cell": [
+        3,
+        2
+      ]
+    },
+    {
+      "name": "Rain of Arrows",
+      "alpha_bounds": [
+        74,
+        22,
+        390,
+        390
+      ],
+      "crop": [
+        0,
+        1024,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "rain_of_arrows",
+      "hero": "Archer",
+      "art_size": [
+        48,
+        48
+      ],
+      "source": "source/archer.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-rain_of_arrows-v1.png",
+      "atlas_cell": [
+        4,
+        2
+      ]
+    },
+    {
+      "name": "Deadeye",
+      "alpha_bounds": [
+        42,
+        18,
+        415,
+        387
+      ],
+      "crop": [
+        512,
+        1024,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "deadeye",
+      "hero": "Archer",
+      "art_size": [
+        48,
+        45
+      ],
+      "source": "source/archer.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-deadeye-v1.png",
+      "atlas_cell": [
+        5,
+        2
+      ]
+    },
+    {
+      "name": "Radiant Flask",
+      "alpha_bounds": [
+        76,
+        80,
+        404,
+        396
+      ],
+      "crop": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "radiant_flask",
+      "hero": "Cleric",
+      "art_size": [
+        48,
+        47
+      ],
+      "source": "source/cleric.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-radiant_flask-v1.png",
+      "atlas_cell": [
+        0,
+        3
+      ]
+    },
+    {
+      "name": "Sanctified Throw",
+      "alpha_bounds": [
+        53,
+        112,
+        389,
+        364
+      ],
+      "crop": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "sanctified_throw",
+      "hero": "Cleric",
+      "art_size": [
+        48,
+        45
+      ],
+      "source": "source/cleric.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-sanctified_throw-v1.png",
+      "atlas_cell": [
+        1,
+        3
+      ]
+    },
+    {
+      "name": "Splash Mend",
+      "alpha_bounds": [
+        73,
+        62,
+        408,
+        450
+      ],
+      "crop": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "splash_mend",
+      "hero": "Cleric",
+      "art_size": [
+        44,
+        48
+      ],
+      "source": "source/cleric.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-splash_mend-v1.png",
+      "atlas_cell": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "Blessed Vial",
+      "alpha_bounds": [
+        84,
+        31,
+        355,
+        481
+      ],
+      "crop": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "blessed_vial",
+      "hero": "Cleric",
+      "art_size": [
+        35,
+        48
+      ],
+      "source": "source/cleric.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-blessed_vial-v1.png",
+      "atlas_cell": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "Sanctuary Rain",
+      "alpha_bounds": [
+        65,
+        0,
+        414,
+        435
+      ],
+      "crop": [
+        0,
+        1024,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "sanctuary_rain",
+      "hero": "Cleric",
+      "art_size": [
+        46,
+        48
+      ],
+      "source": "source/cleric.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-sanctuary_rain-v1.png",
+      "atlas_cell": [
+        4,
+        3
+      ]
+    },
+    {
+      "name": "Cleansing Splash",
+      "alpha_bounds": [
+        59,
+        0,
+        391,
+        435
+      ],
+      "crop": [
+        512,
+        1024,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "cleansing_splash",
+      "hero": "Cleric",
+      "art_size": [
+        43,
+        48
+      ],
+      "source": "source/cleric.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-cleansing_splash-v1.png",
+      "atlas_cell": [
+        5,
+        3
+      ]
+    },
+    {
+      "name": "Quick Cut",
+      "alpha_bounds": [
+        75,
+        70,
+        403,
+        362
+      ],
+      "crop": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "backstab",
+      "hero": "Rogue",
+      "art_size": [
+        48,
+        43
+      ],
+      "source": "source/rogue.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-backstab-v1.png",
+      "atlas_cell": [
+        0,
+        4
+      ]
+    },
+    {
+      "name": "Fan of Blades",
+      "alpha_bounds": [
+        22,
+        52,
+        452,
+        402
+      ],
+      "crop": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "fan_of_blades",
+      "hero": "Rogue",
+      "art_size": [
+        48,
+        43
+      ],
+      "source": "source/rogue.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-fan_of_blades-v1.png",
+      "atlas_cell": [
+        1,
+        4
+      ]
+    },
+    {
+      "name": "Vanish",
+      "alpha_bounds": [
+        56,
+        10,
+        430,
+        502
+      ],
+      "crop": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "vanish",
+      "hero": "Rogue",
+      "art_size": [
+        41,
+        48
+      ],
+      "source": "source/rogue.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-vanish-v1.png",
+      "atlas_cell": [
+        2,
+        4
+      ]
+    },
+    {
+      "name": "Shadowstep",
+      "alpha_bounds": [
+        22,
+        59,
+        441,
+        453
+      ],
+      "crop": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "shadowstep",
+      "hero": "Rogue",
+      "art_size": [
+        47,
+        48
+      ],
+      "source": "source/rogue.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-shadowstep-v1.png",
+      "atlas_cell": [
+        3,
+        4
+      ]
+    },
+    {
+      "name": "Death Bloom",
+      "alpha_bounds": [
+        56,
+        0,
+        422,
+        439
+      ],
+      "crop": [
+        0,
+        1024,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "death_bloom",
+      "hero": "Rogue",
+      "art_size": [
+        46,
+        48
+      ],
+      "source": "source/rogue.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-death_bloom-v1.png",
+      "atlas_cell": [
+        4,
+        4
+      ]
+    },
+    {
+      "name": "Shadow Execution",
+      "alpha_bounds": [
+        42,
+        0,
+        393,
+        461
+      ],
+      "crop": [
+        512,
+        1024,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "execution",
+      "hero": "Rogue",
+      "art_size": [
+        41,
+        48
+      ],
+      "source": "source/rogue.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-execution-v1.png",
+      "atlas_cell": [
+        5,
+        4
+      ]
+    },
+    {
+      "name": "Briar Bolt",
+      "alpha_bounds": [
+        113,
+        19,
+        467,
+        409
+      ],
+      "crop": [
+        0,
+        0,
+        613,
+        428
+      ],
+      "source_size": [
+        1226,
+        1283
+      ],
+      "id": "briar_burst",
+      "hero": "Druid",
+      "art_size": [
+        48,
+        42
+      ],
+      "source": "source/druid.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-briar_burst-v1.png",
+      "atlas_cell": [
+        0,
+        5
+      ]
+    },
+    {
+      "name": "Thornshot",
+      "alpha_bounds": [
+        90,
+        49,
+        424,
+        379
+      ],
+      "crop": [
+        613,
+        0,
+        613,
+        428
+      ],
+      "source_size": [
+        1226,
+        1283
+      ],
+      "id": "thornshot",
+      "hero": "Druid",
+      "art_size": [
+        48,
+        43
+      ],
+      "source": "source/druid.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-thornshot-v1.png",
+      "atlas_cell": [
+        1,
+        5
+      ]
+    },
+    {
+      "name": "Lightning Bird",
+      "alpha_bounds": [
+        87,
+        0,
+        526,
+        421
+      ],
+      "crop": [
+        0,
+        428,
+        613,
+        427
+      ],
+      "source_size": [
+        1226,
+        1283
+      ],
+      "id": "lightning_bird",
+      "hero": "Druid",
+      "art_size": [
+        48,
+        38
+      ],
+      "source": "source/druid.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-lightning_bird-v1.png",
+      "atlas_cell": [
+        2,
+        5
+      ]
+    },
+    {
+      "name": "Fire Wolf",
+      "alpha_bounds": [
+        0,
+        0,
+        513,
+        426
+      ],
+      "crop": [
+        613,
+        428,
+        613,
+        427
+      ],
+      "source_size": [
+        1226,
+        1283
+      ],
+      "id": "fire_wolf",
+      "hero": "Druid",
+      "art_size": [
+        48,
+        40
+      ],
+      "source": "source/druid.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-fire_wolf-v1.png",
+      "atlas_cell": [
+        3,
+        5
+      ]
+    },
+    {
+      "name": "Ice Bear",
+      "alpha_bounds": [
+        69,
+        5,
+        531,
+        391
+      ],
+      "crop": [
+        0,
+        855,
+        613,
+        428
+      ],
+      "source_size": [
+        1226,
+        1283
+      ],
+      "id": "ice_bear",
+      "hero": "Druid",
+      "art_size": [
+        48,
+        35
+      ],
+      "source": "source/druid.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-ice_bear-v1.png",
+      "atlas_cell": [
+        4,
+        5
+      ]
+    },
+    {
+      "name": "Nature Rock Golem",
+      "alpha_bounds": [
+        32,
+        12,
+        522,
+        384
+      ],
+      "crop": [
+        613,
+        855,
+        613,
+        428
+      ],
+      "source_size": [
+        1226,
+        1283
+      ],
+      "id": "nature_golem",
+      "hero": "Druid",
+      "art_size": [
+        48,
+        35
+      ],
+      "source": "source/druid.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-nature_golem-v1.png",
+      "atlas_cell": [
+        5,
+        5
+      ]
+    },
+    {
+      "name": "Discord Note",
+      "alpha_bounds": [
+        93,
+        76,
+        404,
+        396
+      ],
+      "crop": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "discord_note",
+      "hero": "Bard",
+      "art_size": [
+        48,
+        47
+      ],
+      "source": "source/bard.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-discord_note-v1.png",
+      "atlas_cell": [
+        0,
+        6
+      ]
+    },
+    {
+      "name": "Quickstring",
+      "alpha_bounds": [
+        23,
+        120,
+        459,
+        335
+      ],
+      "crop": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "quickstring",
+      "hero": "Bard",
+      "art_size": [
+        48,
+        35
+      ],
+      "source": "source/bard.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-quickstring-v1.png",
+      "atlas_cell": [
+        1,
+        6
+      ]
+    },
+    {
+      "name": "Battle Anthem",
+      "alpha_bounds": [
+        28,
+        28,
+        484,
+        484
+      ],
+      "crop": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "battle_anthem",
+      "hero": "Bard",
+      "art_size": [
+        48,
+        48
+      ],
+      "source": "source/bard.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-battle_anthem-v1.png",
+      "atlas_cell": [
+        2,
+        6
+      ]
+    },
+    {
+      "name": "Fleet Rhythm",
+      "alpha_bounds": [
+        24,
+        36,
+        458,
+        380
+      ],
+      "crop": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "fleet_rhythm",
+      "hero": "Bard",
+      "art_size": [
+        48,
+        40
+      ],
+      "source": "source/bard.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-fleet_rhythm-v1.png",
+      "atlas_cell": [
+        3,
+        6
+      ]
+    },
+    {
+      "name": "Grand Crescendo",
+      "alpha_bounds": [
+        24,
+        0,
+        465,
+        456
+      ],
+      "crop": [
+        0,
+        1024,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "grand_crescendo",
+      "hero": "Bard",
+      "art_size": [
+        48,
+        47
+      ],
+      "source": "source/bard.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-grand_crescendo-v1.png",
+      "atlas_cell": [
+        4,
+        6
+      ]
+    },
+    {
+      "name": "Finale of Heroes",
+      "alpha_bounds": [
+        48,
+        1,
+        433,
+        433
+      ],
+      "crop": [
+        512,
+        1024,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "rallying_chord",
+      "hero": "Bard",
+      "art_size": [
+        48,
+        48
+      ],
+      "source": "source/bard.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-rallying_chord-v1.png",
+      "atlas_cell": [
+        5,
+        6
+      ]
+    },
+    {
+      "name": "Life Spark",
+      "alpha_bounds": [
+        58,
+        65,
+        432,
+        368
+      ],
+      "crop": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "life_spark",
+      "hero": "Healer",
+      "art_size": [
+        48,
+        41
+      ],
+      "source": "source/healer.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-life_spark-v1.png",
+      "atlas_cell": [
+        0,
+        7
+      ]
+    },
+    {
+      "name": "Gentle Mend",
+      "alpha_bounds": [
+        43,
+        84,
+        429,
+        385
+      ],
+      "crop": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "healing_ray",
+      "hero": "Healer",
+      "art_size": [
+        48,
+        43
+      ],
+      "source": "source/healer.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-healing_ray-v1.png",
+      "atlas_cell": [
+        1,
+        7
+      ]
+    },
+    {
+      "name": "Major Mend",
+      "alpha_bounds": [
+        51,
+        24,
+        431,
+        488
+      ],
+      "crop": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "major_mend",
+      "hero": "Healer",
+      "art_size": [
+        42,
+        48
+      ],
+      "source": "source/healer.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-major_mend-v1.png",
+      "atlas_cell": [
+        2,
+        7
+      ]
+    },
+    {
+      "name": "Quick Revival",
+      "alpha_bounds": [
+        83,
+        25,
+        344,
+        487
+      ],
+      "crop": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "quick_revival",
+      "hero": "Healer",
+      "art_size": [
+        34,
+        48
+      ],
+      "source": "source/healer.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-quick_revival-v1.png",
+      "atlas_cell": [
+        3,
+        7
+      ]
+    },
+    {
+      "name": "Miracle",
+      "alpha_bounds": [
+        24,
+        0,
+        483,
+        461
+      ],
+      "crop": [
+        0,
+        1024,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "miracle",
+      "hero": "Healer",
+      "art_size": [
+        48,
+        46
+      ],
+      "source": "source/healer.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-miracle-v1.png",
+      "atlas_cell": [
+        4,
+        7
+      ]
+    },
+    {
+      "name": "Mass Revival",
+      "alpha_bounds": [
+        58,
+        0,
+        418,
+        454
+      ],
+      "crop": [
+        512,
+        1024,
+        512,
+        512
+      ],
+      "source_size": [
+        1024,
+        1536
+      ],
+      "id": "mass_revival",
+      "hero": "Healer",
+      "art_size": [
+        44,
+        48
+      ],
+      "source": "source/healer.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "runtime": "static/sprites/ability-mass_revival-v1.png",
+      "atlas_cell": [
+        5,
+        7
+      ]
+    }
+  ],
+  "rows": 8,
+  "cell": 64,
+  "columns": 6
+}

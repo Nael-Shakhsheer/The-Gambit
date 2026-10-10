@@ -1,0 +1,43 @@
+{
+  "descriptions": [
+    "plucking the small lute, strumming forcefully, then snapping a musical spell forward",
+    "lifting and strumming their lute with a broad conductor gesture, then projecting a musical chord",
+    "pulling out a massive gold concert harp as tall as the hero, leaning into it with both hands, then playing an explosive sweeping chord"
+  ],
+  "directions": [
+    "south",
+    "south-east",
+    "east",
+    "north-east",
+    "north",
+    "north-west",
+    "west",
+    "south-west"
+  ],
+  "hero": "Bard",
+  "rows": 8,
+  "cell": 96,
+  "groups": {
+    "special": [
+      3,
+      4,
+      5
+    ],
+    "light": [
+      0,
+      1,
+      2
+    ],
+    "ultimate": [
+      6,
+      7,
+      8
+    ]
+  },
+  "anchor": [
+    48,
+    79
+  ],
+  "columns": 9,
+  "source": "art/ability-animations/source/bard-v1.png"
+}

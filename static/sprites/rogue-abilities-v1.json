@@ -1,0 +1,43 @@
+{
+  "descriptions": [
+    "crouching with two daggers drawn back, lunging with both blades, then following through low",
+    "folding into a low stealth crouch behind the cloak, drawing one dagger, then launching a quick shadow step",
+    "crossing both daggers high over the chest, crouching deeply as the cloak rises in violet power, then uncrossing both blades in an explosive wide slash"
+  ],
+  "directions": [
+    "south",
+    "south-east",
+    "east",
+    "north-east",
+    "north",
+    "north-west",
+    "west",
+    "south-west"
+  ],
+  "hero": "Rogue",
+  "rows": 8,
+  "cell": 96,
+  "groups": {
+    "special": [
+      3,
+      4,
+      5
+    ],
+    "light": [
+      0,
+      1,
+      2
+    ],
+    "ultimate": [
+      6,
+      7,
+      8
+    ]
+  },
+  "anchor": [
+    48,
+    80
+  ],
+  "columns": 9,
+  "source": "art/ability-animations/source/rogue-v1.png"
+}

@@ -1,0 +1,43 @@
+{
+  "descriptions": [
+    "drawing a golden potion flask back, aiming the arm, then throwing it forward",
+    "uncorking and lifting a holy flask, pouring it toward allies with the free hand blessing it, then sweeping that hand outward",
+    "lifting a huge ornate holy flask overhead with both hands, channeling golden light into it, then pouring an explosive shower of holy droplets around the hero"
+  ],
+  "directions": [
+    "south",
+    "south-east",
+    "east",
+    "north-east",
+    "north",
+    "north-west",
+    "west",
+    "south-west"
+  ],
+  "hero": "Cleric",
+  "rows": 8,
+  "cell": 96,
+  "groups": {
+    "special": [
+      3,
+      4,
+      5
+    ],
+    "light": [
+      0,
+      1,
+      2
+    ],
+    "ultimate": [
+      6,
+      7,
+      8
+    ]
+  },
+  "anchor": [
+    48,
+    80
+  ],
+  "columns": 9,
+  "source": "art/ability-animations/source/cleric-v1.png"
+}
