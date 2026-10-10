@@ -41,6 +41,17 @@ not hosted network guarantees. tools/multiplayer_probe.py uses disposable combat
 fixtures, without touching real rooms/saves. Its extra HP isolates reliability
 from balance. Physical-phone and human-network comfort still need playtesting.
 
+Published runtime commit 9be0e4486ec5c8a0abbc37b32b28fb8c0f6320e2 to GitHub main
+and manually deployed it to Render (srv-db4qi6o473hc738p6k70). Render reported Live
+at 11:36:31 PM EDT. Hosted smoke testing verified the client bytes match this
+workspace, four real HTTP players all moved across 362 requests, enemies
+progressed, dash recharge was enforced, chat/names were masked and health stayed
+successful. This short hosted check supplements the local stress fixtures;
+human multiplayer and physical phones remain necessary for comfort testing.
+The local server also restarted with verified copies of both bed checkpoints in
+data/backups/before-multiplayer-fix-20261009-233607. Hosted live rooms reset during
+deployment; the free Render service still has no durable checkpoint disk.
+
 ## Village variety and equipment click reliability — 2026-10-09
 
 Villages now choose from seven arrangements: market ring, two hamlets, winding
