@@ -211,14 +211,22 @@ async function api(path, data) {
   if (window.location.protocol === "file:") {
     throw new Error("Open the game at http://127.0.0.1:8000/ with server.py running. This file preview cannot connect to the game server.");
   }
-  const response = await fetch(path, {
-    method: data ? "POST" : "GET",
-    headers: data ? { "Content-Type": "application/json" } : {},
-    body: data ? JSON.stringify(data) : undefined
-  });
-  const result = await response.json();
-  if (!response.ok) throw new Error(result.error || "Something went wrong.");
-  return result;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), path === '/api/rooms' || path === '/api/join' ? 60000 : 5000);
+  try {
+    const response = await fetch(path, {
+      method: data ? "POST" : "GET",
+      headers: data ? { "Content-Type": "application/json" } : {},
+      body: data ? JSON.stringify(data) : undefined,
+      signal: controller.signal
+    });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || "Something went wrong.");
+    return result;
+  } catch (error) {
+    if (error.name === 'AbortError') throw new Error('Connection timed out. Reconnecting…');
+    throw error;
+  } finally { clearTimeout(timeout); }
 }
 function sendAction(action, extra) {
   if (!session) return Promise.resolve();
@@ -380,6 +388,7 @@ async function triggerAbility(category) {
 }
 async function triggerDash() {
   if (!latestRoom || latestRoom.phase !== "combat" || latestRoom.dashCooldown) return;
+  if (latestRoom.players.find(player => player.id === latestRoom.you)?.status !== 'alive') return;
   try { await sendAction("dash"); refresh(); }
   catch (error) { notice($("#combatNotice"), error.message); }
 }
@@ -796,6 +805,7 @@ function renderChat(room) {
   box.scrollTop = box.scrollHeight;
 }
 function renderRoom(room, roundTrip = 0) {
+  inputSequence = Math.max(inputSequence, room.inputSequence || 0);
   window.GauntletAudio?.observe(room);
   // Repair notices still arriving from a process started before the UTF-8 fix.
   if (room.privateNotice) room.privateNotice=room.privateNotice.replace(/\u00e2\u20ac\u201d/g,'—');
@@ -861,8 +871,10 @@ function renderRoom(room, roundTrip = 0) {
   $("#attackButton").classList.toggle("hidden", room.phase !== "combat");
   $("#attackButton").disabled = room.phase !== "combat" || Boolean(room.waveCountdown) || own?.status !== "alive";
   $("#dashButton").classList.toggle("hidden", room.phase !== "combat");
-  $("#dashButton").disabled = room.phase !== "combat" || Boolean(room.dashCooldown);
-  $("#dashButton").textContent = room.dashCooldown ? "Dash · " + room.dashCooldown + "s" : "Space · Dash";
+  $("#dashButton").disabled = room.phase !== "combat" || Boolean(room.dashCooldown) || own?.status !== 'alive';
+  $("#dashButton").textContent = own?.status !== 'alive' ? 'Dash unavailable' : room.dashCooldown ? "Dash · " + room.dashCooldown + "s" : "Space · Dash";
+  $("#dashButton").style.setProperty('--dash-ready', (100*(1-Math.min(1,(room.dashCooldownRemaining ?? room.dashCooldown)/(room.dashCooldownDuration || 5))))+'%');
+  $("#dashButton").setAttribute('aria-label', own?.status !== 'alive' ? 'Dash unavailable while downed' : room.dashCooldown ? 'Dash recharging: '+room.dashCooldown+' seconds' : 'Dash ready. Space or tap.');
   $("#reviveButton").classList.toggle("hidden", room.phase !== "combat");
   const interactive = ["town", "puzzle", "chest", "peace"].includes(room.phase);
   $("#interactButton").classList.toggle("hidden", !interactive);
@@ -913,6 +925,7 @@ function renderRoom(room, roundTrip = 0) {
 }
 function updateMotionTracks(room) {
   window.GauntletCombatEnvironment?.observe(room);
+  window.GauntletProjectiles?.observe(room);
   window.GauntletAbilityAnimations?.observe(room);
   const scene = [room.code, room.stage, room.phase, room.townInterior, room.innFloor, room.puzzle?.id].join(":");
   const now = performance.now();
@@ -1000,8 +1013,9 @@ function renderQuickPouch(room) {
   if (room.privateNotice) { lastPrivateNotice = room.privateNotice; privateNoticeUntil = Date.now() + 6000; }
   const privateNotice = Date.now() < privateNoticeUntil ? lastPrivateNotice : "";
   const curseText = room.curse ? "CURSED · " + room.curse.name + " · " + room.curse.remainingStages + " combat/puzzle stages remain. " + room.curse.description + " Towns pause the timer." : privateNotice;
-  const manaUsable = room.mana < room.maxMana;
-  const signature = JSON.stringify([room.inventory, room.utilitySlots, room.toolSlots, room.phase, room.abilitySlots, own && own.hp, manaUsable, room.curse, curseText]);
+  refreshUtilityButtons(pouch, room, own);
+  // Cooldown and resource snapshots must not replace a button during a click.
+  const signature = JSON.stringify([room.inventory, room.utilitySlots, room.toolSlots, room.phase, room.curse, curseText]);
   if (signature === pouch.dataset.signature) return;
   pouch.dataset.signature = signature;
   pouch.replaceChildren();
@@ -1120,10 +1134,18 @@ function canUseUtility(room, item, own) {
   if (item.kind === "mana") return ["combat", "town"].includes(room.phase) && room.mana < room.maxMana;
   return ["ward", "buff", "speed", "arrows"].includes(item.kind) && room.phase === "combat";
 }
+function refreshUtilityButtons(container, room, own) {
+  const items = new Map(room.inventory.concat(room.utilitySlots.filter(Boolean)).map(item => [item.id, item]));
+  container.querySelectorAll('[data-use-item], [data-use]').forEach(button => {
+    const item = items.get(button.dataset.useItem || button.dataset.use);
+    button.disabled = !canUseUtility(room, item, own);
+  });
+}
 function renderUtilityHotbar(room) {
   const hotbar = $("#utilityHotbar");
   const own = room.players.find((player) => player.id === room.you);
-  const signature = JSON.stringify([room.utilitySlots, room.phase, own && own.status, own && own.hp, room.mana >= room.maxMana]);
+  refreshUtilityButtons(hotbar, room, own);
+  const signature = JSON.stringify(room.utilitySlots);
   if (signature === hotbar.dataset.signature) return;
   hotbar.dataset.signature = signature;
   hotbar.replaceChildren();
@@ -1215,6 +1237,8 @@ function renderRoutes(room) {
   if (!lenses.childElementCount) lenses.textContent = "A rare Pathfinder’s Lens can reveal which route is easier.";
 }
 function renderTown(room) {
+  const ownPlayer = room.players.find(player => player.id === room.you);
+  refreshUtilityButtons($("#pouchItems"), room, ownPlayer);
   const signature = JSON.stringify([room.town, room.runes, room.inventory, room.utilitySlots, room.toolSlots, room.shopStock, room.you === room.host]);
   if (signature === lastTownSignature) return;
   lastTownSignature = signature;
@@ -1259,7 +1283,7 @@ function renderTown(room) {
     sell.className = "secondary"; sell.dataset.sell = item.id; sell.textContent = "Sell";
     const use = document.createElement("button");
     use.className = "secondary"; use.dataset.use = item.id; use.textContent = item.kind === "hint" ? "Use at fork" : item.kind === "ward" ? "Use in combat" : "Use";
-    use.disabled = item.kind !== "heal" || !own || own.hp >= own.maxHp;
+    use.disabled = !canUseUtility(room, item, own);
     controls.append(sell, use);
     const slotCount = item.slot === "utility" ? 3 : 2;
     for (let slot = 0; slot < slotCount; slot += 1) {
@@ -1577,6 +1601,9 @@ function drawTownObjects(ctx, room, w, h) {
     for (const width of [44, 30]) {
       g.strokeStyle = width === 44 ? ({woodland:"#857348",ruins:"#75664d",cavern:"#25364b",frost:"#728fa3"})[region] : pattern || "#c6ad72";
       g.lineWidth = width / 2; g.lineJoin = "round"; g.lineCap = "round";
+      for (const [x, y] of (room.townDecor?.plazas || [])) {
+        g.fillStyle = g.strokeStyle; g.beginPath(); g.arc(x/2, y/2, width/2, 0, Math.PI*2); g.fill();
+      }
       for (const path of paths) {
         g.beginPath(); path.forEach(([x, y], i) => i ? g.lineTo(x / 2, y / 2) : g.moveTo(x / 2, y / 2)); g.stroke();
       }
@@ -1809,7 +1836,7 @@ function drawTreasureChest(ctx, chest) {
 function drawCombatEffects(ctx, room) {
   const now = Date.now();
   (room.projectiles || []).forEach((shot) => {
-    if (window.GauntletAbilityAnimations?.projectile(ctx, shot)) return;
+    if (window.GauntletProjectiles?.draw(ctx, shot)) return;
     if (window.GauntletCombatEnvironment?.projectile(ctx, shot)) return;
     ctx.save(); ctx.imageSmoothingEnabled = true; ctx.drawImage(enemyGlow(shot.color), shot.x - 16, shot.y - 16, 32, 32);
     ctx.imageSmoothingEnabled = false; ctx.fillStyle = shot.color;
@@ -2151,6 +2178,7 @@ function drawWorld(room) {
   if (room.phase === "combat") (room.summons || []).forEach((summon) => drawSummonLabel(ctx, summon));
   drawCombatEffects(ctx, room);
   window.GauntletAbilityAnimations?.front(ctx, room);
+  window.GauntletProjectiles?.rain(ctx, room);
   if (room.phase === 'combat') (room.summons || []).forEach(s => window.GauntletAbilityAnimations?.summonFront(ctx, s));
   if (typeof drawPings === "function") drawPings(ctx, room);
   if (room.phase === "cleared" || room.phase === "defeat") {

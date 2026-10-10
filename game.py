@@ -20,6 +20,7 @@ import combat_environment as terrain
 import enemy_roles
 import combat_encounters
 import ability_animations
+import language_filter
 
 WIDTH = 960
 HEIGHT = 540
@@ -205,6 +206,7 @@ class GameWorld:
         self.lock = threading.RLock()
         self.storage = RunStorage(storage_dir) if storage_dir is not None else None
         self.disconnect_timeout = disconnect_timeout
+        self._tick_errors = {}
         if self.storage:
             for room in self.storage.load():
                 try:
@@ -383,7 +385,7 @@ class GameWorld:
     @staticmethod
     def _player(player_id: str, name: str) -> dict:
         return {
-            "id": player_id, "name": name, "class": None, "hp": 100, "maxHp": 100,
+            "id": player_id, "name": language_filter.clean_name(name), "class": None, "hp": 100, "maxHp": 100,
             "mana": 100, "maxMana": 100, "lastManaTick": time.monotonic(),
             "x": 480, "y": 300, "dx": 0, "dy": 0, "status": "alive",
             "facingX": 1, "facingY": 0, "dashCooldownUntil": 0,
@@ -523,7 +525,10 @@ class GameWorld:
                 "runes": room["runes"], "players": players, "classes": CLASSES,
                 "mana": round(room["players"][player_id]["mana"], 1),
                 "maxMana": room["players"][player_id]["maxMana"],
-                "dashCooldown": max(0, math.ceil(room["players"][player_id].get("dashCooldownUntil", 0) - time.monotonic())),
+                "dashCooldown": max(0, math.ceil(room["players"][player_id].get("dashCooldownUntil", 0) - now)),
+                "dashCooldownRemaining": max(0, room["players"][player_id].get("dashCooldownUntil", 0) - now),
+                "dashCooldownDuration": 5,
+                "inputSequence": room["players"][player_id].get("inputSequence", 0),
                 "enemies": [
                     {k: enemy[k] for k in ("id", "name", "kind", "affinity", "color", "x", "y", "hp", "maxHp")}
                     | {"boss": enemy.get("boss", False), "bossPhase": enemy.get("bossPhase", 1),
@@ -1180,8 +1185,8 @@ class GameWorld:
     def _say(self, room: dict, player_id: str, name: str, message: str) -> None:
         room["messageId"] += 1
         room["chat"].append({
-            "id": room["messageId"], "player": player_id, "name": name,
-            "message": message, "at": time.time(),
+            "id": room["messageId"], "player": player_id, "name": language_filter.clean_name(name),
+            "message": language_filter.filter_text(message), "at": time.time(),
         })
         room["chat"] = room["chat"][-80:]
 
@@ -1622,7 +1627,8 @@ class GameWorld:
         room["town"] = town_name or random.choice(TOWNS)
         room["townsVisited"] = room.get("townsVisited", 0) + 1
         room.setdefault('townPressureStages',[]).append(room['stage'])
-        room.update(town_layout.generate(random.randrange(1, 1_000_000)))
+        room.update(town_layout.generate(random.randrange(1, 1_000_000),
+                    previous_layout=room.get("townDecor", {}).get("layout")))
         for index, party_member in enumerate(room["players"].values()):
             party_member["status"] = "alive"
             party_member["deathRecorded"] = False
@@ -2527,7 +2533,8 @@ class GameWorld:
                 terrain.move(room, player, player["x"]+dx/distance*reach, player["y"]+dy/distance*reach)
                 tactical.dashed(player, now, math.hypot(player['x']-start_x, player['y']-start_y))
         ability_animations.record(room, player, ability, cast_origin, cast_target_position, cast_recipient_ids)
-        self._say(room, "system", "The Gauntlet", f"{player['name']} used {ability['name']}.")
+        if ability['attackType'] != 'light':
+            self._say(room, "system", "The Gauntlet", f"{player['name']} used {ability['name']}.")
 
     @staticmethod
     def _stun(enemy, now):
@@ -2641,163 +2648,180 @@ class GameWorld:
     def tick(self) -> None:
         now = time.monotonic()
         with self.lock:
-            for room in self.rooms.values():
-                if not self._update_presence(room, now):
-                    continue
-                telemetry.tick(room, now)
-                room["effects"] = [effect for effect in room["effects"] if effect["until"] > time.time()]
-                # Companions and in-flight attacks cannot clear a stage after everyone falls.
-                if self._check_party_wipe(room):
-                    room["projectiles"] = []
-                    continue
-                boss_ai.tick_areas(self, room, now)
-                terrain.tick(self, room, now)
-                combat_encounters.tick(self,room,now)
-                self._check_party_wipe(room)
-                if room["phase"] == "defeat":
-                    continue
-                self._tick_projectiles(room, now)
-                progression.tick(self, room, now)
-                companion_ai.tick(self, room, now, ABILITY_SETS)
-                for player in room["players"].values():
-                    if not player.get("connected", True):
-                        continue
-                    elapsed = min(1.0, max(0, now - player["lastManaTick"]))
-                    player["lastManaTick"] = now
-                    if room["phase"] == "combat" and player["status"] == "alive":
-                        player["mana"] = min(player["maxMana"], player["mana"] + 2 * elapsed*(1+.05*player.get("skillRanks", {}).get("focus", 0)))
-                    elif room["phase"] in ("town", "routes", "stage_exit", "puzzle", "chest", "peace"):
-                        player["mana"] = min(player["maxMana"], player["mana"] + 6 * elapsed*(1+.05*player.get("skillRanks", {}).get("focus", 0)))
-                    if progression.locked(room, player):
-                        player.update(dx=0, dy=0, lastMove=now)
-                    if room["phase"] in ("town", "routes", "stage_exit", "puzzle", "chest", "peace") and player["status"] == "alive":
-                        dt = min(0.1, max(0, now - player["lastMove"]))
-                        player["lastMove"] = now
-                        speed = CLASSES.get(player["class"], {}).get("speed", 140)
-                        if room["phase"] == "town" and player.get("townInterior"):
-                            next_x = max(180, min(WIDTH-180, player["x"]+player["dx"]*speed*dt))
-                            next_y = max(100, min(HEIGHT-64, player["y"]+player["dy"]*speed*dt))
-                            if progression.interior_walkable(room, player, next_x, player["y"]):
-                                player["x"] = next_x
-                            if progression.interior_walkable(room, player, player["x"], next_y):
-                                player["y"] = next_y
-                            if player.get("townExitReady"):
-                                player["townExitReady"] = False
-                        else:
-                            next_x = max(28, min(WIDTH - 28, player["x"] + player["dx"] * speed * dt))
-                            next_y = max(30, min(HEIGHT - 30, player["y"] + player["dy"] * speed * dt))
-                            if room["phase"] == "routes":
-                                if self._on_fork_path(next_x, player["y"]):
-                                    player["x"] = next_x
-                                if self._on_fork_path(player["x"], next_y):
-                                    player["y"] = next_y
-                            elif room["phase"] == "town":
-                                if self._town_walkable(room, next_x, player["y"]):
-                                    player["x"] = next_x
-                                if self._town_walkable(room, player["x"], next_y):
-                                    player["y"] = next_y
-                            else:
-                                if room["phase"] in ("stage_exit", "chest"):
-                                    terrain.move(room, player, next_x, next_y)
-                                else:
-                                    player["x"], player["y"] = next_x, next_y
-                            if room["phase"] == "town" and player.get("townExitReady"):
-                                gate_x, gate_y = TOWN_GATE
-                                if math.hypot(player["x"] - gate_x, player["y"] - gate_y) > 78:
-                                    player["townExitReady"] = False
-                        if room["phase"] == "town" and player.get("townInteraction"):
-                            npc = self._nearby_npc(room, player)
-                            if not npc or npc["id"] != player["townInteraction"]:
-                                player["townInteraction"] = None
-                                player["guildPreview"] = None
-                if room["phase"] in ("stage_exit", "routes"):
-                    self._tick_travel(room)
-                if room["phase"] == "chest":
-                    self._finish_chest_if_ready(room)
-                if room["phase"] == "town":
-                    active = self._voting_players(room)
-                    can_leave = not (room.get("townWelcome") and not room["townWelcome"].get("done")) and (room.get("townsVisited") != 1 or all(p.get("trainingKnown") for p in active if not p.get("bot")))
-                    if active and can_leave and all(p.get("townExitReady") and not p.get("townInterior") and
-                            math.hypot(p["x"] - TOWN_GATE[0], p["y"] - TOWN_GATE[1]) <= 78 for p in active):
-                        # Reuse the normal exit path without reversing its ready vote.
-                        active[0]["townExitReady"] = False
-                        self._vote_town_exit(room, active[0])
-                if room["phase"] == "puzzle":
-                    self._tick_puzzle(room)
-                    if room["phase"] != "combat":
-                        continue
-                if room["phase"] != "combat":
-                    continue
-                if room.get("waveStartsAt"):
-                    if now < room["waveStartsAt"]:
-                        for member in room["players"].values():
-                            if member["status"] != "alive" or not member.get("connected", True):
-                                continue
-                            dt = min(0.1, max(0, now - member["lastMove"]))
-                            member["lastMove"] = now
-                            speed = CLASSES.get(member["class"], {}).get("speed", 140)
-                            terrain.player_move(room, member, member["dx"], member["dy"], speed, dt)
-                        continue
-                    room["waveStartsAt"] = 0
-                    self._spawn_wave(room, preserve_players=True)
-                for player in room["players"].values():
-                    if not player.get("connected", True):
-                        continue
-                    if player["status"] == "downed":
-                        continue
-                    if player["status"] != "alive":
-                        continue
-                    dt = min(0.1, max(0, now - player["lastMove"]))
-                    player["lastMove"] = now
-                    curse_speed = 0.75 if (player.get("curse") or {}).get("effect") == "sluggish" else 1
-                    speed = CLASSES.get(player["class"], {}).get("speed", 140) * (player["speedBoost"] if player["speedBoostUntil"] > now else 1) * curse_speed
-                    terrain.player_move(room, player, player["dx"], player["dy"], speed, dt)
-                    if player["attacking"]:
-                        self._attack(room, player)
-                for rescuer in room["players"].values():
-                    target_id = rescuer.get("reviving")
-                    if not target_id or rescuer["status"] != "alive" or not rescuer.get("connected", True):
-                        continue
-                    target = room["players"].get(target_id)
-                    if not target or target["status"] != "downed" or math.hypot(target["x"] - rescuer["x"], target["y"] - rescuer["y"]) > 62:
-                        rescuer["reviving"] = None
-                        continue
-                    duration = 0.8 if rescuer["class"] == "Healer" else 1.8
-                    if now - rescuer["reviveStarted"] >= duration:
-                        self._restore_ally(room, rescuer, target, 0.3)
-                        rescuer["reviving"] = None
-                        self._say(room, "system", "The Gauntlet", f"{rescuer['name']} revived {target['name']}.")
+            for room in list(self.rooms.values()):
+                try:
+                    self._tick_room(room, now)
+                except Exception:
+                    # Preserve live rooms and keep other parties moving. Log the first
+                    # failure and at most one repeat per 30 seconds per room.
+                    last = self._tick_errors.get(room["code"])
+                    if last is None or now-last >= 30:
+                        logging.exception("Simulation error in room %s stage %s phase %s",
+                                          room["code"], room["stage"], room["phase"])
+                        self._tick_errors[room["code"]] = now
+                else:
+                    self._tick_errors.pop(room["code"], None)
 
-                self._tick_summons(room, now)
-                for enemy in list(room["enemies"]):
-                    if room['phase']!='combat': break
-                    if enemy.get("bleedUntil", 0) > now and now - enemy.get("lastBleedTick", 0) >= 1:
-                        enemy["lastBleedTick"] = now
-                        owner = room["players"].get(enemy.get("bleedOwner"), room["players"][room["host"]])
-                        self._damage_enemy(room, owner, enemy, enemy.get("bleedDamage", 0),
-                            boost_source=enemy.get("bleedBoostSource"), boost_factor=enemy.get("bleedBoostFactor",1))
-                        if room["phase"] != "combat":
-                            break
-                    if enemy.get("stunUntil", 0) > now:
+    def _tick_room(self, room, now):
+        if not self._update_presence(room, now):
+            return
+        telemetry.tick(room, now)
+        room["effects"] = [effect for effect in room["effects"] if effect["until"] > time.time()]
+        # Companions and in-flight attacks cannot clear a stage after everyone falls.
+        if self._check_party_wipe(room):
+            room["projectiles"] = []
+            return
+        boss_ai.tick_areas(self, room, now)
+        terrain.tick(self, room, now)
+        combat_encounters.tick(self,room,now)
+        self._check_party_wipe(room)
+        if room["phase"] == "defeat":
+            return
+        self._tick_projectiles(room, now)
+        progression.tick(self, room, now)
+        companion_ai.tick(self, room, now, ABILITY_SETS)
+        for player in room["players"].values():
+            if not player.get("connected", True):
+                continue
+            elapsed = min(1.0, max(0, now - player["lastManaTick"]))
+            player["lastManaTick"] = now
+            if room["phase"] == "combat" and player["status"] == "alive":
+                player["mana"] = min(player["maxMana"], player["mana"] + 2 * elapsed*(1+.05*player.get("skillRanks", {}).get("focus", 0)))
+            elif room["phase"] in ("town", "routes", "stage_exit", "puzzle", "chest", "peace"):
+                player["mana"] = min(player["maxMana"], player["mana"] + 6 * elapsed*(1+.05*player.get("skillRanks", {}).get("focus", 0)))
+            if progression.locked(room, player):
+                player.update(dx=0, dy=0, lastMove=now)
+            if room["phase"] in ("town", "routes", "stage_exit", "puzzle", "chest", "peace") and player["status"] == "alive":
+                dt = min(0.1, max(0, now - player["lastMove"]))
+                player["lastMove"] = now
+                speed = CLASSES.get(player["class"], {}).get("speed", 140)
+                if room["phase"] == "town" and player.get("townInterior"):
+                    next_x = max(180, min(WIDTH-180, player["x"]+player["dx"]*speed*dt))
+                    next_y = max(100, min(HEIGHT-64, player["y"]+player["dy"]*speed*dt))
+                    if progression.interior_walkable(room, player, next_x, player["y"]):
+                        player["x"] = next_x
+                    if progression.interior_walkable(room, player, player["x"], next_y):
+                        player["y"] = next_y
+                    if player.get("townExitReady"):
+                        player["townExitReady"] = False
+                else:
+                    next_x = max(28, min(WIDTH - 28, player["x"] + player["dx"] * speed * dt))
+                    next_y = max(30, min(HEIGHT - 30, player["y"] + player["dy"] * speed * dt))
+                    if room["phase"] == "routes":
+                        if self._on_fork_path(next_x, player["y"]):
+                            player["x"] = next_x
+                        if self._on_fork_path(player["x"], next_y):
+                            player["y"] = next_y
+                    elif room["phase"] == "town":
+                        if self._town_walkable(room, next_x, player["y"]):
+                            player["x"] = next_x
+                        if self._town_walkable(room, player["x"], next_y):
+                            player["y"] = next_y
+                    else:
+                        if room["phase"] in ("stage_exit", "chest"):
+                            terrain.move(room, player, next_x, next_y)
+                        else:
+                            player["x"], player["y"] = next_x, next_y
+                    if room["phase"] == "town" and player.get("townExitReady"):
+                        gate_x, gate_y = TOWN_GATE
+                        if math.hypot(player["x"] - gate_x, player["y"] - gate_y) > 78:
+                            player["townExitReady"] = False
+                if room["phase"] == "town" and player.get("townInteraction"):
+                    npc = self._nearby_npc(room, player)
+                    if not npc or npc["id"] != player["townInteraction"]:
+                        player["townInteraction"] = None
+                        player["guildPreview"] = None
+        if room["phase"] in ("stage_exit", "routes"):
+            self._tick_travel(room)
+        if room["phase"] == "chest":
+            self._finish_chest_if_ready(room)
+        if room["phase"] == "town":
+            active = self._voting_players(room)
+            can_leave = not (room.get("townWelcome") and not room["townWelcome"].get("done")) and (room.get("townsVisited") != 1 or all(p.get("trainingKnown") for p in active if not p.get("bot")))
+            if active and can_leave and all(p.get("townExitReady") and not p.get("townInterior") and
+                    math.hypot(p["x"] - TOWN_GATE[0], p["y"] - TOWN_GATE[1]) <= 78 for p in active):
+                # Reuse the normal exit path without reversing its ready vote.
+                active[0]["townExitReady"] = False
+                self._vote_town_exit(room, active[0])
+        if room["phase"] == "puzzle":
+            self._tick_puzzle(room)
+            if room["phase"] != "combat":
+                return
+        if room["phase"] != "combat":
+            return
+        if room.get("waveStartsAt"):
+            if now < room["waveStartsAt"]:
+                for member in room["players"].values():
+                    if member["status"] != "alive" or not member.get("connected", True):
                         continue
-                    available = [p for p in self._combat_targets(room) if p["status"] == "alive"]
-                    if not available:
-                        break
-                    taunting = [p for p in available if p["status"] == "alive" and p.get("tauntUntil", 0) > now]
-                    visible = [p for p in available if p["status"] == "alive" and p.get("invisibleUntil", 0) <= now]
-                    targets = taunting or visible or [p for p in available if p["status"] == "alive"]
-                    if not targets:
-                        continue
-                    target = min(targets, key=lambda p: math.hypot(p["x"] - enemy["x"], p["y"] - enemy["y"]))
-                    wards=combat_encounters.ward(room)
-                    if wards and not taunting and sum(map(ord,enemy['id']))%2==0: target=wards[0]
-                    squadron = room.get("encounterName") == "Mini-boss Squadron"
-                    if squadron:
-                        target_pool = taunting or visible or targets
-                        enemy_index = room["enemies"].index(enemy)
-                        target = target_pool[enemy_index % len(target_pool)]
-                    self._tick_enemy(room, enemy, target, now)
-                self._check_party_wipe(room)
+                    dt = min(0.1, max(0, now - member["lastMove"]))
+                    member["lastMove"] = now
+                    speed = CLASSES.get(member["class"], {}).get("speed", 140)
+                    terrain.player_move(room, member, member["dx"], member["dy"], speed, dt)
+                return
+            room["waveStartsAt"] = 0
+            self._spawn_wave(room, preserve_players=True)
+        for player in room["players"].values():
+            if not player.get("connected", True):
+                continue
+            if player["status"] == "downed":
+                continue
+            if player["status"] != "alive":
+                continue
+            dt = min(0.1, max(0, now - player["lastMove"]))
+            player["lastMove"] = now
+            curse_speed = 0.75 if (player.get("curse") or {}).get("effect") == "sluggish" else 1
+            speed = CLASSES.get(player["class"], {}).get("speed", 140) * (player["speedBoost"] if player["speedBoostUntil"] > now else 1) * curse_speed
+            terrain.player_move(room, player, player["dx"], player["dy"], speed, dt)
+            if player["attacking"]:
+                self._attack(room, player)
+        for rescuer in room["players"].values():
+            target_id = rescuer.get("reviving")
+            if not target_id or rescuer["status"] != "alive" or not rescuer.get("connected", True):
+                continue
+            target = room["players"].get(target_id)
+            if not target or target["status"] != "downed" or math.hypot(target["x"] - rescuer["x"], target["y"] - rescuer["y"]) > 62:
+                rescuer["reviving"] = None
+                continue
+            duration = 0.8 if rescuer["class"] == "Healer" else 1.8
+            if now - rescuer["reviveStarted"] >= duration:
+                self._restore_ally(room, rescuer, target, 0.3)
+                rescuer["reviving"] = None
+                self._say(room, "system", "The Gauntlet", f"{rescuer['name']} revived {target['name']}.")
+
+        self._tick_summons(room, now)
+        for enemy_index, enemy in enumerate(list(room["enemies"])):
+            if room['phase']!='combat': break
+            if enemy not in room["enemies"]:
+                continue
+            if enemy.get("bleedUntil", 0) > now and now - enemy.get("lastBleedTick", 0) >= 1:
+                enemy["lastBleedTick"] = now
+                owner = room["players"].get(enemy.get("bleedOwner"), room["players"][room["host"]])
+                self._damage_enemy(room, owner, enemy, enemy.get("bleedDamage", 0),
+                    boost_source=enemy.get("bleedBoostSource"), boost_factor=enemy.get("bleedBoostFactor",1))
+                if room["phase"] != "combat":
+                    break
+                if enemy not in room["enemies"]:
+                    continue
+            if enemy.get("stunUntil", 0) > now:
+                continue
+            available = [p for p in self._combat_targets(room) if p["status"] == "alive"]
+            if not available:
+                break
+            taunting = [p for p in available if p["status"] == "alive" and p.get("tauntUntil", 0) > now]
+            visible = [p for p in available if p["status"] == "alive" and p.get("invisibleUntil", 0) <= now]
+            targets = taunting or visible or [p for p in available if p["status"] == "alive"]
+            if not targets:
+                continue
+            target = min(targets, key=lambda p: math.hypot(p["x"] - enemy["x"], p["y"] - enemy["y"]))
+            wards=combat_encounters.ward(room)
+            if wards and not taunting and sum(map(ord,enemy['id']))%2==0: target=wards[0]
+            squadron = room.get("encounterName") == "Mini-boss Squadron"
+            if squadron:
+                target_pool = taunting or visible or targets
+                target = target_pool[enemy_index % len(target_pool)]
+            self._tick_enemy(room, enemy, target, now)
+        self._check_party_wipe(room)
 
 
 WORLD = GameWorld(storage_dir=Path(__file__).parent / "data", disconnect_timeout=15)

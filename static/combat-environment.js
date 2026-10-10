@@ -215,7 +215,7 @@
       const frame = !h.active ? Math.min(2,Math.floor(progress*3)) : h.kind !== "pool" ? Math.min(3,Math.floor((now-activated)/60)) : Math.floor(now/120)%4;
       const row = !h.active ? 0 : h.kind === "slam" ? 1 : h.kind === "meteor" ? 2 : 3;
       if (h.side !== 'hero') stamp(ctx,"hazard-effects",frame,row,128,h.x-h.radius*1.14,h.y-h.radius*1.14,h.radius*2.28,h.radius*2.28,row === 3 ? h.color : null);
-      else if (h.active) {
+      else if (h.active && !window.GauntletProjectiles) {
         ctx.strokeStyle='#ffe7ab';ctx.lineWidth=3;
         for(let i=0;i<12;i++){const x=h.x+Math.cos(i*2.4)*h.radius*.7,y=h.y+Math.sin(i*2.4)*h.radius*.7;ctx.beginPath();ctx.moveTo(x-4,y-12);ctx.lineTo(x,y+3);ctx.lineTo(x+4,y-4);ctx.stroke();}
       }

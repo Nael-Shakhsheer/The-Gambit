@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import logging
 import os
 import socket
 import threading
@@ -13,6 +14,7 @@ from game import WORLD
 
 ROOT = Path(__file__).resolve().parent
 STATIC = ROOT / "static"
+SIMULATION_LAST_TICK = None
 
 
 class DualStackThreadingHTTPServer(ThreadingHTTPServer):
@@ -29,6 +31,13 @@ class Handler(BaseHTTPRequestHandler):
 
     def log_message(self, fmt: str, *args) -> None:
         print("%s - %s" % (self.address_string(), fmt % args))
+
+    def log_request(self, code='-', size='-') -> None:
+        # Routine polling/input produces thousands of lines per party. Keep
+        # failures and other requests visible without spending CPU on that flood.
+        if str(code) == '200' and urlparse(self.path).path in ('/api/state', '/api/action', '/healthz'):
+            return
+        super().log_request(code, size)
 
     def _send(self, status: int, body: dict | str | bytes, content_type: str = "application/json; charset=utf-8") -> None:
         raw = body if isinstance(body, bytes) else body.encode("utf-8") if isinstance(body, str) else json.dumps(body).encode("utf-8")
@@ -49,7 +58,8 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self) -> None:
         parsed = urlparse(self.path)
         if parsed.path == "/healthz":
-            return self._send(200, {"ok": True})
+            healthy = SIMULATION_LAST_TICK is None or time.monotonic()-SIMULATION_LAST_TICK < 5
+            return self._send(200 if healthy else 503, {"ok": healthy})
         host_header = self.headers.get("Host", "")
         if host_header.lower().startswith("localhost:"):
             port = host_header.rsplit(":", 1)[-1]
@@ -60,7 +70,7 @@ class Handler(BaseHTTPRequestHandler):
             return
         if parsed.path == "/":
             return self._file("index.html", "text/html; charset=utf-8")
-        if parsed.path in ("/app.js", "/audio.js", "/coordination.js", "/progression.js", "/town-sprites.js", "/combat-environment.js", "/ability-animations.js", "/movement.js", "/equipment-comparison.js", "/style.css"):
+        if parsed.path in ("/app.js", "/audio.js", "/coordination.js", "/progression.js", "/town-sprites.js", "/combat-environment.js", "/ability-animations.js", "/projectile-animations.js", "/movement.js", "/equipment-comparison.js", "/style.css"):
             name = parsed.path.lstrip("/")
             mime = "text/javascript; charset=utf-8" if name.endswith(".js") else "text/css; charset=utf-8"
             return self._file(name, mime)
@@ -121,10 +131,19 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
 
 
-def _simulation_loop() -> None:
-    while True:
-        WORLD.tick()
-        time.sleep(0.05)
+def _simulation_loop(stop_event=None) -> None:
+    global SIMULATION_LAST_TICK
+    SIMULATION_LAST_TICK = time.monotonic()
+    while stop_event is None or not stop_event.is_set():
+        try:
+            WORLD.tick()
+            SIMULATION_LAST_TICK = time.monotonic()
+        except Exception:
+            logging.exception("Unexpected simulation loop failure; retrying next tick")
+        if stop_event is None:
+            time.sleep(0.05)
+        else:
+            stop_event.wait(0.05)
 
 
 def main() -> None:

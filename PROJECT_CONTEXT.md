@@ -2,6 +2,83 @@
 
 Last updated: **2026-10-09**.
 
+## Hosted multiplayer simulation crash, dash and language filter — 2026-10-09
+
+Render logs confirmed an 11:05:47 PM EDT simulation-thread crash: a bleeding
+Wolf died in a Mini-boss Squadron, then tick called enemies.index on that removed
+enemy (game.py line 2797 in the hosted build). HTTP and health stayed available,
+but the only simulation thread died, stopping all room movement and enemy AI.
+Enemies removed by bleed are now skipped; squadron targeting uses the active
+iteration's stable index. Per-room tick errors are isolated and logged with room,
+stage and phase (repeats limited to every 30 seconds). The outer simulation loop
+also survives unexpected exceptions. Health returns 503 if no successful global
+tick has occurred for five seconds, so a stalled loop no longer appears healthy.
+
+Movement input/state requests now time out after five seconds, releasing stuck
+input queues; room creation/join allow 60 seconds for free-host cold starts.
+Private snapshots carry the accepted input sequence and clients synchronize to
+it after refresh/reconnect, preventing new movement from being rejected as old.
+Routine successful input, state and health polls no longer flood server logs.
+Light attacks retain damage, animation and sounds without filling party chat
+with a message on every shot; Special/Ultimate announcements remain.
+
+Dash retains its server-enforced five-second recharge and now shows a progress
+bar plus countdown, with fractional readiness from the server. Downed heroes
+cannot use the button or keyboard shortcut. English profanity, slurs, common
+insults and self-harm harassment phrases are masked server-side in chat/names.
+The filter handles common leetspeak, punctuation/spacing, repeated letters,
+full-width/accented letters and invisible characters, with word boundaries to
+preserve ordinary names/game words. Fully masked names become Adventurer.
+This is a curated local filter, not a general semantic moderation service.
+
+Validation: 172 Python tests passed, including the exact hosted bleed/squadron
+crash, room isolation, loop recovery, dash enforcement, reconnect sequences and
+filter behavior. Browser/client regressions passed. Four simultaneous HTTP
+clients completed 3,527 requests across stages 7/13/17/20/25 with no simulation
+errors; localhost p95 response was 17.46 ms and longest tick was 3.1 ms. See
+reports/MULTIPLAYER_RELIABILITY_2026-10-09.json. These are synthetic local numbers,
+not hosted network guarantees. tools/multiplayer_probe.py uses disposable combat
+fixtures, without touching real rooms/saves. Its extra HP isolates reliability
+from balance. Physical-phone and human-network comfort still need playtesting.
+
+## Village variety and equipment click reliability — 2026-10-09
+
+Villages now choose from seven arrangements: market ring, two hamlets, winding
+street, staggered lanes, western common, crescent and scattered courts. Visits
+avoid repeating the previous arrangement, mirror and jitter buildings,
+occasionally relocate a whole building, and shuffle all services including the
+Guild. Roads use branching, loop or lane networks with multiple commons instead
+of a single central crossroad. Villagers cluster around the commons or scatter;
+regional trees stay clear of roads. All six services, every party spawn and the
+welcome runner remain accessible. Layout metadata uses the existing townDecor
+checkpoint field; old checkpoints retain their saved village until the next visit.
+
+The pouch previously rebuilt its buttons on every fractional ability cooldown
+or HP update. A pressed button could disappear before release, so equipping
+appeared to do nothing. Item/slot changes now rebuild the inventory; health,
+mana and status only refresh utility availability. HUD utility buttons likewise
+remain stable. Both tools and all three utility slots still swap occupied slots
+atomically, including when the pouch is full. Shop utility availability refreshes
+without rebuilding the inventory, and mana draughts can be used there too.
+
+Validation: 162 Python tests passed; all Node client tests and app syntax passed.
+A 2,000-seed generation probe completed without failures. New regressions cover
+seed stability, diverse/connected road layouts, consecutive visit variety, and
+equipment button identity/click dispatch during health, mana and cooldown polls.
+An isolated browser run verified equipping and swapping both tools and all
+three utilities against the real server, and reviewed multiple village layouts.
+No physical-phone or human multiplayer session was run for this change.
+
+Python changes require a server restart; clients should refresh for the pouch
+fix and road drawing. Downloaded copies on another computer need the updated
+files; editing this workspace does not automatically update those copies.
+
+Activated locally on port 8000 in exec session 99629. Both bed checkpoints were
+copied and SHA256-matched to data/backups/before-village-equipment-20261009-225915
+before restarting. HTTP health and exact current app.js bytes were verified.
+The isolated QA server and browser tab were closed. These changes have not been
+published to GitHub or Render in this task.
+
 ## Render free deployment preparation — 2026-10-09
 
 The user chose Render free hosting. `render.yaml` defines one free Python web

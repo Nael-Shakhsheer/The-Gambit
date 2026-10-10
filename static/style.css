@@ -520,6 +520,8 @@ body.is-playing .ability-key { display: grid; gap: 4px; min-height: 48px; max-wi
 .ability-name { line-height: 1.15; overflow-wrap: anywhere; }
 .ability-key small { font-size: 10px; color: #c6e7df; }
 .hud-actions button { min-height: 44px; touch-action: manipulation; }
+#dashButton { position: relative; padding-bottom: 12px; }
+#dashButton::after { content: ''; position: absolute; left: 5px; right: 5px; bottom: 4px; height: 4px; background: linear-gradient(to right, #94d39c var(--dash-ready,100%), #704a43 var(--dash-ready,100%)); }
 body.is-playing .touch-pad { grid-template-columns: repeat(3, 44px); grid-template-rows: repeat(2, 44px); }
 @media (max-width: 700px) {
   body.is-playing #gameHud { height: 216px; min-height: 216px; grid-template-columns: 1fr; grid-template-rows: 30px 98px 48px; gap: 8px; padding: 8px; }
@@ -879,11 +881,12 @@ body.is-playing .ability-center .ability-key { min-width: 0; flex: 1; }
 .ability-choice-heading span { color:inherit; font-size:inherit; }
 body.is-playing .ability-center .ability-buttons { display:flex; justify-content:center; gap:6px; }
 body.is-playing .ability-center .ability-icon-button {
-  --ring-color:#ff5757; display:grid; justify-items:center; align-content:start; gap:3px;
+  display:grid; justify-items:center; align-content:start; gap:3px;
   flex:0 1 92px; min-width:56px; min-height:100px; padding:3px 2px;
   background:transparent; border:0; box-shadow:none; border-radius:8px;
   opacity:1; touch-action:none; color:#f1e8d2;
 }
+.ability-icon-button { --ring-color:#ff5757; }
 .ability-icon-button .ability-orb { position:relative; display:grid; place-items:center; width:64px; height:64px; border-radius:50%; background:#13261ff2; }
 .ability-icon-button .ability-sprite { width:48px; height:48px; image-rendering:pixelated; pointer-events:none; }
 .ability-ring { position:absolute; inset:0; width:100%; height:100%; overflow:visible; pointer-events:none; transform:rotate(-90deg); }
@@ -891,6 +894,8 @@ body.is-playing .ability-center .ability-icon-button {
 .ability-ring-fill { stroke:var(--ring-color); stroke-width:4; stroke-dasharray:100 100; stroke-linecap:round; filter:drop-shadow(0 0 3px var(--ring-color)); }
 .ability-icon-button[data-charge=ready] { --ring-color:#70f09b; }
 .ability-icon-button[data-charge=ready] .ability-ring-track { stroke:#335d42; }
+.ability-icon-button[data-charge=ready] .ability-orb { outline:2px solid #70f09b; outline-offset:1px; box-shadow:0 0 10px #70f09b99,inset 0 0 8px #70f09b33; }
+.ability-icon-button[data-charge=ready] .ability-sprite { filter:drop-shadow(1px 0 0 #70f09b) drop-shadow(-1px 0 0 #70f09b) drop-shadow(0 1px 0 #70f09b) drop-shadow(0 -1px 0 #70f09b) drop-shadow(0 0 4px #70f09b99); }
 .ability-icon-button[data-charge=charging] .ability-sprite { opacity:.72; }
 .ability-icon-button[data-charge=active] .ability-sprite { opacity:.9; }
 .ability-icon-button .ability-name { font-size:10px; line-height:1.15; min-height:23px; max-width:100%; text-align:center; }

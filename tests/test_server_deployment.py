@@ -2,6 +2,7 @@ import json
 import threading
 import unittest
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError
 from unittest.mock import patch
 
 import server
@@ -49,6 +50,12 @@ class DeploymentTests(unittest.TestCase):
                 self.assertEqual(status, 201)
                 self.assertEqual(json.loads(raw)["room"], room["room"])
                 self.assertEqual(request(f'/api/state?room={room["room"]}&player={room["player"]}')[0], 200)
+                with patch.object(server, 'SIMULATION_LAST_TICK', server.time.monotonic()-6):
+                    with self.assertRaises(HTTPError) as failure:
+                        request('/healthz')
+                    self.assertEqual(failure.exception.code, 503)
+                    self.assertEqual(json.loads(failure.exception.read()), {'ok':False})
+                self.assertEqual(json.loads(request('/healthz')[1]), {'ok':True})
             finally:
                 listener.shutdown()
                 worker.join(timeout=5)

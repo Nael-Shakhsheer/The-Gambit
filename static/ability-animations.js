@@ -1,6 +1,6 @@
 // Shared cast choreography: relative server time, persistent cast IDs, native pixel art.
 (() => {
-  const sprites = {}, icons = {}, motions = new Map(), casts = new Map(), births = new Map();
+  const sprites = {}, motions = new Map(), casts = new Map(), births = new Map();
   const spriteRoot = document.currentScript?.dataset.spriteRoot || '/sprites/';
   const heroes = ['Knight','Wizard','Archer','Cleric','Rogue','Druid','Bard','Healer'];
   const designs = {
@@ -32,9 +32,6 @@
   for (const hero of heroes) {
     const img = sprites[hero] = new Image();
     img.src = spriteRoot+hero.toLowerCase()+'-abilities-v1.png';
-  }
-  for (const id of Object.keys(designs)) {
-    const img = icons[id] = new Image(); img.src = spriteRoot+'ability-'+id+'-v1.png';
   }
   let scene = '';
   const clamp = n => Math.max(0,Math.min(1,n));
@@ -98,10 +95,13 @@
     for(let i=0;i<8;i++){const a=i*Math.PI/4+spin;pixel(ctx,x+Math.cos(a)*r-2,y+Math.sin(a)*r*.42-2,4,color);}
     ctx.restore();
   }
-  function glyph(ctx,id,x,y,size,angle=0) {
-    const img=icons[id];if(!img?.complete || !img.naturalWidth)return;
-    ctx.save();ctx.imageSmoothingEnabled=false;ctx.translate(x,y);ctx.rotate(angle);
-    ctx.drawImage(img,-size/2,-size/2,size,size);ctx.restore();
+  function summonRune(ctx,id,x,y,color) {
+    ctx.save();ctx.translate(x,y);ctx.strokeStyle=color;ctx.fillStyle=color;ctx.lineWidth=2;
+    if(id==='lightning_bird'){ctx.beginPath();ctx.moveTo(2,-6);ctx.lineTo(-3,0);ctx.lineTo(2,0);ctx.lineTo(-2,6);ctx.stroke();}
+    else if(id==='fire_wolf'){ctx.beginPath();ctx.moveTo(0,-6);ctx.lineTo(4,3);ctx.lineTo(0,6);ctx.lineTo(-4,3);ctx.closePath();ctx.fill();}
+    else if(id==='ice_bear'){ctx.beginPath();ctx.moveTo(0,-6);ctx.lineTo(4,0);ctx.lineTo(0,6);ctx.lineTo(-4,0);ctx.closePath();ctx.stroke();}
+    else{ctx.strokeRect(-4,-4,8,8);ctx.fillRect(-1,-1,3,3);}
+    ctx.restore();
   }
   function emitter(ctx,type,color,x,y,t,size=1,seed=0) {
     const fade=1-clamp(t);
@@ -124,7 +124,7 @@
       const radius=r.attackType==='ultimate'?51:36;
       ring(ctx,p.x,p.y+17,radius*(.45+.55*Math.min(1,t*4)),color,1-t*.5,t*.8);
       ring(ctx,p.x,p.y+17,radius*.72,color,.6,-t*.8);
-      for(let i=0;i<4;i++) {const a=i*Math.PI/2+t;glyph(ctx,r.abilityId,p.x+Math.cos(a)*radius*.7,p.y+17+Math.sin(a)*radius*.3,15);}
+      for(let i=0;i<4;i++) {const a=i*Math.PI/2+t;summonRune(ctx,r.abilityId,p.x+Math.cos(a)*radius*.7,p.y+17+Math.sin(a)*radius*.3,color);}
     } else if(r.attackType!=='light') ring(ctx,p.x,p.y+16,r.attackType==='ultimate'?43:28,color,.8*(1-t),t);
     if(r.attackType==='ultimate') ring(ctx,p.x,p.y+18,18+72*t,color,(1-t)*.7);
     ctx.restore();
@@ -160,22 +160,19 @@
       } else if(type==='wind'||type==='shadow') {
         ctx.strokeStyle=color;ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(c.x,c.y-8);ctx.lineTo(p.x,p.y-8);ctx.stroke();
       } else if(type==='blades') {
-        for(let i=0;i<5;i++){const a=i*Math.PI*2/5+t*4;glyph(ctx,'backstab',p.x+Math.cos(a)*(26+t*40),p.y-15+Math.sin(a)*(16+t*20),22,a);}
-      } else if(type==='rain' && c.abilityId==='rain_of_arrows') {
-        if(t>.35)for(let i=0;i<7;i++){const phase=(t*3+i*.13)%1;glyph(ctx,'piercing_volley',c.targetX+(i-3)*14,c.targetY-70+phase*85,24,Math.PI/2);}
+        for(let i=0;i<5;i++){const a=i*Math.PI*2/5+t*4;window.GauntletProjectiles?.variant(ctx,'flying_dagger',p.x+Math.cos(a)*(26+t*40),p.y-15+Math.sin(a)*(16+t*20),a,elapsed(c)*1000,.8);}
       } else if(type==='slash' && t<.7) {
         const a=Math.atan2(c.facingY,c.facingX),r=28+(isUlt?32:16)*t;
         ctx.strokeStyle=color;ctx.lineWidth=isUlt?5:3;ctx.beginPath();ctx.arc(p.x,p.y-7,r,a-.8,a+.8);ctx.stroke();
       }
       if(c.abilityId==='earthshaker') {
-        glyph(ctx,c.abilityId,p.x+19,p.y-53+Math.min(1,t*4)*45,42);
         if(t>.2)ring(ctx,p.x,p.y+12,12+75*t,color,1-t);
       } else if(c.abilityId==='challenge' && t<.65) {
-        glyph(ctx,c.abilityId,p.x+12,p.y-27,24);
+        ctx.strokeStyle=color;ctx.lineWidth=2;for(let i=0;i<3;i++){ctx.beginPath();ctx.arc(p.x+8,p.y-25,9+i*7,-.65,.65);ctx.stroke();}
       } else if(c.abilityId==='eagle_eye') {
-        glyph(ctx,c.abilityId,p.x,p.y-63,28);
+        ctx.strokeStyle=color;ctx.lineWidth=2;ctx.strokeRect(p.x-7,p.y-62,14,14);ctx.beginPath();ctx.moveTo(p.x-11,p.y-55);ctx.lineTo(p.x+11,p.y-55);ctx.moveTo(p.x,p.y-66);ctx.lineTo(p.x,p.y-44);ctx.stroke();
       } else if(c.abilityId==='frost_lance' && t<.4) {
-        glyph(ctx,c.abilityId,p.x+20,p.y-26,26);
+        window.GauntletProjectiles?.variant(ctx,'frost_lance',p.x+20,p.y-26,Math.atan2(c.facingY,c.facingX),elapsed(c)*1000,.6);
       } else if(c.abilityId==='sanctuary_rain') {
         for(let i=0;i<7;i++){const f=(t*2+i*.16)%1;pixel(ctx,p.x+(i-3)*14,p.y-65+f*83,3,color);}
       }
@@ -189,19 +186,6 @@
       }
       ctx.restore();
     }
-  }
-  function projectile(ctx,shot) {
-    const design=designs[shot.abilityId];
-    if(!design || shot.side!=='hero' || shot.summonId)return false;
-    const [,type,color]=design, img=icons[shot.abilityId];
-    if(!img?.naturalWidth)return false;
-    const big=shot.abilityId==='deadeye', angle=Math.atan2(shot.vy||0,shot.vx||1);
-    ctx.save();ctx.imageSmoothingEnabled=false;
-    // Literal ice shards, potion bottles, thorns, arrows and notes use their art.
-    const size=big?48:type==='flask'?27:type==='sound'?22:28;
-    for(let i=3;i>0;i--){ctx.globalAlpha=.12*(4-i);pixel(ctx,shot.x-Math.cos(angle)*i*7,shot.y-Math.sin(angle)*i*7,big?5:3,color);}
-    ctx.globalAlpha=1;glyph(ctx,shot.abilityId,shot.x,shot.y,size,type==='flask'?performance.now()/160:angle);
-    ctx.restore();return true;
   }
   function summonGround(ctx,s) {
     const b=births.get(s.id);if(!b)return;
@@ -236,5 +220,5 @@
     } else emitter(ctx,type,color,x,y,t,e.boss?1.1:.6);
     ctx.restore();
   }
-  window.GauntletAbilityAnimations={observe,hero,motion,ground,front,projectile,summonGround,summonScale,summonFront,enemy};
+  window.GauntletAbilityAnimations={observe,hero,motion,ground,front,summonGround,summonScale,summonFront,enemy};
 })();

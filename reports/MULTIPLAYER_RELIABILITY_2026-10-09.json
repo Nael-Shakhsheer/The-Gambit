@@ -1,0 +1,42 @@
+{
+  "clients": 4,
+  "seconds": 30.0,
+  "requests": 3527,
+  "simulationTicks": 483,
+  "movingSnapshotsPerClient": [
+    434,
+    440,
+    432,
+    445
+  ],
+  "httpMedianMs": 4.0,
+  "httpP95Ms": 17.46,
+  "tickMaxMs": 3.1,
+  "errors": [],
+  "health": {
+    "ok": true
+  },
+  "fixtures": [
+    {
+      "stage": 7,
+      "kind": "squadron"
+    },
+    {
+      "stage": 13,
+      "kind": "regular"
+    },
+    {
+      "stage": 17,
+      "kind": "regular"
+    },
+    {
+      "stage": 20,
+      "kind": "boss"
+    },
+    {
+      "stage": 25,
+      "kind": "dragon"
+    }
+  ],
+  "note": "Synthetic localhost reliability fixtures with extra hero/enemy HP; not balance or physical-phone testing."
+}

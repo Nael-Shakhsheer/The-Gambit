@@ -54,6 +54,8 @@ bank ships locally; no audio tool installation is needed to play. Rebuild/tuning
 instructions are in `art/audio/WORKFLOW.md`.
 
 - Move: WASD by default, or arrow keys; touch movement pad on phones.
+- Dash: Space or the Dash button during combat. Its five-second recharge shows
+  a countdown and progress bar; dashing is unavailable while downed.
 - Light attack: hold left click on the arena or hold the Attack button to repeat
   your equipped Light at its normal cooldown. A quick click/tap also works.
   Release, switch tabs, or open a dialog to stop. Movement and attack can be held together.
@@ -87,11 +89,18 @@ instructions are in `art/audio/WORKFLOW.md`.
   Summons persist between waves. Special summons deal 90% of the
   equipped Light's damage per hit; Ultimate summons deal twice that Light damage.
 - Chat: use Party Chat beside the shared game view.
+  Common English profanity, insults and harassment phrases are masked in chat
+  and player names. Held Light attacks do not flood the chat with announcements.
 
 ## Exploring the run
 
 - After clearing a stage and opening any treasure, connected human players gather at the top opening. Non-town transitions have a 50% chance of a fork; otherwise the party advances directly. Town arrivals are direct. At forks, humans walk along the left or right path to the screen edge to vote. A split party uses the human majority, with the host breaking a tie. NPC companions follow and never count toward votes or exit readiness; they still count toward combat difficulty.
-- Town layouts shuffle each visit, including the Guild. Enter the Inn, Store, Alchemy Lab, or Guild with E, then approach the NPC inside and press E. Return through the door. Connected human players gather at the village gate and vote with E to leave; the NPC companion is not required.
+- Town layouts shuffle each visit, including the Guild. Seven village arrangements,
+  mirrored and shifted buildings, branching paths, lanes and loops give visits
+  different shapes; consecutive visits use different arrangements. Enter the Inn,
+  Store, Alchemy Lab, or Guild with E, then approach the NPC inside and press E.
+  Return through the door. Connected human players gather at the village gate and
+  vote with E to leave; the NPC companion is not required.
 - The Guildmaster offers one class change per player per run. Your current hero and heroes taken by teammates are disabled. Pick a new hero, review its six shuffled class-specific skills, and choose one Light, one Special, and one Ultimate before confirming. Back out or press Escape to cancel without using the change. Checkpoint recovery keeps your new class and the used allowance.
 - Open Pouch and press Expand to read descriptions for carried and equipped items. Equip items anywhere.
 - The original 22 equipable items (13 tools and 9 utilities) have individual pixel-art
