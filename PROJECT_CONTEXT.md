@@ -11,8 +11,17 @@ service in Virginia with manual deploys, `/healthz`, and `HOST=0.0.0.0`.
 README contains the Deploy to Render link and release instructions.
 Free hosting loses its temporary checkpoint files on sleep/restart/redeploy;
 local data is excluded from publication. Rooms require a single process/instance.
-Render account sign-in and live deployment are pending; no public game URL has
-been verified yet. Do not describe this as already deployed.
+Render deployment is live and verified:
+https://the-gauntlet-d0pc.onrender.com
+Service: srv-db4qi6o473hc738p6k70; Blueprint: exs-db4qi3o473hc738p69sg.
+Dashboard: https://dashboard.render.com/web/srv-db4qi6o473hc738p6k70
+Deployed commit: 4d357efdb57c627e4277ddf4aaef8ff9c3e2f526.
+Render confirmed Free plan and successful deploy; runtime Python 3.13.16,
+listener port 10000. Public browser smoke created room 2ZP96, selected Knight
+abilities, entered Stage 1 / Wave 1, and showed no browser errors/warnings.
+Rapid consecutive ability choices required reselection after server responses;
+remote-latency choice synchronization remains an observation for future work.
+Proof: reports/RENDER_LIVE_2026-10-09.jpg. Local server was not restarted.
 
 Deployment HTTP checks pass for health, client, room creation, joining and state.
 The full suite passed 160 tests on rerun. Initial full run had six village

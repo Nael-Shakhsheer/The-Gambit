@@ -21,6 +21,10 @@ Open http://127.0.0.1:8000 on the host computer. Do not open `static/index.html`
 
 ## Deploy on Render (free public playtesting)
 
+Play the hosted game: **https://the-gauntlet-d0pc.onrender.com**.
+Manage the current service at
+https://dashboard.render.com/web/srv-db4qi6o473hc738p6k70.
+
 The repository includes `render.yaml` for a single free Python web service.
 Sign in to Render, then use
 [Deploy to Render](https://render.com/deploy?repo=https://github.com/Nael-Shakhsheer/The-Gauntlet)
