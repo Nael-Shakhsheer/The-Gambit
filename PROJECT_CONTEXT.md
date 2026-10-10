@@ -13,6 +13,13 @@ authoring projects, release archives and machine cleanup records. The earlier
 tracked October 6 ZIP remains on GitHub; its local cleanup is not a request to
 erase repository history. Record the verified publication commit after upload.
 
+Publication completed and remote main/tree verified:
+https://github.com/Nael-Shakhsheer/The-Gauntlet/commit/c47db9e6576e31b3fe9805c056c34886be5399ff
+All 357 current public game files match GitHub blob hashes; the retained legacy
+ZIP brings the repository to 358 files. This includes all 57 new runtime PNGs,
+source and metadata for icons/casting animations. Saves and cleanup records were
+excluded. GitHub's main archive downloads the complete playable source build.
+
 ## Ability casting poses and shared ultimate eruptions — 2026-10-09
 
 Eight new hero animation atlases add three-frame Light, Special and Ultimate
