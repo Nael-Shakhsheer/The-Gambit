@@ -19,7 +19,27 @@ Run: python server.py
 
 Open http://127.0.0.1:8000 on the host computer. Do not open `static/index.html` directly; a `file://` page cannot reach the Python API. For another device on the same Wi-Fi, open http://<host-computer-LAN-IP>:8000 and enter the room code.
 
-The development server is not a public deployment. Publishing a public link will require choosing a hosting service and configuring the Python server for it.
+## Deploy on Render (free public playtesting)
+
+The repository includes `render.yaml` for a single free Python web service.
+Sign in to Render, then use
+[Deploy to Render](https://render.com/deploy?repo=https://github.com/Nael-Shakhsheer/The-Gauntlet)
+to create the Blueprint. Review that the service uses the **Free** plan, then deploy.
+Render assigns an HTTPS `onrender.com` URL; share that URL with players.
+The service uses Python 3.13, `pip install -r requirements.txt` to build,
+`python -u server.py` to start, `HOST=0.0.0.0`, Render's `PORT`, and `/healthz`.
+Local defaults remain unchanged.
+
+Automatic deploys are disabled to avoid interrupting parties on every commit.
+To release a new build, publish it to GitHub main and use **Manual Deploy >
+Deploy latest commit** on the Render service. Every redeploy resets live rooms.
+Keep exactly one instance: rooms and the simulation run in that process's memory.
+
+Free services sleep after 15 minutes without incoming traffic and may take about
+a minute to wake. Their filesystem is temporary: inn checkpoints on Render are
+lost on sleep, restart or redeploy. Local saves are not uploaded. This free setup
+is for playtesting; durable online saves need separate persistent storage.
+See [Render's free service limits](https://render.com/docs/free).
 
 ## Controls
 

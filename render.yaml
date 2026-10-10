@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: the-gauntlet
+    runtime: python
+    plan: free
+    region: virginia
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -u server.py
+    healthCheckPath: /healthz
+    autoDeployTrigger: "off"
+    envVars:
+      - key: HOST
+        value: 0.0.0.0

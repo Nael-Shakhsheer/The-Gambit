@@ -2,6 +2,23 @@
 
 Last updated: **2026-10-09**.
 
+## Render free deployment preparation — 2026-10-09
+
+The user chose Render free hosting. `render.yaml` defines one free Python web
+service in Virginia with manual deploys, `/healthz`, and `HOST=0.0.0.0`.
+`server.py` reads HOST/PORT while retaining local IPv6/IPv4 defaults.
+`.python-version` selects Python 3.13; requirements.txt documents stdlib-only use.
+README contains the Deploy to Render link and release instructions.
+Free hosting loses its temporary checkpoint files on sleep/restart/redeploy;
+local data is excluded from publication. Rooms require a single process/instance.
+Render account sign-in and live deployment are pending; no public game URL has
+been verified yet. Do not describe this as already deployed.
+
+Deployment HTTP checks pass for health, client, room creation, joining and state.
+The full suite passed 160 tests on rerun. Initial full run had six village
+routing errors; isolated village checks and the rerun passed without code changes.
+This intermittent observation remains open; no village changes were made here.
+
 ## Latest GitHub publication — 2026-10-09
 
 The user requested publishing the current playable build to

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import socket
 import threading
 import time
@@ -47,6 +48,8 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self) -> None:
         parsed = urlparse(self.path)
+        if parsed.path == "/healthz":
+            return self._send(200, {"ok": True})
         host_header = self.headers.get("Host", "")
         if host_header.lower().startswith("localhost:"):
             port = host_header.rsplit(":", 1)[-1]
@@ -125,12 +128,14 @@ def _simulation_loop() -> None:
 
 
 def main() -> None:
-    host = "::"
-    port = 8000
+    host = os.environ.get("HOST", "::")
+    port = int(os.environ.get("PORT", "8000"))
+    server_class = DualStackThreadingHTTPServer if ":" in host else ThreadingHTTPServer
+    server = server_class((host, port), Handler)
     threading.Thread(target=_simulation_loop, daemon=True).start()
     print(f"The Gauntlet listening on port {port} (open http://localhost:{port} on this computer)")
     print("Press Ctrl+C to stop.")
-    DualStackThreadingHTTPServer((host, port), Handler).serve_forever()
+    server.serve_forever()
 
 
 if __name__ == "__main__":
